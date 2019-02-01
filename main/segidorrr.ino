@@ -79,7 +79,6 @@ void waitForRelease(){
 
 }
 
-<<<<<<< HEAD
 void setSpeeds(int esq, int dir){
 
 }
@@ -91,6 +90,3 @@ void calibrateLineSensors(){
 unsigned int readLine(sensors){
 
 }
-=======
-void setSpeeds(int esq, int dir)
->>>>>>> 24e8b7898f49c24d7e54cf881034534de0cf0e97
