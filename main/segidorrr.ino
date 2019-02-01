@@ -73,3 +73,20 @@ void loop()
   else
     setSpeeds(maximum, maximum - power_difference);
 }
+
+
+void waitForRelease(){
+
+}
+
+void setSpeeds(int esq, int dir){
+
+}
+
+void calibrateLineSensors(){
+
+}
+
+unsigned int readLine(sensors){
+
+}
