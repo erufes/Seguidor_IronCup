@@ -4,6 +4,14 @@ unsigned int mincalib[7];
 unsigned int last_proportional = 0;
 long integral = 0;
 
+//pinos:
+
+//[direção1, direção2, velocidade]
+const int motorA[3] = {};
+const int motorB[3] = {};
+////[sensor1, sensor2, ...]
+const int pinosSensores[7] = {};
+
 void setup()
 {
   unsigned int counter; // used as a simple timer
@@ -77,7 +85,11 @@ void loop()
 
 
 void waitForRelease(){
-
+  unsigned char button_pressed = 0;
+  do{
+    button_pressed = digitalRead(button);
+  }while(!button_pressed);
+  return;
 }
 
 void setSpeeds(int esq, int dir){
