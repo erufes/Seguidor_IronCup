@@ -11,6 +11,8 @@ const int motorA[3] = {};
 const int motorB[3] = {};
 ////[sensor1, sensor2, ...]
 const int pinosSensores[7] = {};
+//pino do botao de inicialização
+const int button = ;
 
 void setup()
 {
@@ -113,7 +115,7 @@ void calibrateLineSensors(int* maxcalib, int* mincalib){
   value[5] = analogRead();
   value[6] = analogRead();
 
-  for(int i = 0; i<7; i++){
+  for(int i = 0; i < 7; i++){
     if(value[i] > maxcalib[i])
       maxcalib[i] = value[i];
     if(value[i] < mincalib[i])
