@@ -49,10 +49,10 @@ void loop()
   // Get the position of the line.  Note that we *must* provide
   // the "sensors" argument to read_line() here, even though we
   // are not interested in the individual sensor readings.
-  unsigned int position = readLine(sensors);
+  linePosition = readLine();
 
   // The "proportional" term should be 0 when we are on the line.
-  int proportional = (int)position - 2000;
+  int proportional = (int)linePosition - 2000;
 
   // Compute the derivative (change) and integral (sum) of the
   // position.
@@ -73,7 +73,7 @@ void loop()
 
   // Compute the actual motor settings.  We never set either motor
   // to a negative value.
-  const int maximum = 200 ;
+  const int maximum = 200;
   if (power_difference > maximum)
     power_difference = maximum;
   if (power_difference < -maximum)
