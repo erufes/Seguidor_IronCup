@@ -123,7 +123,7 @@ void calibrateLineSensors(int* maxcalib, int* mincalib){
   }
 }
 
-unsigned int readLine(sensors){
+unsigned int readLine(){
   for(i = 0; i < 5; i++){
     sensors[i] = analogRead(pinosSensores[i]);
   }
