@@ -95,7 +95,13 @@ void waitForRelease(){
 }
 
 void setSpeeds(int esq, int dir){
+  digitalWrite(motorA[0], HIGH);
+  digitalWrite(motorA[1], LOW);
+  digitalWrite(motorB[0], HIGH);
+  digitalWrite(motorB[1], LOW);
 
+  analogWrite(motorA[2], esq);
+  analogWrite(motorB[2], dir);
 }
 
 void preCalibration(int* maxcalib, int* mincalib){
@@ -107,15 +113,13 @@ void preCalibration(int* maxcalib, int* mincalib){
 
 void calibrateLineSensors(int* maxcalib, int* mincalib){
   int value[7];
-  value[0] = analogRead();
-  value[1] = analogRead();
-  value[2] = analogRead();
-  value[3] = analogRead();
-  value[4] = analogRead();
-  value[5] = analogRead();
-  value[6] = analogRead();
 
+<<<<<<< HEAD
   for(int i = 0; i < 7; i++){
+=======
+  for(int i = 0; i<7; i++){
+    value[i] = analogRead(pinosSensores[i]);
+>>>>>>> 9cf31580e02d4daee16f6c46f10a92f6857eb381
     if(value[i] > maxcalib[i])
       maxcalib[i] = value[i];
     if(value[i] < mincalib[i])
