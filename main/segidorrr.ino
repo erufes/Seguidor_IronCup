@@ -12,6 +12,8 @@ const int motorB[3] = {};
 ////[sensor1, sensor2, ...]
 const int pinosSensores[7] = {};
 
+int linePosition;//indica posição da linha
+
 void setup()
 {
   unsigned int counter; // used as a simple timer
@@ -123,7 +125,6 @@ void calibrateLineSensors(){
 
 int readLine(){
   int i = 0;
-  int linePosition;
   sensors_num = 0;
   sensors_dem = 0;
 
@@ -145,6 +146,5 @@ int readLine(){
   for(i = 0; i < 5; i++){
     sensors_dem += sensors[i];
   }
-  linePosition = (sensor_num/sensors_dem);
-  return linePosition;
+  return sensor_num/sensors_dem;
 }
