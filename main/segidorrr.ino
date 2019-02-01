@@ -1,6 +1,6 @@
-unsigned int sensors[7]; // an array to hold sensor values
-unsigned int maxcalib[7];
-unsigned int mincalib[7];
+int sensors[7]; // an array to hold sensor values
+int maxcalib[7];
+int mincalib[7];
 unsigned int last_proportional = 0;
 long integral = 0;
 
@@ -102,27 +102,49 @@ void setSpeeds(int esq, int dir){
   analogWrite(motorB[2], dir);
 }
 
-void preCalibration(int* maxcalib, int* mincalib){
+void preCalibration(){
   for(int i = 0; i < 7; i++){
     maxcalib[i] = 0;
     mincalib[i] = 1024;
   }
 }
 
-void calibrateLineSensors(int* maxcalib, int* mincalib){
+void calibrateLineSensors(){
   int value[7];
 
-  for(int i = 0; i<7; i++){
+  for(int i = 0; i < 7; i++){
     value[i] = analogRead(pinosSensores[i]);
     if(value[i] > maxcalib[i])
       maxcalib[i] = value[i];
     if(value[i] < mincalib[i])
       mincalib[i] = value[i];
   }
-}//aaa
+}
 
-unsigned int readLine(){
+int readLine(){
+  int i = 0;
+  int linePosition;
+  sensors_num = 0;
+  sensors_dem = 0;
+
   for(i = 0; i < 5; i++){
     sensors[i] = analogRead(pinosSensores[i]);
   }
+  //calibração utilizando map. Valores iguais ou acima do maxcalib serão considerados 1000
+  //e valores menores que o mincalib serão considerados 0
+  for(i = 0; i < 5; i++){
+      sensors[i] = map(sensors[i], mincalib[i], maxcalib[i], 0, 1000);
+      //failsafe against values beyond expected calibrated limits
+      if(sensors[i] < 0) sensors[i] = 0;
+      else if(sensors[i] > 1000) sensors[i] = 1000;
+  }
+
+  for (i = 0; i < 5; i++){
+    sensors_num += sensors[i]*i;
+  }
+  for(i = 0; i < 5; i++){
+    sensors_dem += sensors[i];
+  }
+  linePosition = (sensor_num/sensors_dem);
+  return linePosition;
 }
