@@ -1,6 +1,6 @@
-unsigned int sensors[6]; // an array to hold sensor values
-unsigned int maxcalib[6];
-unsigned int mincalib[6];
+unsigned int sensors[7]; // an array to hold sensor values
+unsigned int maxcalib[7];
+unsigned int mincalib[7];
 unsigned int last_proportional = 0;
 long integral = 0;
 
@@ -13,6 +13,7 @@ void setup()
 
   // Auto-calibration: turn right and left while calibrating the
   // sensors.
+  preCalibration(maxcalib, mincalib);
   for (counter=0; counter<80; counter++)
   {
     if (counter < 20 || counter >= 60)
@@ -22,7 +23,7 @@ void setup()
 
     // This function records a set of sensor readings and keeps
     // track of the minimum and maximum values encountered.
-    calibrateLineSensors();
+    calibrateLineSensors(maxcalib, mincalib);
     delay(20);
   }
 
@@ -79,18 +80,35 @@ void waitForRelease(){
 
 }
 
-<<<<<<< HEAD
 void setSpeeds(int esq, int dir){
 
 }
 
-void calibrateLineSensors(){
+void preCalibration(int* maxcalib, int* mincalib){
+  for(int i = 0; i < 7; i++){
+    maxcalib[i] = 0;
+    mincalib[i] = 1024;
+  }
+}
 
+void calibrateLineSensors(int* maxcalib, int* mincalib){
+  int value[7];
+  value[0] = analogRead();
+  value[1] = analogRead();
+  value[2] = analogRead();
+  value[3] = analogRead();
+  value[4] = analogRead();
+  value[5] = analogRead();
+  value[6] = analogRead();
+
+  for(int i = 0; i<7; i++){
+    if(value[i] > maxcalib[i])
+      maxcalib[i] = value[i];
+    if(value[i] < mincalib[i])
+      mincalib[i] = value[i];
+  }
 }
 
 unsigned int readLine(sensors){
 
 }
-=======
-void setSpeeds(int esq, int dir)
->>>>>>> 24e8b7898f49c24d7e54cf881034534de0cf0e97
