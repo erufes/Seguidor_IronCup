@@ -11,6 +11,7 @@ const int motorA[3] = {};
 const int motorB[3] = {};
 ////[sensor1, sensor2, ...]
 const int pinosSensores[7] = {};
+const int button ;
 
 int linePosition;//indica posição da linha
 
@@ -23,7 +24,7 @@ void setup()
 
   // Auto-calibration: turn right and left while calibrating the
   // sensors.
-  preCalibration(maxcalib, mincalib);
+  preCalibration();
   for (counter=0; counter<80; counter++)
   {
     if (counter < 20 || counter >= 60)
@@ -33,7 +34,7 @@ void setup()
 
     // This function records a set of sensor readings and keeps
     // track of the minimum and maximum values encountered.
-    calibrateLineSensors(maxcalib, mincalib);
+    calibrateLineSensors();
     delay(20);
   }
 
@@ -125,8 +126,8 @@ void calibrateLineSensors(){
 
 int readLine(){
   int i = 0;
-  sensors_num = 0;
-  sensors_dem = 0;
+  int sensors_num = 0;
+  int sensors_dem = 0;
 
   for(i = 0; i < 5; i++){
     sensors[i] = analogRead(pinosSensores[i]);
@@ -146,5 +147,5 @@ int readLine(){
   for(i = 0; i < 5; i++){
     sensors_dem += sensors[i];
   }
-  return sensor_num/sensors_dem;
+  return sensors_num/sensors_dem;
 }
