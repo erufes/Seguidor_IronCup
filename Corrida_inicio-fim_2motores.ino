@@ -45,6 +45,6 @@ void loop() {
   //Começar corrida
   while(!linha_chegada){
   // ------CÓDIGO DE CONTROLE AQUI------
-
-  }
+hfdtrhtfrhtfhyutfrthtfryhtry
+}//in progress
 }
