@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "Arduino nano")(type KiCad)(uri ${KIPRJMOD}/libraries/kicad_ArduinoNano-master/kicad_ArduinoNano-master/libraries)(options "")(descr ""))
+  (lib (name Tcrt5000)(type KiCad)(uri ${KIPRJMOD}/libraries/cyclophone.pretty)(options "")(descr ""))
+)
