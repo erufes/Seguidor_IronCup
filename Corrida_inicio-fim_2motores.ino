@@ -49,8 +49,11 @@ void loop() {
 
   //Começar corrida
   last_read = digitalRead(pin_linha_chegada);
+  if(!last_read && linePosition >= 0 && linePosition <= 7000){//Se a corrida iniciar em cima da linha de chegada e estivermos "no caminho"
+    linha_chegada += 1;
+  }
 
-  while(){//loop de corrida
+  while(1){//loop de corrida
     // ------CÓDIGO DE CONTROLE AQUI------
     //------CÓDIGO DE CONTROLE AQUI------ FIM
 
@@ -61,7 +64,7 @@ void loop() {
         if(read != lastread){
           if(!last_read && read){
             //detecta borda de subida com sucesso
-            linha_chegada = 1;
+            linha_chegada += 1;
             t0 = millis();//inicia timer
           }
           last_read = read;
@@ -70,4 +73,5 @@ void loop() {
     }
   }
   //protocolo de parada
+  
 }
