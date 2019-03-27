@@ -5,7 +5,7 @@
 #define EMITTER_PIN             2  // emitter is controlled by digital pin 2
 
 QTRSensorsAnalog qtra((unsigned char[]) {
-  A0, A1, A2, A3, A4, A5, A7, A6
+ A0, A1, A2, A3, A4, A5, A7, A6
 },
 NUM_SENSORS, NUM_SAMPLES_PER_SENSOR, EMITTER_PIN);
 
@@ -29,11 +29,11 @@ void setup()
   for (int i = 0; i < 5; i++)
   {
     if (i % 2 == 0) {
-      anda(40, -40);
+      anda(33, -33);
     } else {
-      anda(-40, 40);
+      anda(-33, 33);
     }
-    for (int j = 0; j < 30 ; j++) {
+    for (int j = 0; j < 22 ; j++) {
       qtra.calibrate();
     }
   }
@@ -100,6 +100,18 @@ void anda(int velE, int velD)
   }
 }
 
+void para() 
+{
+  digitalWrite(motorEsq[0], LOW);
+  digitalWrite(motorEsq[1], LOW);
+  analogWrite(motorEsq[2], 0);
+
+    
+  digitalWrite(motorDir[0], LOW);
+  digitalWrite(motorDir[1], LOW);
+  analogWrite(motorDir[2], 0);
+}
+
 
 //funcao que faz o robo girar para encontrar a linha e centralizar
 void posCalibracao() {
@@ -108,11 +120,12 @@ void posCalibracao() {
   
   while (linePosition < 3450 || linePosition > 3550) {
     linePosition = qtra.readLine(sensorValues);
-    int erro = (linePosition - 3500) / 9;
-    if (erro > 150) erro = 150;
-    if (erro < -150) erro = -150;
+    int erro = (int)(linePosition - 3500) / 14;
+    Serial.println(erro);
+    if (erro > 45) erro = 45;
+    if (erro < -45) erro = -45;
     anda(erro, -erro);
   }
-
+  para();
 
 }
