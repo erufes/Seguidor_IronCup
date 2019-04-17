@@ -25,8 +25,15 @@ void setup()
     pinMode(motorDir[i], OUTPUT);
   }
   para();
+  
+  for(int i = 0; i < NUM_SENSORS; i++){
+	  calibratedMinimum[i] = 999;
+	  calibratedMaximum[i] = 0;
+  }
+  
   Serial.begin(9600);
   Serial.println("comecou calibracao!");
+  
   for (int i = 0; i < 5; i++)
   {
     if (i % 2 == 0) {
@@ -34,25 +41,12 @@ void setup()
     } else {
       anda(-33, 33);
     }
-    for (int j = 0; j < 22 ; j++) {
+    for (int j = 0; j < 15 ; j++) {
       calibrate();
     }
   }
 
-for (int i = 0; i < NUM_SENSORS; i++)
-  {
-    Serial.print(calibratedMinimum[i]);
-    Serial.print(' ');
-  }
-  Serial.println();
-
-  for (int i = 0; i < NUM_SENSORS; i++)
-  {
-    Serial.print(calibratedMaximum[i]);
-    Serial.print(' ');
-  }
-  Serial.println();
-  Serial.println();
+  printaCalibracao();
 
   posCalibracao();
 
@@ -105,17 +99,19 @@ void para()
 
 void calibrate(){
 	int value;
-	int soma = 0;
+	int soma;
 	for(int j = 0; j < NUM_SENSORS; j++){
-		for(int i = 0; i < NUM_SAMPLES_PER_SENSOR){
+		soma = 0;
+		for(int i = 0; i < NUM_SAMPLES_PER_SENSOR; i++){
 			value = analogRead(sensor[j]);
 			soma += value;
+		}
+		value = soma / NUM_SENSORS;
+		if(value > calibratedMaximum[j])
+			calibratedMaximum[j] = value;
+		if(value < calibratedMinimum[j])
+			calibratedMinimum[j] = value;
 	}
-	value = soma / NUM_SENSORS;
-	if(value > calibratedMaximum[j])
-		calibratedMaximum[j] = value;
-	if(value < calibratedMinimum[j])
-		calibratedMinimum[j] = value;
 }
 
 //funcao que faz o robo procurar a linha e ficar no centro
@@ -132,5 +128,36 @@ void posCalibracao() {
     anda(erro, -erro);
   }
   para();
-
 }
+
+void printaCalibracao(){
+	for (int i = 0; i < NUM_SENSORS; i++)
+  {
+    Serial.print(calibratedMinimum[i]);
+    Serial.print(' ');
+  }
+  Serial.println();
+
+  for (int i = 0; i < NUM_SENSORS; i++)
+  {
+    Serial.print(calibratedMaximum[i]);
+    Serial.print(' ');
+  }
+  Serial.println();
+  Serial.println();
+}
+
+int readLine(){
+	int value;
+	int soma;
+	for(int j = 0; j < NUM_SENSORS; j++){
+		soma = 0;
+		for(int i = 0; i < NUM_SAMPLES_PER_SENSOR; i++){
+			value = analogRead(sensor[j]);
+			soma += value;
+		}
+		value = soma / NUM_SENSORS;
+	
+	}
+}
+
