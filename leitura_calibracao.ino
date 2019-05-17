@@ -130,7 +130,7 @@ int readLine(){
       value = analogRead(sensor[j]);
       soma += value;
     }
-    value = soma / NUM_SENSORS;
+    value = soma / NUM_SAMPLES_PER_SENSOR;
     values[j] = (value - calibratedMinimum[j])*1000/(calibratedMaximum[j] - calibratedMaximum[j]);   //calcula o valor de acordo com a calibracao
     linePosition += values[j] * (j*1000);  
     }
