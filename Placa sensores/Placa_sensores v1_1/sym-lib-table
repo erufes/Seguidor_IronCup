@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name Placa_sensore-rescue)(type Legacy)(uri ${KIPRJMOD}/Placa_sensore-rescue.lib)(options "")(descr ""))
+  (lib (name Placa_sensoresV1_1)(type Legacy)(uri ${KIPRJMOD}/Placa_sensoresV1_1.lib)(options "")(descr ""))
+  (lib (name cyclophone)(type Legacy)(uri ${KIPRJMOD}/cyclophone.lib)(options "")(descr ""))
+)
