@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name Tcrt5000_e_afins)(type KiCad)(uri ${KIPRJMOD}/Libraries/cyclophone.pretty)(options "")(descr ""))
-)
