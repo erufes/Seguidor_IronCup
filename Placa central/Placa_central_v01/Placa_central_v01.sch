@@ -26,17 +26,6 @@ F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 3250 1750 50
 	1    0    0    -1  
 $EndComp
 $Comp
-L Placa_central_v01-rescue:TCRT5000-cyclophone U2
-U 1 1 5C812FD5
-P 9450 2400
-F 0 "U2" H 9450 2550 60  0000 C CNN
-F 1 "TCRT5000" H 9450 2650 60  0000 C CNN
-F 2 "" H 9450 2400 60  0001 C CNN
-F 3 "" H 9450 2400 60  0000 C CNN
-	1    9450 2400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 5C8132E2
 P 10150 2450
@@ -70,17 +59,6 @@ Wire Wire Line
 	9950 2450 10000 2450
 Wire Wire Line
 	9950 2700 10000 2700
-$Comp
-L Placa_central_v01-rescue:TCRT5000-cyclophone U1
-U 1 1 5C8139FF
-P 9450 1450
-F 0 "U1" H 9450 1600 60  0000 C CNN
-F 1 "TCRT5000" H 9450 1700 60  0000 C CNN
-F 2 "" H 9450 1450 60  0001 C CNN
-F 3 "" H 9450 1450 60  0000 C CNN
-	1    9450 1450
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R3
 U 1 1 5C813A06
@@ -119,12 +97,10 @@ Wire Wire Line
 	9950 1750 9950 1950
 Wire Wire Line
 	9950 1950 10050 1950
-Connection ~ 9950 1750
 Wire Wire Line
 	9950 2700 9950 2900
 Wire Wire Line
 	9950 2900 10050 2900
-Connection ~ 9950 2700
 Text GLabel 8850 2450 0    50   Input ~ 0
 5V
 Text GLabel 8850 1500 0    50   Input ~ 0
@@ -147,60 +123,12 @@ Text GLabel 10050 1950 2    50   Input ~ 0
 Encoder1
 Text GLabel 10050 2900 2    50   Input ~ 0
 Encoder2
-$Comp
-L Regulator_Linear:L7805 U3
-U 1 1 5C81568D
-P 9600 3550
-F 0 "U3" H 9600 3792 50  0000 C CNN
-F 1 "L7805" H 9600 3701 50  0000 C CNN
-F 2 "" H 9625 3400 50  0001 L CIN
-F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 9600 3500 50  0001 C CNN
-	1    9600 3550
-	1    0    0    -1  
-$EndComp
 Text GLabel 10250 3950 2    50   Input ~ 0
 GND
-$Comp
-L cyclophone:C C1
-U 1 1 5C81583B
-P 9150 3750
-F 0 "C1" H 9265 3788 40  0000 L CNN
-F 1 "0.33uF" H 9265 3712 40  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 9188 3600 30  0001 C CNN
-F 3 "" H 9150 3750 60  0000 C CNN
-	1    9150 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L cyclophone:C C2
-U 1 1 5C8158B3
-P 10050 3750
-F 0 "C2" H 10165 3788 40  0000 L CNN
-F 1 "0.1uF" H 10165 3712 40  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 10088 3600 30  0001 C CNN
-F 3 "" H 10050 3750 60  0000 C CNN
-	1    10050 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10250 3950 10050 3950
-Connection ~ 10050 3950
-Wire Wire Line
-	10050 3950 9150 3950
-Wire Wire Line
-	9300 3550 9150 3550
-Connection ~ 9150 3550
-Wire Wire Line
-	9900 3550 10050 3550
-Connection ~ 10050 3550
-Wire Wire Line
-	10050 3550 10250 3550
 Text GLabel 10250 3550 2    50   Input ~ 0
 5V
 Text GLabel 9000 3550 0    50   Input ~ 0
 8.4V
-Wire Wire Line
-	9000 3550 9150 3550
 $Comp
 L Device:LED D1
 U 1 1 5C81702D
@@ -346,7 +274,7 @@ L Switch:SW_Push SW2
 U 1 1 5C81F63E
 P 8350 5400
 F 0 "SW2" H 8350 5685 50  0000 C CNN
-F 1 "SW_Push" H 8350 5594 50  0000 C CNN
+F 1 "SW_comando2" H 8350 5594 50  0000 C CNN
 F 2 "" H 8350 5600 50  0001 C CNN
 F 3 "" H 8350 5600 50  0001 C CNN
 	1    8350 5400
@@ -357,7 +285,7 @@ L Switch:SW_Push SW1
 U 1 1 5C81F7C0
 P 7650 5400
 F 0 "SW1" H 7650 5685 50  0000 C CNN
-F 1 "SW_Push" H 7650 5594 50  0000 C CNN
+F 1 "SW_comando1" H 7650 5594 50  0000 C CNN
 F 2 "" H 7650 5600 50  0001 C CNN
 F 3 "" H 7650 5600 50  0001 C CNN
 	1    7650 5400
@@ -383,4 +311,133 @@ Text GLabel 2650 3250 0    50   Input ~ 0
 SensorEsq
 Text GLabel 3900 2750 2    50   Input ~ 0
 Botao1
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5D0BCA30
+P 6000 5400
+F 0 "SW?" H 6000 5635 50  0000 C CNN
+F 1 "SW_ON/OFF" H 6000 5544 50  0000 C CNN
+F 2 "" H 6000 5400 50  0001 C CNN
+F 3 "" H 6000 5400 50  0001 C CNN
+	1    6000 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 5D0BE091
+P 3650 5450
+F 0 "H?" H 3750 5501 50  0000 L CNN
+F 1 "V8.4 - Lipo" H 3750 5410 50  0000 L CNN
+F 2 "" H 3650 5450 50  0001 C CNN
+F 3 "~" H 3650 5450 50  0001 C CNN
+	1    3650 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 5D0BE14B
+P 3850 5750
+F 0 "H?" H 3950 5801 50  0000 L CNN
+F 1 "V0 - Lipo" H 3950 5710 50  0000 L CNN
+F 2 "" H 3850 5750 50  0001 C CNN
+F 3 "~" H 3850 5750 50  0001 C CNN
+	1    3850 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Driver_Motor:L298P U?
+U 1 1 5D0BE849
+P 5650 2850
+F 0 "U?" H 5650 3728 50  0000 C CNN
+F 1 "L298P" H 5650 3637 50  0000 C CNN
+F 2 "" H 5800 3100 50  0001 C CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000240.pdf" H 5800 3100 50  0001 C CNN
+	1    5650 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5D0BC666
+P 9150 3750
+F 0 "C?" H 9265 3796 50  0000 L CNN
+F 1 "0,33uF" H 9265 3705 50  0000 L CNN
+F 2 "" H 9188 3600 50  0001 C CNN
+F 3 "~" H 9150 3750 50  0001 C CNN
+	1    9150 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:L7805 U3
+U 1 1 5C81568D
+P 9600 3550
+F 0 "U3" H 9600 3792 50  0000 C CNN
+F 1 "L7805" H 9600 3701 50  0000 C CNN
+F 2 "" H 9625 3400 50  0001 L CIN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 9600 3500 50  0001 C CNN
+	1    9600 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 3550 9150 3550
+Wire Wire Line
+	9150 3900 9150 3950
+Wire Wire Line
+	9150 3600 9150 3550
+Connection ~ 9150 3550
+Wire Wire Line
+	9150 3550 9300 3550
+$Comp
+L Device:C C?
+U 1 1 5D0BDB83
+P 10050 3750
+F 0 "C?" H 10165 3796 50  0000 L CNN
+F 1 "0,1uF" H 10165 3705 50  0000 L CNN
+F 2 "" H 10088 3600 50  0001 C CNN
+F 3 "~" H 10050 3750 50  0001 C CNN
+	1    10050 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3550 10050 3550
+Wire Wire Line
+	9150 3950 9600 3950
+Wire Wire Line
+	10050 3600 10050 3550
+Connection ~ 10050 3550
+Wire Wire Line
+	10050 3550 10250 3550
+Wire Wire Line
+	10050 3900 10050 3950
+Connection ~ 10050 3950
+Wire Wire Line
+	10050 3950 10250 3950
+Wire Wire Line
+	9600 3850 9600 3950
+Connection ~ 9600 3950
+Wire Wire Line
+	9600 3950 10050 3950
+$Comp
+L Sensores_e_componentes_SL:TCRT5000 U?
+U 1 1 5D0BF882
+P 9450 1450
+F 0 "U?" H 9450 1937 60  0000 C CNN
+F 1 "TCRT5000" H 9450 1831 60  0000 C CNN
+F 2 "" H 9450 1450 60  0000 C CNN
+F 3 "" H 9450 1450 60  0000 C CNN
+	1    9450 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 9950 1750
+$Comp
+L Sensores_e_componentes_SL:TCRT5000 U?
+U 1 1 5D0BF8FC
+P 9450 2400
+F 0 "U?" H 9450 2887 60  0000 C CNN
+F 1 "TCRT5000" H 9450 2781 60  0000 C CNN
+F 2 "" H 9450 2400 60  0000 C CNN
+F 3 "" H 9450 2400 60  0000 C CNN
+	1    9450 2400
+	1    0    0    -1  
+$EndComp
+Connection ~ 9950 2700
 $EndSCHEMATC

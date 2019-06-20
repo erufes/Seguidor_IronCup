@@ -1,4 +1,5 @@
 (fp_lib_table
   (lib (name "Arduino nano")(type KiCad)(uri ${KIPRJMOD}/libraries/kicad_ArduinoNano-master/kicad_ArduinoNano-master/libraries)(options "")(descr ""))
   (lib (name Sensores_e_componentes_SL)(type KiCad)(uri ${KIPRJMOD}/libraries/Sensores_e_componentes_SL.pretty)(options "")(descr ""))
+  (lib (name Componentes_soltos)(type KiCad)(uri ${KIPRJMOD}/libraries/Componentes_soltos.pretty)(options "")(descr ""))
 )
