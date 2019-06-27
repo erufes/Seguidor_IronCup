@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Placa_central_v01-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L MCU_Module:Arduino_Nano_v3.x A1
 U 1 1 5C812F31
-P 3250 2750
-F 0 "A1" H 3250 1664 50  0000 C CNN
-F 1 "Arduino_Nano_v3.x" H 3250 1573 50  0000 C CNN
-F 2 "Module:Arduino_Nano" H 3400 1800 50  0001 L CNN
-F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 3250 1750 50  0001 C CNN
-	1    3250 2750
+P 1750 1900
+F 0 "A1" H 1750 814 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 1750 723 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 1900 950 50  0001 L CNN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 1750 900 50  0001 C CNN
+	1    1750 1900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -123,132 +123,45 @@ Text GLabel 10050 1950 2    50   Input ~ 0
 Encoder1
 Text GLabel 10050 2900 2    50   Input ~ 0
 Encoder2
-Text GLabel 10250 3950 2    50   Input ~ 0
-GND
-Text GLabel 10250 3550 2    50   Input ~ 0
-5V
-Text GLabel 9000 3550 0    50   Input ~ 0
-8.4V
 $Comp
 L Device:LED D1
 U 1 1 5C81702D
-P 9500 4850
-F 0 "D1" H 9491 5066 50  0000 C CNN
-F 1 "LED" H 9491 4975 50  0000 C CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 9500 4850 50  0001 C CNN
-F 3 "~" H 9500 4850 50  0001 C CNN
-	1    9500 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED D2
-U 1 1 5C81727F
-P 10000 4850
-F 0 "D2" H 9991 5066 50  0000 C CNN
-F 1 "LED" H 9991 4975 50  0000 C CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 10000 4850 50  0001 C CNN
-F 3 "~" H 10000 4850 50  0001 C CNN
-	1    10000 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Q_NPN_BCE Q1
-U 1 1 5C8175BD
-P 9450 5400
-F 0 "Q1" H 9641 5446 50  0000 L CNN
-F 1 "Q_NPN_BCE" H 9641 5355 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 9650 5500 50  0001 C CNN
-F 3 "~" H 9450 5400 50  0001 C CNN
-	1    9450 5400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Q_NPN_BCE Q2
-U 1 1 5C81765A
-P 9950 5400
-F 0 "Q2" H 10141 5446 50  0000 L CNN
-F 1 "Q_NPN_BCE" H 10141 5355 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:TCRT5000" H 10150 5500 50  0001 C CNN
-F 3 "~" H 9950 5400 50  0001 C CNN
-	1    9950 5400
+P 9950 3700
+F 0 "D1" H 9941 3916 50  0000 C CNN
+F 1 "LedAzul" H 9941 3825 50  0000 C CNN
+F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 9950 3700 50  0001 C CNN
+F 3 "~" H 9950 3700 50  0001 C CNN
+	1    9950 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R1
 U 1 1 5C817C0F
-P 9500 5100
-F 0 "R1" V 9293 5100 50  0000 C CNN
-F 1 "330" V 9384 5100 50  0000 C CNN
-F 2 "" V 9430 5100 50  0001 C CNN
-F 3 "~" H 9500 5100 50  0001 C CNN
-	1    9500 5100
+P 9550 3700
+F 0 "R1" V 9343 3700 50  0000 C CNN
+F 1 "330" V 9434 3700 50  0000 C CNN
+F 2 "" V 9480 3700 50  0001 C CNN
+F 3 "~" H 9550 3700 50  0001 C CNN
+	1    9550 3700
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:R R2
-U 1 1 5C817CFF
-P 10000 5100
-F 0 "R2" V 9793 5100 50  0000 C CNN
-F 1 "330" V 9884 5100 50  0000 C CNN
-F 2 "" V 9930 5100 50  0001 C CNN
-F 3 "~" H 10000 5100 50  0001 C CNN
-	1    10000 5100
-	0    1    1    0   
-$EndComp
-Text GLabel 3150 1650 1    50   Input ~ 0
+Text GLabel 1550 800  0    50   Input ~ 0
 8.4V
 Wire Wire Line
-	3150 1650 3150 1750
-Text GLabel 3450 3800 2    50   Input ~ 0
+	1650 800  1650 900 
+Text GLabel 1950 2950 2    50   Input ~ 0
 GND
 Wire Wire Line
-	3450 3800 3350 3800
+	1950 2950 1850 2950
 Wire Wire Line
-	3350 3750 3350 3800
-NoConn ~ 2750 2250
-NoConn ~ 2750 2150
-NoConn ~ 3750 2550
-Text GLabel 2650 2350 0    50   Input ~ 0
+	1850 2900 1850 2950
+NoConn ~ 1250 1400
+NoConn ~ 1250 1300
+NoConn ~ 2250 1700
+Text GLabel 1150 1500 0    50   Input ~ 0
 Encoder1
-Text GLabel 2650 2450 0    50   Input ~ 0
+Text GLabel 1150 1600 0    50   Input ~ 0
 Encoder2
-Wire Wire Line
-	2650 2350 2750 2350
-Wire Wire Line
-	2650 2450 2750 2450
-$Comp
-L Device:LED D3
-U 1 1 5C81CEED
-P 10500 4850
-F 0 "D3" H 10491 5066 50  0000 C CNN
-F 1 "LED" H 10491 4975 50  0000 C CNN
-F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 10500 4850 50  0001 C CNN
-F 3 "~" H 10500 4850 50  0001 C CNN
-	1    10500 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 5C81CF31
-P 10500 5100
-F 0 "R7" V 10293 5100 50  0000 C CNN
-F 1 "330" V 10384 5100 50  0000 C CNN
-F 2 "" V 10430 5100 50  0001 C CNN
-F 3 "~" H 10500 5100 50  0001 C CNN
-	1    10500 5100
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Q_NPN_BCE Q3
-U 1 1 5C81CFAB
-P 10450 5400
-F 0 "Q3" H 10641 5446 50  0000 L CNN
-F 1 "Q_NPN_BCE" H 10641 5355 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:TCRT5000" H 10650 5500 50  0001 C CNN
-F 3 "~" H 10450 5400 50  0001 C CNN
-	1    10450 5400
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	8650 3000 8650 950 
 Wire Notes Line
@@ -257,171 +170,76 @@ Wire Notes Line
 	10650 950  10650 3000
 Wire Notes Line
 	10650 3000 8650 3000
-Text Notes 8650 1100 0    98   ~ 0
+Text Notes 9350 1100 0    79   ~ 0
 Encoder
-Wire Notes Line
-	8650 3200 10650 3200
-Wire Notes Line
-	10650 3200 10650 4100
-Wire Notes Line
-	10650 4100 8650 4100
-Wire Notes Line
-	8650 4100 8650 3200
-Text Notes 8650 3300 0    79   ~ 0
-Regulador de tensão +5V
-$Comp
-L Switch:SW_Push SW2
-U 1 1 5C81F63E
-P 8350 5400
-F 0 "SW2" H 8350 5685 50  0000 C CNN
-F 1 "SW_comando2" H 8350 5594 50  0000 C CNN
-F 2 "" H 8350 5600 50  0001 C CNN
-F 3 "" H 8350 5600 50  0001 C CNN
-	1    8350 5400
-	1    0    0    -1  
-$EndComp
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5C81F7C0
-P 7650 5400
-F 0 "SW1" H 7650 5685 50  0000 C CNN
-F 1 "SW_comando1" H 7650 5594 50  0000 C CNN
-F 2 "" H 7650 5600 50  0001 C CNN
-F 3 "" H 7650 5600 50  0001 C CNN
-	1    7650 5400
+P 9650 4900
+F 0 "SW1" H 9650 5185 50  0000 C CNN
+F 1 "SW_comando1" H 9650 5094 50  0000 C CNN
+F 2 "" H 9650 5100 50  0001 C CNN
+F 3 "" H 9650 5100 50  0001 C CNN
+	1    9650 4900
 	1    0    0    -1  
 $EndComp
-Text GLabel 2650 2550 0    50   Input ~ 0
+Text GLabel 2350 1900 2    50   Input ~ 0
 Sensor1
-Text GLabel 2650 2650 0    50   Input ~ 0
+Text GLabel 2350 2000 2    50   Input ~ 0
 Sensor2
-Text GLabel 2650 2750 0    50   Input ~ 0
+Text GLabel 2350 2100 2    50   Input ~ 0
 Sensor3
-Text GLabel 2650 2850 0    50   Input ~ 0
+Text GLabel 2350 2200 2    50   Input ~ 0
 Sensor4
-Text GLabel 2650 2950 0    50   Input ~ 0
+Text GLabel 2350 2300 2    50   Input ~ 0
 Sensor5
-Text GLabel 2650 3050 0    50   Input ~ 0
+Text GLabel 2350 2400 2    50   Input ~ 0
 Sensor6
-Text GLabel 2650 3150 0    50   Input ~ 0
+Text GLabel 2350 2500 2    50   Input ~ 0
 Sensor7
-Text GLabel 2650 3350 0    50   Input ~ 0
+Text GLabel 1150 2500 0    50   Input ~ 0
 SensorDir
-Text GLabel 2650 3250 0    50   Input ~ 0
+Text GLabel 1150 2400 0    50   Input ~ 0
 SensorEsq
-Text GLabel 3900 2750 2    50   Input ~ 0
-Botao1
 $Comp
 L Switch:SW_SPST SW?
 U 1 1 5D0BCA30
-P 6000 5400
-F 0 "SW?" H 6000 5635 50  0000 C CNN
-F 1 "SW_ON/OFF" H 6000 5544 50  0000 C CNN
-F 2 "" H 6000 5400 50  0001 C CNN
-F 3 "" H 6000 5400 50  0001 C CNN
-	1    6000 5400
-	1    0    0    -1  
+P 1650 7300
+F 0 "SW?" H 1650 7535 50  0000 C CNN
+F 1 "SW_ON/OFF" H 1650 7444 50  0000 C CNN
+F 2 "" H 1650 7300 50  0001 C CNN
+F 3 "" H 1650 7300 50  0001 C CNN
+	1    1650 7300
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H?
 U 1 1 5D0BE091
-P 3650 5450
-F 0 "H?" H 3750 5501 50  0000 L CNN
-F 1 "V8.4 - Lipo" H 3750 5410 50  0000 L CNN
-F 2 "" H 3650 5450 50  0001 C CNN
-F 3 "~" H 3650 5450 50  0001 C CNN
-	1    3650 5450
+P 1650 6150
+F 0 "H?" H 1750 6201 50  0000 L CNN
+F 1 "V8.4 - Lipo" H 1400 6100 50  0000 L CNN
+F 2 "" H 1650 6150 50  0001 C CNN
+F 3 "~" H 1650 6150 50  0001 C CNN
+	1    1650 6150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H?
 U 1 1 5D0BE14B
-P 3850 5750
-F 0 "H?" H 3950 5801 50  0000 L CNN
-F 1 "V0 - Lipo" H 3950 5710 50  0000 L CNN
-F 2 "" H 3850 5750 50  0001 C CNN
-F 3 "~" H 3850 5750 50  0001 C CNN
-	1    3850 5750
+P 2100 6150
+F 0 "H?" H 2200 6201 50  0000 L CNN
+F 1 "GND - Lipo" H 1900 6100 50  0000 L CNN
+F 2 "" H 2100 6150 50  0001 C CNN
+F 3 "~" H 2100 6150 50  0001 C CNN
+	1    2100 6150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Driver_Motor:L298P U?
-U 1 1 5D0BE849
-P 5650 2850
-F 0 "U?" H 5650 3728 50  0000 C CNN
-F 1 "L298P" H 5650 3637 50  0000 C CNN
-F 2 "" H 5800 3100 50  0001 C CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000240.pdf" H 5800 3100 50  0001 C CNN
-	1    5650 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 5D0BC666
-P 9150 3750
-F 0 "C?" H 9265 3796 50  0000 L CNN
-F 1 "0,33uF" H 9265 3705 50  0000 L CNN
-F 2 "" H 9188 3600 50  0001 C CNN
-F 3 "~" H 9150 3750 50  0001 C CNN
-	1    9150 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Regulator_Linear:L7805 U3
-U 1 1 5C81568D
-P 9600 3550
-F 0 "U3" H 9600 3792 50  0000 C CNN
-F 1 "L7805" H 9600 3701 50  0000 C CNN
-F 2 "" H 9625 3400 50  0001 L CIN
-F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 9600 3500 50  0001 C CNN
-	1    9600 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9000 3550 9150 3550
-Wire Wire Line
-	9150 3900 9150 3950
-Wire Wire Line
-	9150 3600 9150 3550
-Connection ~ 9150 3550
-Wire Wire Line
-	9150 3550 9300 3550
-$Comp
-L Device:C C?
-U 1 1 5D0BDB83
-P 10050 3750
-F 0 "C?" H 10165 3796 50  0000 L CNN
-F 1 "0,1uF" H 10165 3705 50  0000 L CNN
-F 2 "" H 10088 3600 50  0001 C CNN
-F 3 "~" H 10050 3750 50  0001 C CNN
-	1    10050 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9900 3550 10050 3550
-Wire Wire Line
-	9150 3950 9600 3950
-Wire Wire Line
-	10050 3600 10050 3550
-Connection ~ 10050 3550
-Wire Wire Line
-	10050 3550 10250 3550
-Wire Wire Line
-	10050 3900 10050 3950
-Connection ~ 10050 3950
-Wire Wire Line
-	10050 3950 10250 3950
-Wire Wire Line
-	9600 3850 9600 3950
-Connection ~ 9600 3950
-Wire Wire Line
-	9600 3950 10050 3950
 $Comp
 L Sensores_e_componentes_SL:TCRT5000 U?
 U 1 1 5D0BF882
 P 9450 1450
-F 0 "U?" H 9450 1937 60  0000 C CNN
-F 1 "TCRT5000" H 9450 1831 60  0000 C CNN
+F 0 "U?" H 9300 1650 60  0000 C CNN
+F 1 "TCRT5000" H 9700 1650 60  0000 C CNN
 F 2 "" H 9450 1450 60  0000 C CNN
 F 3 "" H 9450 1450 60  0000 C CNN
 	1    9450 1450
@@ -440,4 +258,494 @@ F 3 "" H 9450 2400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9950 2700
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D1527D8
+P 1350 6650
+F 0 "J?" H 1250 6450 50  0000 C CNN
+F 1 "PinoChargeBateriaV++" H 1600 6550 50  0000 C CNN
+F 2 "" H 1350 6650 50  0001 C CNN
+F 3 "~" H 1350 6650 50  0001 C CNN
+	1    1350 6650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D152CB0
+P 2400 6500
+F 0 "J?" H 2428 6526 50  0000 L CNN
+F 1 "PinoChargeBateriaGND" H 2428 6435 50  0000 L CNN
+F 2 "" H 2400 6500 50  0001 C CNN
+F 3 "~" H 2400 6500 50  0001 C CNN
+	1    2400 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D?
+U 1 1 5D153AA9
+P 1650 6850
+F 0 "D?" V 1696 6771 50  0000 R CNN
+F 1 "DiodoProtecao-4A" V 1605 6771 50  0000 R CNN
+F 2 "" H 1650 6850 50  0001 C CNN
+F 3 "~" H 1650 6850 50  0001 C CNN
+	1    1650 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Fuse F?
+U 1 1 5D154189
+P 1650 6450
+F 0 "F?" H 1710 6496 50  0000 L CNN
+F 1 "Fuse-4A" H 1710 6405 50  0000 L CNN
+F 2 "" V 1580 6450 50  0001 C CNN
+F 3 "~" H 1650 6450 50  0001 C CNN
+	1    1650 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_DPDT_x2 SW?
+U 1 1 5D158BEE
+P 3600 7300
+F 0 "SW?" H 3600 7650 50  0000 C CNN
+F 1 "SW_AlimentacaoPlacaSensores" H 3600 7550 50  0000 C CNN
+F 2 "" H 3600 7300 50  0001 C CNN
+F 3 "~" H 3600 7300 50  0001 C CNN
+	1    3600 7300
+	1    0    0    -1  
+$EndComp
+Text GLabel 3200 7300 0    50   Input ~ 0
+VccSensores
+NoConn ~ 4100 7400
+Text GLabel 1150 2100 0    50   Input ~ 0
+Motor1PWM
+Text GLabel 1150 2000 0    50   Input ~ 0
+Motor2PWM
+Text GLabel 1150 1700 0    50   Input ~ 0
+Motor1Dir1
+Text GLabel 1150 1800 0    50   Input ~ 0
+Motor1Dir2
+Text GLabel 1150 2200 0    50   Input ~ 0
+Motor2Dir1
+Text GLabel 1150 2300 0    50   Input ~ 0
+Motor2Dir2
+Text GLabel 1150 1900 0    50   Input ~ 0
+Botao1
+Text GLabel 1150 2600 0    50   Input ~ 0
+Botao2
+Text GLabel 2350 2600 2    50   Input ~ 0
+LedAzul
+Text GLabel 2200 7500 2    50   Input ~ 0
+GND
+Wire Wire Line
+	1750 2900 1750 2950
+Wire Wire Line
+	1750 2950 1850 2950
+Connection ~ 1850 2950
+Text GLabel 1600 7600 0    50   Input ~ 0
+8.4V
+Text GLabel 2050 800  2    50   Input ~ 0
+5VArduino
+Wire Wire Line
+	1550 800  1650 800 
+Wire Wire Line
+	2050 800  1950 800 
+Wire Wire Line
+	1950 800  1950 900 
+Text GLabel 6900 1350 0    50   Input ~ 0
+5VPonteH
+Wire Wire Line
+	1650 6250 1650 6300
+Wire Wire Line
+	1650 6600 1650 6650
+Wire Wire Line
+	1550 6650 1650 6650
+Connection ~ 1650 6650
+Wire Wire Line
+	1650 6650 1650 6700
+Wire Wire Line
+	1650 7000 1650 7100
+Wire Wire Line
+	1650 7500 1650 7600
+Wire Wire Line
+	1650 7600 1600 7600
+Wire Wire Line
+	2100 7500 2100 6500
+Wire Wire Line
+	2100 7500 2200 7500
+Wire Wire Line
+	2200 6500 2100 6500
+Connection ~ 2100 6500
+Wire Wire Line
+	2100 6500 2100 6250
+Text GLabel 6900 1700 0    50   Input ~ 0
+Motor1Dir1
+Text GLabel 6900 1800 0    50   Input ~ 0
+Motor1Dir2
+Text GLabel 6900 2100 0    50   Input ~ 0
+Motor2PWM
+Text GLabel 6900 1600 0    50   Input ~ 0
+Motor1PWM
+Text GLabel 6900 1900 0    50   Input ~ 0
+Motor2Dir1
+Text GLabel 6900 2000 0    50   Input ~ 0
+Motor2Dir2
+Text GLabel 6900 1450 0    50   Input ~ 0
+GND
+Text GLabel 6900 2350 0    50   Input ~ 0
+Motor11
+Text GLabel 6900 2250 0    50   Input ~ 0
+Motor12
+Text GLabel 6900 2550 0    50   Input ~ 0
+Motor21
+Text GLabel 6900 2450 0    50   Input ~ 0
+Motor22
+Text Notes 650  5950 0    79   ~ 0
+Circuito de Alimentação da placa e Sistema de proteção
+Wire Wire Line
+	3200 7300 3400 7300
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5D178B41
+P 7200 2250
+F 0 "J?" H 7300 2200 50  0000 C CNN
+F 1 "Conn_01x02_Motor1" H 7750 2200 50  0000 C CNN
+F 2 "" H 7200 2250 50  0001 C CNN
+F 3 "~" H 7200 2250 50  0001 C CNN
+	1    7200 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5D179BFA
+P 7200 2450
+F 0 "J?" H 7300 2400 50  0000 C CNN
+F 1 "Conn_01x02_Motor2" H 7750 2400 50  0000 C CNN
+F 2 "" H 7200 2450 50  0001 C CNN
+F 3 "~" H 7200 2450 50  0001 C CNN
+	1    7200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17BE38
+P 7200 1600
+F 0 "J?" H 7228 1626 50  0000 L CNN
+F 1 "Conn_01x01_Motor1PWM" H 7300 1600 50  0000 L CNN
+F 2 "" H 7200 1600 50  0001 C CNN
+F 3 "~" H 7200 1600 50  0001 C CNN
+	1    7200 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17CB00
+P 7200 1700
+F 0 "J?" H 7228 1726 50  0000 L CNN
+F 1 "Conn_01x01_Motor1Dir1" H 7300 1700 50  0000 L CNN
+F 2 "" H 7200 1700 50  0001 C CNN
+F 3 "~" H 7200 1700 50  0001 C CNN
+	1    7200 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17CCD0
+P 7200 1800
+F 0 "J?" H 7228 1826 50  0000 L CNN
+F 1 "Conn_01x01_Motor1Dir2" H 7300 1800 50  0000 L CNN
+F 2 "" H 7200 1800 50  0001 C CNN
+F 3 "~" H 7200 1800 50  0001 C CNN
+	1    7200 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17CE09
+P 7200 1900
+F 0 "J?" H 7228 1926 50  0000 L CNN
+F 1 "Conn_01x01_Motor2Dir1" H 7300 1900 50  0000 L CNN
+F 2 "" H 7200 1900 50  0001 C CNN
+F 3 "~" H 7200 1900 50  0001 C CNN
+	1    7200 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17CF2D
+P 7200 2000
+F 0 "J?" H 7228 2026 50  0000 L CNN
+F 1 "Conn_01x01_Motor2Dir2" H 7300 2000 50  0000 L CNN
+F 2 "" H 7200 2000 50  0001 C CNN
+F 3 "~" H 7200 2000 50  0001 C CNN
+	1    7200 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D17D53A
+P 7200 2100
+F 0 "J?" H 7228 2126 50  0000 L CNN
+F 1 "Conn_01x01_Motor2PWM" H 7300 2100 50  0000 L CNN
+F 2 "" H 7200 2100 50  0001 C CNN
+F 3 "~" H 7200 2100 50  0001 C CNN
+	1    7200 2100
+	1    0    0    -1  
+$EndComp
+Text GLabel 6900 1250 0    50   Input ~ 0
+8.4V
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D1815D1
+P 7200 1250
+F 0 "J?" H 7228 1276 50  0000 L CNN
+F 1 "Conn_01x01_8.4VPonteH" H 7300 1250 50  0000 L CNN
+F 2 "" H 7200 1250 50  0001 C CNN
+F 3 "~" H 7200 1250 50  0001 C CNN
+	1    7200 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D181805
+P 7200 1450
+F 0 "J?" H 7228 1476 50  0000 L CNN
+F 1 "Conn_01x01_GNDPonteH" H 7300 1450 50  0000 L CNN
+F 2 "" H 7200 1450 50  0001 C CNN
+F 3 "~" H 7200 1450 50  0001 C CNN
+	1    7200 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D181A54
+P 7200 1350
+F 0 "J?" H 7228 1376 50  0000 L CNN
+F 1 "Conn_01x01_5VPonteH" H 7300 1350 50  0000 L CNN
+F 2 "" H 7200 1350 50  0001 C CNN
+F 3 "~" H 7200 1350 50  0001 C CNN
+	1    7200 1350
+	1    0    0    -1  
+$EndComp
+Text Notes 6650 1100 0    79   ~ 0
+Ponte H - Pinos soltos
+$Comp
+L Mechanical:MountingHole H?
+U 1 1 5D1915F0
+P 6600 2750
+F 0 "H?" H 6700 2796 50  0000 L CNN
+F 1 "FurosPonteH" H 6700 2705 50  0000 L CNN
+F 2 "" H 6600 2750 50  0001 C CNN
+F 3 "~" H 6600 2750 50  0001 C CNN
+	1    6600 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 1500 1250 1500
+Wire Wire Line
+	1150 1600 1250 1600
+Wire Wire Line
+	1150 1700 1250 1700
+Wire Wire Line
+	1150 1800 1250 1800
+Wire Wire Line
+	1150 1900 1250 1900
+Wire Wire Line
+	1150 2000 1250 2000
+Wire Wire Line
+	1150 2100 1250 2100
+Wire Wire Line
+	1150 2200 1250 2200
+Wire Wire Line
+	1150 2300 1250 2300
+Wire Wire Line
+	1150 2400 1250 2400
+Wire Wire Line
+	1150 2500 1250 2500
+Wire Wire Line
+	1150 2600 1250 2600
+Wire Wire Line
+	2350 2600 2250 2600
+Wire Wire Line
+	2250 2500 2350 2500
+Wire Wire Line
+	2250 2400 2350 2400
+Wire Wire Line
+	2250 2300 2350 2300
+Wire Wire Line
+	2250 2200 2350 2200
+Wire Wire Line
+	2250 2100 2350 2100
+Wire Wire Line
+	2250 2000 2350 2000
+Wire Wire Line
+	2250 1900 2350 1900
+Text Notes 1200 700  0    79   ~ 0
+Arduino Nano V3.x
+Text Notes 2650 6850 0    59   ~ 0
+Switch de alimentação da placa de sensores
+Wire Wire Line
+	3800 7200 3900 7200
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D1B2515
+P 4100 7200
+F 0 "J?" H 4128 7226 50  0000 L CNN
+F 1 "Conn_01x01_5VPlacaSensores" H 4128 7135 50  0000 L CNN
+F 2 "" H 4100 7200 50  0001 C CNN
+F 3 "~" H 4100 7200 50  0001 C CNN
+	1    4100 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 7400 4100 7400
+Wire Wire Line
+	6900 1250 7000 1250
+Wire Wire Line
+	7000 1350 6900 1350
+Wire Wire Line
+	6900 1450 7000 1450
+Wire Wire Line
+	6900 1600 7000 1600
+Wire Wire Line
+	6900 1700 7000 1700
+Wire Wire Line
+	6900 1800 7000 1800
+Wire Wire Line
+	6900 1900 7000 1900
+Wire Wire Line
+	6900 2000 7000 2000
+Wire Wire Line
+	6900 2100 7000 2100
+Wire Wire Line
+	6900 2250 7000 2250
+Wire Wire Line
+	6900 2350 7000 2350
+Wire Wire Line
+	6900 2450 7000 2450
+Wire Wire Line
+	6900 2550 7000 2550
+NoConn ~ 1850 900 
+Text GLabel 9250 3700 0    59   Input ~ 0
+LedAzul
+Text GLabel 10250 3700 2    59   Input ~ 0
+GND
+Wire Wire Line
+	9250 3700 9400 3700
+Wire Wire Line
+	9700 3700 9800 3700
+Wire Wire Line
+	10100 3700 10250 3700
+Text Notes 9250 3400 0    79   ~ 0
+Leds da pcb
+$Comp
+L Device:R R?
+U 1 1 5D1DC4E5
+P 9550 4100
+F 0 "R?" V 9343 4100 50  0000 C CNN
+F 1 "330" V 9434 4100 50  0000 C CNN
+F 2 "" V 9480 4100 50  0001 C CNN
+F 3 "~" H 9550 4100 50  0001 C CNN
+	1    9550 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 5D1DC66B
+P 9950 4100
+F 0 "D?" H 9941 4316 50  0000 C CNN
+F 1 "LedVerde" H 9941 4225 50  0000 C CNN
+F 2 "Capacitors_THT:CP_Axial_L11.0mm_D5.0mm_P18.00mm_Horizontal" H 9950 4100 50  0001 C CNN
+F 3 "~" H 9950 4100 50  0001 C CNN
+	1    9950 4100
+	1    0    0    -1  
+$EndComp
+Text GLabel 10250 4100 2    59   Input ~ 0
+GND
+Wire Wire Line
+	10100 4100 10250 4100
+Wire Wire Line
+	9800 4100 9700 4100
+Text GLabel 9250 4100 0    59   Input ~ 0
+5V
+Wire Wire Line
+	9250 4100 9400 4100
+$Comp
+L Device:R RPullDown
+U 1 1 5D1E3F24
+P 10000 5150
+F 0 "RPullDown" H 10070 5196 50  0000 L CNN
+F 1 "R" H 10070 5105 50  0000 L CNN
+F 2 "" V 9930 5150 50  0001 C CNN
+F 3 "~" H 10000 5150 50  0001 C CNN
+	1    10000 5150
+	1    0    0    -1  
+$EndComp
+Text GLabel 10100 4900 2    50   Input ~ 0
+Botao1
+Wire Wire Line
+	9850 4900 10000 4900
+Wire Wire Line
+	10000 5000 10000 4900
+Connection ~ 10000 4900
+Wire Wire Line
+	10000 4900 10100 4900
+Text GLabel 9900 5400 0    59   Input ~ 0
+GND
+Wire Wire Line
+	9900 5400 10000 5400
+Wire Wire Line
+	10000 5400 10000 5300
+Text GLabel 9150 4900 0    59   Input ~ 0
+5V
+Wire Wire Line
+	9150 4900 9450 4900
+Text Notes 9200 4500 0    79   ~ 0
+Botoes da pcb
+Text GLabel 3200 7600 0    59   Input ~ 0
+GND
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D1F3BEA
+P 4100 7600
+F 0 "J?" H 4128 7626 50  0000 L CNN
+F 1 "Conn_01x01_GNDPlacaSensores" H 4128 7535 50  0000 L CNN
+F 2 "" H 4100 7600 50  0001 C CNN
+F 3 "~" H 4100 7600 50  0001 C CNN
+	1    4100 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 7600 3200 7600
+Wire Notes Line
+	6250 950  8400 950 
+Wire Notes Line
+	8400 950  8400 2900
+Wire Notes Line
+	8400 2900 6250 2900
+Wire Notes Line
+	6250 2900 6250 950 
+Wire Notes Line
+	8650 3200 10650 3200
+Wire Notes Line
+	10650 3200 10650 5600
+Wire Notes Line
+	10650 5600 8650 5600
+Wire Notes Line
+	8650 5600 8650 3200
+Wire Notes Line
+	550  5750 5500 5750
+Wire Notes Line
+	5500 5750 5500 7750
+Wire Notes Line
+	550  7750 550  5750
+Wire Notes Line
+	550  7750 5500 7750
+Wire Notes Line
+	600  3200 600  550 
+Wire Notes Line
+	2750 3200 2750 550 
+Wire Notes Line
+	2750 3200 600  3200
+Wire Notes Line
+	600  550  2750 550 
 $EndSCHEMATC

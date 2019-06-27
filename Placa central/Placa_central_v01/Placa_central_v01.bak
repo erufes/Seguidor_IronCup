@@ -26,17 +26,6 @@ F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 3250 1750 50
 	1    0    0    -1  
 $EndComp
 $Comp
-L Placa_central_v01-rescue:TCRT5000-cyclophone U2
-U 1 1 5C812FD5
-P 9450 2400
-F 0 "U2" H 9450 2550 60  0000 C CNN
-F 1 "TCRT5000" H 9450 2650 60  0000 C CNN
-F 2 "" H 9450 2400 60  0001 C CNN
-F 3 "" H 9450 2400 60  0000 C CNN
-	1    9450 2400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 5C8132E2
 P 10150 2450
@@ -70,17 +59,6 @@ Wire Wire Line
 	9950 2450 10000 2450
 Wire Wire Line
 	9950 2700 10000 2700
-$Comp
-L Placa_central_v01-rescue:TCRT5000-cyclophone U1
-U 1 1 5C8139FF
-P 9450 1450
-F 0 "U1" H 9450 1600 60  0000 C CNN
-F 1 "TCRT5000" H 9450 1700 60  0000 C CNN
-F 2 "" H 9450 1450 60  0001 C CNN
-F 3 "" H 9450 1450 60  0000 C CNN
-	1    9450 1450
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R3
 U 1 1 5C813A06
@@ -119,12 +97,10 @@ Wire Wire Line
 	9950 1750 9950 1950
 Wire Wire Line
 	9950 1950 10050 1950
-Connection ~ 9950 1750
 Wire Wire Line
 	9950 2700 9950 2900
 Wire Wire Line
 	9950 2900 10050 2900
-Connection ~ 9950 2700
 Text GLabel 8850 2450 0    50   Input ~ 0
 5V
 Text GLabel 8850 1500 0    50   Input ~ 0
@@ -440,4 +416,28 @@ Wire Wire Line
 Connection ~ 9600 3950
 Wire Wire Line
 	9600 3950 10050 3950
+$Comp
+L Sensores_e_componentes_SL:TCRT5000 U?
+U 1 1 5D0BF882
+P 9450 1450
+F 0 "U?" H 9450 1937 60  0000 C CNN
+F 1 "TCRT5000" H 9450 1831 60  0000 C CNN
+F 2 "" H 9450 1450 60  0000 C CNN
+F 3 "" H 9450 1450 60  0000 C CNN
+	1    9450 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 9950 1750
+$Comp
+L Sensores_e_componentes_SL:TCRT5000 U?
+U 1 1 5D0BF8FC
+P 9450 2400
+F 0 "U?" H 9450 2887 60  0000 C CNN
+F 1 "TCRT5000" H 9450 2781 60  0000 C CNN
+F 2 "" H 9450 2400 60  0000 C CNN
+F 3 "" H 9450 2400 60  0000 C CNN
+	1    9450 2400
+	1    0    0    -1  
+$EndComp
+Connection ~ 9950 2700
 $EndSCHEMATC
