@@ -125,23 +125,12 @@ F 3 "~" H 3200 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J16
-U 1 1 5D1527D8
-P 2450 6500
-F 0 "J16" H 2550 6500 50  0000 C CNN
-F 1 "PinoChargeBateriaVcc" H 3050 6500 50  0000 C CNN
-F 2 "Sensores_e_componentes_SL:Jack_Banana" H 2450 6500 50  0001 C CNN
-F 3 "~" H 2450 6500 50  0001 C CNN
-	1    2450 6500
-	-1   0    0    1   
-$EndComp
-$Comp
 L Connector:Conn_01x01_Female J17
 U 1 1 5D152CB0
 P 3500 6350
 F 0 "J17" H 3550 6350 50  0000 L CNN
 F 1 "PinoChargeBateriaGND" H 3700 6350 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:Jack_Banana" H 3500 6350 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3500 6350 50  0001 C CNN
 F 3 "~" H 3500 6350 50  0001 C CNN
 	1    3500 6350
 	1    0    0    -1  
@@ -151,7 +140,7 @@ L Device:D D1
 U 1 1 5D153AA9
 P 2750 6800
 F 0 "D1" V 2700 6700 50  0000 R CNN
-F 1 "DiodoProtecao-4A" V 2700 7600 50  0000 R CNN
+F 1 "DiodoProtecao-5A" V 2700 7600 50  0000 R CNN
 F 2 "Diode_THT:D_DO-27_P15.24mm_Horizontal" H 2750 6800 50  0001 C CNN
 F 3 "~" H 2750 6800 50  0001 C CNN
 	1    2750 6800
@@ -162,21 +151,10 @@ L Device:Fuse F1
 U 1 1 5D154189
 P 2750 6300
 F 0 "F1" H 2810 6346 50  0000 L CNN
-F 1 "Fuse-4A" H 2810 6255 50  0000 L CNN
-F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 2680 6300 50  0001 C CNN
+F 1 "Fuse-5A" H 2810 6255 50  0000 L CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 2680 6300 50  0001 C CNN
 F 3 "~" H 2750 6300 50  0001 C CNN
 	1    2750 6300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Switch:SW_DPDT_x2 SW2
-U 1 1 5D158BEE
-P 4850 2850
-F 0 "SW2" H 4850 3200 50  0000 C CNN
-F 1 "SW_AlimentacaoPlacaSensores" H 4850 3100 50  0000 C CNN
-F 2 "Sensores_e_componentes_SL:SW_7x7_6Pinos" H 4850 2850 50  0001 C CNN
-F 3 "~" H 4850 2850 50  0001 C CNN
-	1    4850 2850
 	1    0    0    -1  
 $EndComp
 Text GLabel 1650 2450 0    50   Input ~ 0
@@ -217,11 +195,6 @@ Text GLabel 6900 1350 0    50   Input ~ 0
 Wire Wire Line
 	2750 6100 2750 6150
 Wire Wire Line
-	2750 6450 2750 6500
-Wire Wire Line
-	2650 6500 2750 6500
-Connection ~ 2750 6500
-Wire Wire Line
 	2750 7400 2750 7500
 Wire Wire Line
 	2750 7500 2700 7500
@@ -248,30 +221,6 @@ Text GLabel 6900 1450 0    50   Input ~ 0
 GND
 Text Notes 1200 5800 0    79   ~ 0
 Circuito de Alimentação da placa e Sistema de proteção
-Wire Wire Line
-	4450 2850 4650 2850
-$Comp
-L Connector:Conn_01x01_Female J40
-U 1 1 5D17BE38
-P 7200 1600
-F 0 "J40" H 7228 1626 50  0000 L CNN
-F 1 "Conn_01x01_Motor1PWM" H 7350 1600 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7200 1600 50  0001 C CNN
-F 3 "~" H 7200 1600 50  0001 C CNN
-	1    7200 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J41
-U 1 1 5D17CB00
-P 7200 1700
-F 0 "J41" H 7228 1726 50  0000 L CNN
-F 1 "Conn_01x01_Motor1Dir1" H 7350 1700 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7200 1700 50  0001 C CNN
-F 3 "~" H 7200 1700 50  0001 C CNN
-	1    7200 1700
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Conn_01x01_Female J42
 U 1 1 5D17CCD0
@@ -356,12 +305,12 @@ Ponte H - Pinos soltos
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5D1915F0
-P 6600 2350
-F 0 "H4" H 6700 2396 50  0000 L CNN
-F 1 "FurosPonteH" H 6700 2305 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:Ponte_H_furos" H 6600 2350 50  0001 C CNN
-F 3 "~" H 6600 2350 50  0001 C CNN
-	1    6600 2350
+P 7700 3650
+F 0 "H4" H 7800 3696 50  0000 L CNN
+F 1 "FurosPonteH" H 7800 3605 50  0000 L CNN
+F 2 "Sensores_e_componentes_SL:Ponte_H_furos" H 7700 3650 50  0001 C CNN
+F 3 "~" H 7700 3650 50  0001 C CNN
+	1    7700 3650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -406,8 +355,6 @@ Wire Wire Line
 	2750 2250 2850 2250
 Text Notes 1700 1050 0    79   ~ 0
 Arduino Nano V3.x
-Wire Wire Line
-	5050 2750 5150 2750
 Wire Wire Line
 	6900 1250 7000 1250
 Wire Wire Line
@@ -468,7 +415,7 @@ Wire Wire Line
 Wire Wire Line
 	9850 3700 9750 3700
 Text GLabel 9300 3700 0    59   Input ~ 0
-5V
+5VArduino
 Wire Wire Line
 	9300 3700 9450 3700
 $Comp
@@ -506,7 +453,7 @@ Botoes da pcb
 Wire Notes Line
 	6250 950  8400 950 
 Wire Notes Line
-	8400 2550 6250 2550
+	8400 3850 6250 3850
 Wire Notes Line
 	8700 2800 10700 2800
 Wire Notes Line
@@ -647,12 +594,12 @@ Text GLabel 5250 1400 2    50   Input ~ 0
 SensorEsq
 Text GLabel 5250 2000 2    50   Input ~ 0
 SensorDir
-Text Notes 3800 2400 0    59   ~ 0
-Switch de alimentação da placa de sensores
+Text Notes 4050 2400 0    59   ~ 0
+Alimentação da placa de sensores
 Text Notes 3900 1150 0    79   ~ 0
 Placa Sensores - Pinos soltos
 Wire Notes Line
-	5950 3100 3700 3100
+	5950 2800 3700 2800
 Wire Notes Line
 	4900 5600 4900 7600
 Wire Notes Line
@@ -674,8 +621,6 @@ F 3 "~" H 2100 6600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2650 6600 2750 6600
-Wire Wire Line
-	2750 6500 2750 6600
 Wire Wire Line
 	2750 6650 2750 6600
 Connection ~ 2750 6600
@@ -922,7 +867,7 @@ Motor2Dir2
 Text GLabel 2550 4650 2    50   Input ~ 0
 Botao1
 Text GLabel 2550 5350 2    50   Input ~ 0
-Botao2
+ArduinoD6
 Wire Wire Line
 	3400 4450 3550 4450
 Wire Wire Line
@@ -985,156 +930,156 @@ Text GLabel 2850 2850 2    50   Input ~ 0
 Sensor7
 Text GLabel 2850 2950 2    50   Input ~ 0
 LedAzul
-Text GLabel 6600 3600 0    79   Input ~ 0
+Text GLabel 6600 4500 0    79   Input ~ 0
 8.4V
 $Comp
 L Device:D_Zener D2
 U 1 1 5D316091
-P 6750 3950
-F 0 "D2" V 6704 4029 50  0000 L CNN
-F 1 "DiodoZener6.8V" V 6795 4029 50  0000 L CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P10.16mm_Horizontal" H 6750 3950 50  0001 C CNN
-F 3 "~" H 6750 3950 50  0001 C CNN
-	1    6750 3950
+P 6750 4850
+F 0 "D2" V 6704 4929 50  0000 L CNN
+F 1 "DiodoZener6.8V" V 6795 4929 50  0000 L CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P10.16mm_Horizontal" H 6750 4850 50  0001 C CNN
+F 3 "~" H 6750 4850 50  0001 C CNN
+	1    6750 4850
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R3
 U 1 1 5D316319
-P 7000 4350
-F 0 "R3" V 7000 4350 50  0000 C CNN
-F 1 "R1KMedidorDeBateria" V 6884 4350 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6930 4350 50  0001 C CNN
-F 3 "~" H 7000 4350 50  0001 C CNN
-	1    7000 4350
+P 7000 5250
+F 0 "R3" V 7000 5250 50  0000 C CNN
+F 1 "R1KMedidorDeBateria" V 6884 5250 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6930 5250 50  0001 C CNN
+F 3 "~" H 7000 5250 50  0001 C CNN
+	1    7000 5250
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R2
 U 1 1 5D316455
-P 6750 4600
-F 0 "R2" H 6700 4600 50  0000 L CNN
-F 1 "R6K6MedidorDeBateria" H 6820 4555 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6680 4600 50  0001 C CNN
-F 3 "~" H 6750 4600 50  0001 C CNN
-	1    6750 4600
+P 6750 5500
+F 0 "R2" H 6700 5500 50  0000 L CNN
+F 1 "R6K6MedidorDeBateria" H 6820 5455 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6680 5500 50  0001 C CNN
+F 3 "~" H 6750 5500 50  0001 C CNN
+	1    6750 5500
 	1    0    0    -1  
 $EndComp
 $Comp
 L Transistor_BJT:BC548 Q1
 U 1 1 5D3166B6
-P 7500 4350
-F 0 "Q1" H 7691 4396 50  0000 L CNN
-F 1 "BC548" H 7691 4305 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 7700 4275 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 7500 4350 50  0001 L CNN
-	1    7500 4350
+P 7500 5250
+F 0 "Q1" H 7691 5296 50  0000 L CNN
+F 1 "BC548" H 7691 5205 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 7700 5175 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 7500 5250 50  0001 L CNN
+	1    7500 5250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R4
 U 1 1 5D316CF8
-P 7600 3850
-F 0 "R4" H 7550 3850 50  0000 L CNN
-F 1 "R10KMedidorDeBateria" H 7670 3805 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7530 3850 50  0001 C CNN
-F 3 "~" H 7600 3850 50  0001 C CNN
-	1    7600 3850
+P 7600 4750
+F 0 "R4" H 7550 4750 50  0000 L CNN
+F 1 "R10KMedidorDeBateria" H 7670 4705 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7530 4750 50  0001 C CNN
+F 3 "~" H 7600 4750 50  0001 C CNN
+	1    7600 4750
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R5
 U 1 1 5D31721A
-P 7900 3550
-F 0 "R5" V 7900 3550 50  0000 C CNN
-F 1 "RMedidorDeBateria1K" V 7784 3550 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7830 3550 50  0001 C CNN
-F 3 "~" H 7900 3550 50  0001 C CNN
-	1    7900 3550
+P 7900 4450
+F 0 "R5" V 7900 4450 50  0000 C CNN
+F 1 "RMedidorDeBateria1K" V 7784 4450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7830 4450 50  0001 C CNN
+F 3 "~" H 7900 4450 50  0001 C CNN
+	1    7900 4450
 	0    1    1    0   
 $EndComp
 $Comp
 L Transistor_BJT:BC548 Q2
 U 1 1 5D3176BA
-P 8050 4100
-F 0 "Q2" H 8241 4146 50  0000 L CNN
-F 1 "BC548" H 8241 4055 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 8250 4025 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8050 4100 50  0001 L CNN
-	1    8050 4100
+P 8050 5000
+F 0 "Q2" H 8241 5046 50  0000 L CNN
+F 1 "BC548" H 8241 4955 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 8250 4925 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8050 5000 50  0001 L CNN
+	1    8050 5000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:LED D3
 U 1 1 5D31810C
-P 8150 3700
-F 0 "D3" V 8188 3582 50  0000 R CNN
-F 1 "LedBateriaVermelho" V 8097 3582 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 8150 3700 50  0001 C CNN
-F 3 "~" H 8150 3700 50  0001 C CNN
-	1    8150 3700
+P 8150 4600
+F 0 "D3" V 8188 4482 50  0000 R CNN
+F 1 "LedBateriaVermelho" V 8050 4750 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm" H 8150 4600 50  0001 C CNN
+F 3 "~" H 8150 4600 50  0001 C CNN
+	1    8150 4600
 	0    -1   -1   0   
 $EndComp
-Text GLabel 6600 4850 0    79   Input ~ 0
+Text GLabel 6600 5750 0    79   Input ~ 0
 GND
 Wire Wire Line
-	6600 4850 6750 4850
+	6600 5750 6750 5750
 Wire Wire Line
-	6750 4850 6750 4750
+	6750 5750 6750 5650
 Wire Wire Line
-	6750 4450 6750 4350
+	6750 5350 6750 5250
 Wire Wire Line
-	6850 4350 6750 4350
-Connection ~ 6750 4350
+	6850 5250 6750 5250
+Connection ~ 6750 5250
 Wire Wire Line
-	7150 4350 7300 4350
+	7150 5250 7300 5250
 Wire Wire Line
-	7600 4150 7600 4100
+	7600 5050 7600 5000
 Wire Wire Line
-	8150 3550 8050 3550
+	8150 4450 8050 4450
 Wire Wire Line
-	8150 3850 8150 3900
+	8150 4750 8150 4800
 Wire Wire Line
-	7850 4100 7600 4100
-Connection ~ 7600 4100
+	7850 5000 7600 5000
+Connection ~ 7600 5000
 Wire Wire Line
-	8150 4300 8150 4850
+	8150 5200 8150 5750
 Wire Wire Line
-	8150 4850 7600 4850
-Connection ~ 6750 4850
+	8150 5750 7600 5750
+Connection ~ 6750 5750
 Wire Wire Line
-	7600 4850 6750 4850
-Connection ~ 7600 4850
+	7600 5750 6750 5750
+Connection ~ 7600 5750
 Wire Wire Line
-	7600 4550 7600 4850
+	7600 5450 7600 5750
 Wire Wire Line
-	7750 3600 7750 3550
+	7750 4500 7750 4450
 Wire Wire Line
-	7600 4000 7600 4100
+	7600 4900 7600 5000
 Wire Wire Line
-	7600 3700 7600 3600
-Connection ~ 7600 3600
+	7600 4600 7600 4500
+Connection ~ 7600 4500
 Wire Wire Line
-	7600 3600 7750 3600
+	7600 4500 7750 4500
 Wire Wire Line
-	6600 3600 6750 3600
+	6600 4500 6750 4500
 Wire Wire Line
-	6750 3800 6750 3600
-Connection ~ 6750 3600
+	6750 4700 6750 4500
+Connection ~ 6750 4500
 Wire Wire Line
-	6750 3600 7600 3600
+	6750 4500 7600 4500
 Wire Wire Line
-	6750 4100 6750 4350
-Text Notes 6500 3250 0    79   ~ 0
+	6750 5000 6750 5250
+Text Notes 6500 4150 0    79   ~ 0
 Circuito Medidor de Bateria
 Wire Notes Line
-	8450 3050 8450 5000
+	8450 3950 8450 5900
 Wire Notes Line
-	8450 5000 6200 5000
+	8450 5900 6200 5900
 Wire Notes Line
-	6200 5000 6200 3050
+	6200 5900 6200 3950
 Wire Notes Line
-	6200 3050 8450 3050
+	6200 3950 8450 3950
 Wire Notes Line
 	1100 3650 1100 5500
 Wire Notes Line
@@ -1190,7 +1135,6 @@ Wire Wire Line
 	2300 6600 2350 6600
 Wire Wire Line
 	3200 6350 3200 7350
-NoConn ~ 5050 2950
 $Comp
 L Device:R R1
 U 1 1 5D1A4675
@@ -1215,10 +1159,8 @@ F 3 "~" H 4850 1700 50  0001 C CNN
 $EndComp
 Text GLabel 4550 1400 0    59   Input ~ 0
 GND
-Text GLabel 5150 2750 2    50   Input ~ 0
+Text GLabel 5000 2600 2    50   Input ~ 0
 VccSensores
-Text GLabel 4450 2850 0    50   Input ~ 0
-5VPonteH
 Text GLabel 4550 2000 0    50   Input ~ 0
 VccSensores
 Wire Wire Line
@@ -1247,14 +1189,158 @@ NoConn ~ 5150 1500
 NoConn ~ 5150 1700
 NoConn ~ 5150 1900
 Wire Notes Line
-	6250 2550 6250 950 
-Wire Notes Line
-	8400 950  8400 2550
-Wire Notes Line
-	3700 3100 3700 950 
-Wire Notes Line
-	5950 3100 5950 950 
-Wire Notes Line
 	3700 950  5950 950 
-NoConn ~ 1650 2250
+Wire Wire Line
+	2750 6450 2750 6600
+Text GLabel 4750 2600 0    50   Input ~ 0
+5VArduino
+Wire Wire Line
+	4750 2600 5000 2600
+Wire Notes Line
+	5950 950  5950 2800
+Wire Notes Line
+	3700 950  3700 2800
+Text GLabel 1650 2250 0    50   Input ~ 0
+ArduinD6
+$Comp
+L Device:Fuse F2
+U 1 1 5D2FBDD6
+P 7050 3200
+F 0 "F2" H 7110 3246 50  0000 L CNN
+F 1 "Fuse-3A" H 7110 3155 50  0000 L CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 6980 3200 50  0001 C CNN
+F 3 "~" H 7050 3200 50  0001 C CNN
+	1    7050 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F3
+U 1 1 5D2FC357
+P 7600 3200
+F 0 "F3" H 7660 3246 50  0000 L CNN
+F 1 "Fuse-3A" H 7660 3155 50  0000 L CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 7530 3200 50  0001 C CNN
+F 3 "~" H 7600 3200 50  0001 C CNN
+	1    7600 3200
+	1    0    0    -1  
+$EndComp
+Text GLabel 7050 3400 0    50   Input ~ 0
+PCBMotor1_fused
+Text GLabel 7600 3000 2    50   Input ~ 0
+PonteHPCBMotor2
+Text GLabel 7600 3400 2    50   Input ~ 0
+PCBMotor2_fused
+Text GLabel 7050 3000 0    50   Input ~ 0
+PonteHPCBMotor1
+$Comp
+L Connector:Conn_01x01_Female J16
+U 1 1 5D31E89D
+P 7300 2300
+F 0 "J16" H 7328 2326 50  0000 L CNN
+F 1 "Conn_01x01_Motor1PonteHPCB" H 7450 2300 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2300 50  0001 C CNN
+F 3 "~" H 7300 2300 50  0001 C CNN
+	1    7300 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J27
+U 1 1 5D31E8A3
+P 7300 2400
+F 0 "J27" H 7328 2426 50  0000 L CNN
+F 1 "Conn_01x01_Motor2PonteHPCB" H 7450 2400 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2400 50  0001 C CNN
+F 3 "~" H 7300 2400 50  0001 C CNN
+	1    7300 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 2300 7100 2300
+Wire Wire Line
+	7000 2400 7100 2400
+$Comp
+L Connector:Conn_01x01_Female J28
+U 1 1 5D33C265
+P 7300 2550
+F 0 "J28" H 7328 2576 50  0000 L CNN
+F 1 "Conn_01x01_Motor1PCBMotor" H 7450 2550 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2550 50  0001 C CNN
+F 3 "~" H 7300 2550 50  0001 C CNN
+	1    7300 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J29
+U 1 1 5D33C26B
+P 7300 2650
+F 0 "J29" H 7328 2676 50  0000 L CNN
+F 1 "Conn_01x01_Motor2PCBMotor" H 7450 2650 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2650 50  0001 C CNN
+F 3 "~" H 7300 2650 50  0001 C CNN
+	1    7300 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 2550 7100 2550
+Wire Wire Line
+	7000 2650 7100 2650
+Text GLabel 7000 2550 0    50   Input ~ 0
+PCBMotor1_fused
+Text GLabel 7000 2300 0    50   Input ~ 0
+PonteHPCBMotor1
+Text GLabel 7000 2400 0    50   Input ~ 0
+PonteHPCBMotor2
+Text GLabel 7000 2650 0    50   Input ~ 0
+PCBMotor2_fused
+$Comp
+L Connector:Conn_01x01_Female J41
+U 1 1 5D17CB00
+P 7200 1700
+F 0 "J41" H 7228 1726 50  0000 L CNN
+F 1 "Conn_01x01_Motor1Dir1" H 7350 1700 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7200 1700 50  0001 C CNN
+F 3 "~" H 7200 1700 50  0001 C CNN
+	1    7200 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J40
+U 1 1 5D17BE38
+P 7200 1600
+F 0 "J40" H 7228 1626 50  0000 L CNN
+F 1 "Conn_01x01_Motor1PWM" H 7350 1600 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7200 1600 50  0001 C CNN
+F 3 "~" H 7200 1600 50  0001 C CNN
+	1    7200 1600
+	1    0    0    -1  
+$EndComp
+Text Notes 6700 2900 0    79   ~ 0
+Fusíveis dos Motores
+Wire Wire Line
+	7050 3000 7050 3050
+Wire Wire Line
+	7600 3400 7600 3350
+Wire Wire Line
+	7600 3000 7600 3050
+Wire Wire Line
+	7050 3400 7050 3350
+Wire Notes Line
+	6250 950  6250 3850
+Wire Notes Line
+	8400 950  8400 3850
+Text Notes 6300 3650 0    39   ~ 0
+Furos da PonteH para fixação na placa:
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5D3C81FB
+P 4100 7350
+F 0 "H3" H 4200 7396 50  0000 L CNN
+F 1 "FuroBateria" H 4200 7305 50  0000 L CNN
+F 2 "Sensores_e_componentes_SL:Bateria" H 4100 7350 50  0001 C CNN
+F 3 "~" H 4100 7350 50  0001 C CNN
+	1    4100 7350
+	1    0    0    -1  
+$EndComp
+Text Notes 3600 7200 0    39   ~ 0
+Furo da Bateria para fixação na placa:
 $EndSCHEMATC
