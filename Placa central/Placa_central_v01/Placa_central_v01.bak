@@ -130,7 +130,7 @@ U 1 1 5D152CB0
 P 3500 6350
 F 0 "J17" H 3550 6350 50  0000 L CNN
 F 1 "PinoChargeBateriaGND" H 3700 6350 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:Jack_Banana" H 3500 6350 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3500 6350 50  0001 C CNN
 F 3 "~" H 3500 6350 50  0001 C CNN
 	1    3500 6350
 	1    0    0    -1  
@@ -152,7 +152,7 @@ U 1 1 5D154189
 P 2750 6300
 F 0 "F1" H 2810 6346 50  0000 L CNN
 F 1 "Fuse-5A" H 2810 6255 50  0000 L CNN
-F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 2680 6300 50  0001 C CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 2680 6300 50  0001 C CNN
 F 3 "~" H 2750 6300 50  0001 C CNN
 	1    2750 6300
 	1    0    0    -1  
@@ -971,7 +971,7 @@ U 1 1 5D3166B6
 P 7500 5250
 F 0 "Q1" H 7691 5296 50  0000 L CNN
 F 1 "BC548" H 7691 5205 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 7700 5175 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 7700 5175 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 7500 5250 50  0001 L CNN
 	1    7500 5250
 	1    0    0    -1  
@@ -1004,7 +1004,7 @@ U 1 1 5D3176BA
 P 8050 5000
 F 0 "Q2" H 8241 5046 50  0000 L CNN
 F 1 "BC548" H 8241 4955 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 8250 4925 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Wide" H 8250 4925 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8050 5000 50  0001 L CNN
 	1    8050 5000
 	1    0    0    -1  
@@ -1208,7 +1208,7 @@ U 1 1 5D2FBDD6
 P 7050 3200
 F 0 "F2" H 7110 3246 50  0000 L CNN
 F 1 "Fuse-3A" H 7110 3155 50  0000 L CNN
-F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 6980 3200 50  0001 C CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 6980 3200 50  0001 C CNN
 F 3 "~" H 7050 3200 50  0001 C CNN
 	1    7050 3200
 	1    0    0    -1  
@@ -1219,7 +1219,7 @@ U 1 1 5D2FC357
 P 7600 3200
 F 0 "F3" H 7660 3246 50  0000 L CNN
 F 1 "Fuse-3A" H 7660 3155 50  0000 L CNN
-F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 7530 3200 50  0001 C CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 7530 3200 50  0001 C CNN
 F 3 "~" H 7600 3200 50  0001 C CNN
 	1    7600 3200
 	1    0    0    -1  
@@ -1238,7 +1238,7 @@ U 1 1 5D31E89D
 P 7300 2300
 F 0 "J16" H 7328 2326 50  0000 L CNN
 F 1 "Conn_01x01_Motor1PonteHPCB" H 7450 2300 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7300 2300 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2300 50  0001 C CNN
 F 3 "~" H 7300 2300 50  0001 C CNN
 	1    7300 2300
 	1    0    0    -1  
@@ -1249,7 +1249,7 @@ U 1 1 5D31E8A3
 P 7300 2400
 F 0 "J27" H 7328 2426 50  0000 L CNN
 F 1 "Conn_01x01_Motor2PonteHPCB" H 7450 2400 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7300 2400 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2400 50  0001 C CNN
 F 3 "~" H 7300 2400 50  0001 C CNN
 	1    7300 2400
 	1    0    0    -1  
@@ -1264,7 +1264,7 @@ U 1 1 5D33C265
 P 7300 2550
 F 0 "J28" H 7328 2576 50  0000 L CNN
 F 1 "Conn_01x01_Motor1PCBMotor" H 7450 2550 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7300 2550 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2550 50  0001 C CNN
 F 3 "~" H 7300 2550 50  0001 C CNN
 	1    7300 2550
 	1    0    0    -1  
@@ -1275,7 +1275,7 @@ U 1 1 5D33C26B
 P 7300 2650
 F 0 "J29" H 7328 2676 50  0000 L CNN
 F 1 "Conn_01x01_Motor2PCBMotor" H 7450 2650 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 7300 2650 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 7300 2650 50  0001 C CNN
 F 3 "~" H 7300 2650 50  0001 C CNN
 	1    7300 2650
 	1    0    0    -1  
@@ -1336,7 +1336,7 @@ U 1 1 5D3C81FB
 P 4100 7350
 F 0 "H3" H 4200 7396 50  0000 L CNN
 F 1 "FuroBateria" H 4200 7305 50  0000 L CNN
-F 2 "" H 4100 7350 50  0001 C CNN
+F 2 "Sensores_e_componentes_SL:Bateria" H 4100 7350 50  0001 C CNN
 F 3 "~" H 4100 7350 50  0001 C CNN
 	1    4100 7350
 	1    0    0    -1  

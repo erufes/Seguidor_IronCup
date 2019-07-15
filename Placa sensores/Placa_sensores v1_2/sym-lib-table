@@ -1,3 +1,3 @@
 (sym_lib_table
-  (lib (name Tcrt5000_e_afins)(type Legacy)(uri ${KIPRJMOD}/Libraries/cyclophone.lib)(options "")(descr ""))
+  (lib (name Sensores_SL)(type Legacy)(uri ${KIPRJMOD}/Libraries/Sensores_SL.lib)(options "")(descr ""))
 )

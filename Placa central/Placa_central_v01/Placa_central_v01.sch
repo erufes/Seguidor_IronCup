@@ -576,23 +576,23 @@ Wire Notes Line
 	10850 2550 8700 2550
 Wire Notes Line
 	8700 2550 8700 950 
-Text GLabel 4550 1500 0    50   Input ~ 0
+Text GLabel 4550 2000 0    50   Input ~ 0
 Sensor1
-Text GLabel 4550 1600 0    50   Input ~ 0
-Sensor2
-Text GLabel 4550 1700 0    50   Input ~ 0
-Sensor3
-Text GLabel 4550 1800 0    50   Input ~ 0
-Sensor4
 Text GLabel 4550 1900 0    50   Input ~ 0
+Sensor2
+Text GLabel 4550 1800 0    50   Input ~ 0
+Sensor3
+Text GLabel 4550 1700 0    50   Input ~ 0
+Sensor4
+Text GLabel 4550 1600 0    50   Input ~ 0
 Sensor5
-Text GLabel 5250 1800 2    50   Input ~ 0
+Text GLabel 4550 1500 0    50   Input ~ 0
 Sensor6
-Text GLabel 5250 1600 2    50   Input ~ 0
+Text GLabel 5250 1900 2    50   Input ~ 0
 Sensor7
-Text GLabel 5250 1400 2    50   Input ~ 0
+Text GLabel 5250 2100 2    50   Input ~ 0
 SensorEsq
-Text GLabel 5250 2000 2    50   Input ~ 0
+Text GLabel 5250 1400 2    50   Input ~ 0
 SensorDir
 Text Notes 4050 2400 0    59   ~ 0
 Alimentação da placa de sensores
@@ -1146,48 +1146,12 @@ F 3 "~" H 2500 6600 50  0001 C CNN
 	1    2500 6600
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector_Generic:Conn_02x07_Odd_Even J26
-U 1 1 5D1F4EF5
-P 4850 1700
-F 0 "J26" H 4900 2217 50  0000 C CNN
-F 1 "Conn_02x07_IDC_Latch" H 4900 2126 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x07_P2.54mm_Horizontal" H 4850 1700 50  0001 C CNN
-F 3 "~" H 4850 1700 50  0001 C CNN
-	1    4850 1700
-	1    0    0    -1  
-$EndComp
-Text GLabel 4550 1400 0    59   Input ~ 0
+Text GLabel 4550 1400 0    50   Input ~ 0
 GND
 Text GLabel 5000 2600 2    50   Input ~ 0
 VccSensores
-Text GLabel 4550 2000 0    50   Input ~ 0
+Text GLabel 4550 2100 0    50   Input ~ 0
 VccSensores
-Wire Wire Line
-	4550 1400 4650 1400
-Wire Wire Line
-	4550 2000 4650 2000
-Wire Wire Line
-	5250 1400 5150 1400
-Wire Wire Line
-	4550 1500 4650 1500
-Wire Wire Line
-	4650 1600 4550 1600
-Wire Wire Line
-	4550 1700 4650 1700
-Wire Wire Line
-	4550 1800 4650 1800
-Wire Wire Line
-	4550 1900 4650 1900
-Wire Wire Line
-	5150 2000 5250 2000
-Wire Wire Line
-	5150 1800 5250 1800
-Wire Wire Line
-	5150 1600 5250 1600
-NoConn ~ 5150 1500
-NoConn ~ 5150 1700
-NoConn ~ 5150 1900
 Wire Notes Line
 	3700 950  5950 950 
 Wire Wire Line
@@ -1343,4 +1307,42 @@ F 3 "~" H 4100 7350 50  0001 C CNN
 $EndComp
 Text Notes 3600 7200 0    39   ~ 0
 Furo da Bateria para fixação na placa:
+$Comp
+L Connector_Generic:Conn_02x08_Odd_Even J26
+U 1 1 5D2D91DB
+P 4850 1700
+F 0 "J26" H 4900 2217 50  0000 C CNN
+F 1 "Conn_02x08_Odd_Even" H 4900 2126 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Horizontal" H 4850 1700 50  0001 C CNN
+F 3 "~" H 4850 1700 50  0001 C CNN
+	1    4850 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 1400 4650 1400
+Wire Wire Line
+	4550 1500 4650 1500
+Wire Wire Line
+	4550 1600 4650 1600
+Wire Wire Line
+	4550 1700 4650 1700
+Wire Wire Line
+	4550 1800 4650 1800
+Wire Wire Line
+	4550 1900 4650 1900
+Wire Wire Line
+	4550 2000 4650 2000
+Wire Wire Line
+	4550 2100 4650 2100
+Wire Wire Line
+	5250 2100 5150 2100
+Wire Wire Line
+	5250 1900 5150 1900
+NoConn ~ 5150 2000
+NoConn ~ 5150 1800
+NoConn ~ 5150 1600
+NoConn ~ 5150 1700
+NoConn ~ 5150 1500
+Wire Wire Line
+	5150 1400 5250 1400
 $EndSCHEMATC
