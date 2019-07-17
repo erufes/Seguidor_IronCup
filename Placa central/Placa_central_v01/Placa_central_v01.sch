@@ -129,7 +129,7 @@ L Connector:Conn_01x01_Female J17
 U 1 1 5D152CB0
 P 3500 6350
 F 0 "J17" H 3550 6350 50  0000 L CNN
-F 1 "PinoChargeBateriaGND" H 3700 6350 50  0000 L CNN
+F 1 "PinoCheckBateriaGND" H 3700 6350 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3500 6350 50  0001 C CNN
 F 3 "~" H 3500 6350 50  0001 C CNN
 	1    3500 6350
