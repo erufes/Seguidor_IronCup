@@ -1,22 +1,25 @@
-#define NUM_SENSORS             8  // number of sensors used
-#define NUM_SAMPLES_PER_SENSOR  4  // average 4 analog samples per sensor reading
-#define VELMIN 75
-#define VELMAX 160
+#define NUM_SENSORS             8    // number of sensors used
+#define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
+#define VELMIN                  75   // velocidade minima
+#define VELMAX                  160  // velocidade maxima
 
-int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //conferir pinagem!
-const int motorEsq[3] = {11, 10, 9};                        //
-const int motorDir[3] = {5, 4, 3};                      //
-const int pin_chegada = 2;
+int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
+const int motorEsq[3] = {11, 10, 9};  // {dig, dig, pwm}
+const int motorDir[3] = {5, 4, 3};    // {dig, dig, pwm}
+const int pin_chegada = 2;            // sensor de linha de chegada
 
-int values[NUM_SENSORS];
-int calibratedMinimum[NUM_SENSORS];
-int calibratedVELMAX[NUM_SENSORS];
-int lastValue;
+int values[NUM_SENSORS];              // leituras atuais dos sensores
+int calibratedMIN[NUM_SENSORS];       // valores de calibracao
+int calibratedMAX[NUM_SENSORS];       // ^
 
+int saiu = 0;                         // indica se o robo nao esta na linha
+int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de chegada leu preto
+int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
+
+int lastValue;                        // ultima posicao da linhas
 unsigned int last_proportional = 0;
-int saiu = 0;
-int leu_chegada = 0;
-int passou_chegada = 0;
+
+//********************************************************************
 
 void setup() {
 
@@ -28,8 +31,8 @@ void setup() {
   para();
 
   for (int i = 0; i < NUM_SENSORS; i++) {
-    calibratedMinimum[i] = 999;
-    calibratedVELMAX[i] = 0;
+    calibratedMIN[i] = 999;
+    calibratedMAX[i] = 0;
   }
   for (int i = 0; i < 6; i++)
   {
@@ -89,10 +92,10 @@ void loop() {
     saiu = 0;
 }
 
-
-
 //********************************************************************
 
+//le os sensores e compara com os valores maximos e minimos
+//essa funcao eh rodada varias vezes na calibracao
 void calibrate() {
   for (int k = 0; k < 10; k++) {
     int value;
@@ -100,33 +103,14 @@ void calibrate() {
     for (int j = 0; j < NUM_SENSORS; j++) {
       value = analogRead(sensor[j]);
 
-      if (value > calibratedVELMAX[j])
-        calibratedVELMAX[j] = value;
-      if (value < calibratedMinimum[j])
-        calibratedMinimum[j] = value;
+      if (value > calibratedMAX[j])
+        calibratedMAX[j] = value;
+      if (value < calibratedMIN[j])
+        calibratedMIN[j] = value;
     }
     delay(8);
   }
 }
-
-//printa os valores maximos e mininos da calibracao
-void printaCalibracao() {
-  for (int i = 0; i < NUM_SENSORS; i++)
-  {
-    Serial.print(calibratedMinimum[i]);
-    Serial.print(' ');
-  }
-  Serial.println();
-
-  for (int i = 0; i < NUM_SENSORS; i++)
-  {
-    Serial.print(calibratedVELMAX[i]);
-    Serial.print(' ');
-  }
-  Serial.println();
-  Serial.println();
-}
-
 
 //le os sensores e calcula a posicao da linha
 int readLine()
@@ -135,7 +119,7 @@ int readLine()
   long int value;
   unsigned long avg = 0; // this is for the weighted total, which is long before division
   unsigned long sum = 0; // this is for the denominator which is <= 64000
-
+  
   for (int j = 0; j < NUM_SENSORS; j++) {
     int samples = 0;
     for (int i = 0; i < NUM_SAMPLES_PER_SENSOR; i++) {
@@ -143,12 +127,10 @@ int readLine()
       samples += value;
     }
     value = samples / NUM_SAMPLES_PER_SENSOR;
-
     //calcula o valor de acordo com a calibracao
-    value = ((value - calibratedMinimum[j]) * 1000) / (calibratedVELMAX[j] - calibratedMinimum[j]);
+    value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
-
     // keep track of whether we see the line at all
     if (value > 200) {
       on_line = 1;
@@ -159,23 +141,20 @@ int readLine()
       sum += value;
     }
   }
-
   if (!on_line)
   {
     // If it last read to the left of center, return 0.
     if (lastValue < (NUM_SENSORS - 1) * 1000 / 2)
       return 0;
-
     // If it last read to the right of center, return the max.
     else
       return (NUM_SENSORS - 1) * 1000;
   }
-
   lastValue = avg / sum;
-
   return lastValue;
 }
 
+//acionamento dos motores
 void anda(int velE, int velD)
 {
   if (velE >= 40) {
@@ -206,6 +185,7 @@ void anda(int velE, int velD)
   }
 }
 
+//desliga os motores
 void para()
 {
   digitalWrite(motorEsq[0], LOW);
@@ -218,7 +198,7 @@ void para()
   analogWrite(motorDir[2], 0);
 }
 
-//funcao que faz o robo girar para encontrar a linha e centralizar
+//procurar a linha e centralizar apos a calibracao
 void posCalibracao() {
 
   unsigned int linePosition;
@@ -232,4 +212,22 @@ void posCalibracao() {
   }
   para();
 
+}
+
+//printa os valores de calibracao
+void printaCalibracao() {
+  for (int i = 0; i < NUM_SENSORS; i++)
+  {
+    Serial.print(calibratedMIN[i]);
+    Serial.print(' ');
+  }
+  Serial.println();
+
+  for (int i = 0; i < NUM_SENSORS; i++)
+  {
+    Serial.print(calibratedMAX[i]);
+    Serial.print(' ');
+  }
+  Serial.println();
+  Serial.println();
 }
