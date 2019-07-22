@@ -97,7 +97,7 @@ U 1 1 5D0BCA30
 P 2750 7200
 F 0 "SW1" H 2750 7435 50  0000 C CNN
 F 1 "SW_ON/OFF" H 2750 7344 50  0000 C CNN
-F 2 "Sensores_e_componentes_SL:BotaoOnOff" H 2750 7200 50  0001 C CNN
+F 2 "CUSTOM_Placa_central_v01:Solder_Pad_Custom" H 2750 7200 50  0001 C CNN
 F 3 "" H 2750 7200 50  0001 C CNN
 	1    2750 7200
 	0    -1   -1   0   
@@ -273,7 +273,7 @@ U 1 1 5D1815D1
 P 7200 1250
 F 0 "J37" H 7228 1276 50  0000 L CNN
 F 1 "Conn_01x01_8.4VPonteH" H 7350 1250 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.2mm" H 7200 1250 50  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_single_1-2mmDrill" H 7200 1250 50  0001 C CNN
 F 3 "~" H 7200 1250 50  0001 C CNN
 	1    7200 1250
 	1    0    0    -1  
@@ -1294,19 +1294,6 @@ Wire Notes Line
 	8400 950  8400 3850
 Text Notes 6300 3650 0    39   ~ 0
 Furos da PonteH para fixação na placa:
-$Comp
-L Mechanical:MountingHole H3
-U 1 1 5D3C81FB
-P 4100 7350
-F 0 "H3" H 4200 7396 50  0000 L CNN
-F 1 "FuroBateria" H 4200 7305 50  0000 L CNN
-F 2 "Sensores_e_componentes_SL:Bateria" H 4100 7350 50  0001 C CNN
-F 3 "~" H 4100 7350 50  0001 C CNN
-	1    4100 7350
-	1    0    0    -1  
-$EndComp
-Text Notes 3600 7200 0    39   ~ 0
-Furo da Bateria para fixação na placa:
 $Comp
 L Connector_Generic:Conn_02x08_Odd_Even J26
 U 1 1 5D2D91DB
