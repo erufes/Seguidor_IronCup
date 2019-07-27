@@ -206,7 +206,7 @@
   )
 
   (module Diode_THT:D_DO-35_SOD27_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE50CD5) (tstamp 5D2F836F)
-    (at 105.41 145.542 270)
+    (at 82.55 94.488 270)
     (descr "Diode, DO-35_SOD27 series, Axial, Horizontal, pin pitch=10.16mm, , length*diameter=4*2mm^2, , http://www.diodes.com/_files/packages/DO-35.pdf")
     (tags "Diode DO-35_SOD27 series Axial Horizontal pin pitch 10.16mm  length 4mm diameter 2mm")
     (path /5D316091)
@@ -259,7 +259,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 5D3C83C0)
-    (at 103.378 158.496 270)
+    (at 80.518 107.442 270)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D316455)
@@ -300,7 +300,7 @@
   )
 
   (module LED_THT:LED_D3.0mm (layer F.Cu) (tedit 587A3A7B) (tstamp 5D3C80F3)
-    (at 99.822 136.144 90)
+    (at 76.962 85.09 90)
     (descr "LED, diameter 3.0mm, 2 pins")
     (tags "LED diameter 3.0mm 2 pins")
     (path /5D31810C)
@@ -335,7 +335,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 5D2FA117)
-    (at 95.25 133.096 270)
+    (at 72.39 82.042 270)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D316CF8)
@@ -376,7 +376,7 @@
   )
 
   (module Package_TO_SOT_THT:TO-92_Wide (layer F.Cu) (tedit 5A2795B7) (tstamp 5D3C7C03)
-    (at 103.632 140.208 180)
+    (at 80.772 89.154 180)
     (descr "TO-92 leads molded, wide, drill 0.75mm (see NXP sot054_po.pdf)")
     (tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
     (path /5D3176BA)
@@ -564,7 +564,7 @@
   )
 
   (module Diode_THT:D_DO-27_P15.24mm_Horizontal (layer F.Cu) (tedit 5AE50CD5) (tstamp 5D2F8350)
-    (at 96.774 108.5342 90)
+    (at 108.712 106.68 90)
     (descr "Diode, DO-27 series, Axial, Horizontal, pin pitch=15.24mm, , length*diameter=9.52*5.33mm^2, , http://www.slottechforum.com/slotinfo/Techstuff/CD2%20Diodes%20and%20Transistors/Cases/Diode%20DO-27.jpg")
     (tags "Diode DO-27 series Axial Horizontal pin pitch 15.24mm  length 9.52mm diameter 5.33mm")
     (path /5D153AA9)
@@ -687,7 +687,7 @@
   )
 
   (module Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open (layer F.Cu) (tedit 5B7EAE13) (tstamp 5D2FA97E)
-    (at 111.1758 114.427 90)
+    (at 118.11 91.44 90)
     (descr https://www.tme.eu/en/Document/3b48dbe2b9714a62652c97b08fcd464b/PTF78.pdf)
     (tags "Fuseholder horizontal open 5x20 Stelvio-Kontek PTF/78")
     (path /5D154189)
@@ -864,7 +864,7 @@
   )
 
   (module Connector_Wire:SolderWirePad_1x01_Drill1.5mm (layer F.Cu) (tedit 5AEE5EB3) (tstamp 5D2FA8CC)
-    (at 100.9142 113.4872)
+    (at 118.11 98.298)
     (descr "Wire solder connection")
     (tags connector)
     (path /5D0BE091)
@@ -887,7 +887,7 @@
   )
 
   (module Connector_Wire:SolderWirePad_1x01_Drill1.5mm (layer F.Cu) (tedit 5AEE5EB3) (tstamp 5D2FA8B1)
-    (at 99.06 161.036 90)
+    (at 76.2 109.982 90)
     (descr "Wire solder connection")
     (tags connector)
     (path /5D0BE14B)
@@ -939,7 +939,7 @@
   )
 
   (module Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical (layer F.Cu) (tedit 5A19A434) (tstamp 5D2FA882)
-    (at 103.2002 107.1626)
+    (at 107.95 85.852)
     (descr "Through hole straight socket strip, 1x01, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x01 2.54mm single row")
     (path /5D20493D)
@@ -2294,7 +2294,7 @@
   )
 
   (module Package_TO_SOT_THT:TO-92_Wide (layer F.Cu) (tedit 5A2795B7) (tstamp 5D2FA156)
-    (at 96.266 146.05 270)
+    (at 73.406 94.996 270)
     (descr "TO-92 leads molded, wide, drill 0.75mm (see NXP sot054_po.pdf)")
     (tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
     (path /5D3166B6)
@@ -2333,7 +2333,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 5D2F9589)
-    (at 103.3272 92.8116 270)
+    (at 107.95 70.104 270)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D1A4675)
@@ -2374,7 +2374,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 5D37681B)
-    (at 102.108 146.05 270)
+    (at 79.248 94.996 270)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D316319)
@@ -2415,7 +2415,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 5D2FA0D5)
-    (at 104.394 130.048 180)
+    (at 81.534 78.994 180)
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D31721A)
@@ -2630,7 +2630,7 @@
   )
 
   (module Connector_Wire:SolderWirePad_1x01_Drill1.5mm (layer F.Cu) (tedit 5AEE5EB3) (tstamp 5D2FB4BF)
-    (at 98.044 155.448 90)
+    (at 75.184 104.394 90)
     (descr "Wire solder connection")
     (tags connector)
     (path /5D152CB0)

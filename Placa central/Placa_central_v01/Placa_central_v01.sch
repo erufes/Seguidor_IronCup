@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Placa_central_v01-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -930,8 +929,6 @@ Text GLabel 2850 2850 2    50   Input ~ 0
 Sensor7
 Text GLabel 2850 2950 2    50   Input ~ 0
 LedAzul
-Text GLabel 6600 4500 0    79   Input ~ 0
-8.4V
 $Comp
 L Device:D_Zener D2
 U 1 1 5D316091
@@ -1020,8 +1017,6 @@ F 3 "~" H 8150 4600 50  0001 C CNN
 	1    8150 4600
 	0    -1   -1   0   
 $EndComp
-Text GLabel 6600 5750 0    79   Input ~ 0
-GND
 Wire Wire Line
 	6600 5750 6750 5750
 Wire Wire Line
@@ -1332,4 +1327,26 @@ NoConn ~ 5150 1700
 NoConn ~ 5150 1500
 Wire Wire Line
 	5150 1400 5250 1400
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D3D07BC
+P 6400 4500
+F 0 "J?" H 6428 4526 50  0000 L CNN
+F 1 "Conn_01x01_MedidorBateriaVcc" H 6550 4500 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6400 4500 50  0001 C CNN
+F 3 "~" H 6400 4500 50  0001 C CNN
+	1    6400 4500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J?
+U 1 1 5D3D515E
+P 6400 5750
+F 0 "J?" H 6428 5776 50  0000 L CNN
+F 1 "Conn_01x01_MedidorBateriaGnd" H 6550 5750 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6400 5750 50  0001 C CNN
+F 3 "~" H 6400 5750 50  0001 C CNN
+	1    6400 5750
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
