@@ -410,4 +410,144 @@ Text GLabel 8850 2150 0    50   Input ~ 0
 VccDir
 Text GLabel 7650 3000 0    50   Input ~ 0
 GNDDir
+Text Notes 3400 3300 0    79   ~ 0
+Furos Suporte Encoder Esquerdo
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5D406AF8
+P 3850 3550
+F 0 "H1" H 3950 3596 50  0000 L CNN
+F 1 "Furo1Esq" H 3950 3505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 3850 3550 50  0001 C CNN
+F 3 "~" H 3850 3550 50  0001 C CNN
+	1    3850 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5D4070A4
+P 3850 3900
+F 0 "H2" H 3950 3946 50  0000 L CNN
+F 1 "Furo2Esq" H 3950 3855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 3850 3900 50  0001 C CNN
+F 3 "~" H 3850 3900 50  0001 C CNN
+	1    3850 3900
+	1    0    0    -1  
+$EndComp
+Text Notes 8700 3350 0    79   ~ 0
+Furos Suporte Encoder Direito
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5D407741
+P 9150 3600
+F 0 "H3" H 9250 3646 50  0000 L CNN
+F 1 "Furo1Dir" H 9250 3555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 9150 3600 50  0001 C CNN
+F 3 "~" H 9150 3600 50  0001 C CNN
+	1    9150 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5D40774B
+P 9150 3950
+F 0 "H4" H 9250 3996 50  0000 L CNN
+F 1 "Furo2Dir" H 9250 3905 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 9150 3950 50  0001 C CNN
+F 3 "~" H 9150 3950 50  0001 C CNN
+	1    9150 3950
+	1    0    0    -1  
+$EndComp
+Text Notes 3350 4300 0    79   ~ 0
+Furos Motor Case Encoder Esquerdo
+Text Notes 8700 4300 0    79   ~ 0
+Furos Motor Case Encoder Direito
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 5D40CB8F
+P 3850 4550
+F 0 "H5" H 3950 4596 50  0000 L CNN
+F 1 "Furo3Esq" H 3950 4505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 3850 4550 50  0001 C CNN
+F 3 "~" H 3850 4550 50  0001 C CNN
+	1    3850 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 5D40CB95
+P 3850 4900
+F 0 "H6" H 3950 4946 50  0000 L CNN
+F 1 "Furo4Esq" H 3950 4855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 3850 4900 50  0001 C CNN
+F 3 "~" H 3850 4900 50  0001 C CNN
+	1    3850 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 5D40DDE5
+P 4600 4550
+F 0 "H7" H 4700 4596 50  0000 L CNN
+F 1 "Furo5Esq" H 4700 4505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 4600 4550 50  0001 C CNN
+F 3 "~" H 4600 4550 50  0001 C CNN
+	1    4600 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 5D40DDEB
+P 4600 4900
+F 0 "H8" H 4700 4946 50  0000 L CNN
+F 1 "Furo6Esq" H 4700 4855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 4600 4900 50  0001 C CNN
+F 3 "~" H 4600 4900 50  0001 C CNN
+	1    4600 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H9
+U 1 1 5D40EB57
+P 9150 4550
+F 0 "H9" H 9250 4596 50  0000 L CNN
+F 1 "Furo3Dir" H 9250 4505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 9150 4550 50  0001 C CNN
+F 3 "~" H 9150 4550 50  0001 C CNN
+	1    9150 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H10
+U 1 1 5D40EB61
+P 9150 4900
+F 0 "H10" H 9250 4946 50  0000 L CNN
+F 1 "Furo4Dir" H 9250 4855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 9150 4900 50  0001 C CNN
+F 3 "~" H 9150 4900 50  0001 C CNN
+	1    9150 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H11
+U 1 1 5D40EB6B
+P 9900 4550
+F 0 "H11" H 10000 4596 50  0000 L CNN
+F 1 "Furo5Dir" H 10000 4505 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 9900 4550 50  0001 C CNN
+F 3 "~" H 9900 4550 50  0001 C CNN
+	1    9900 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H12
+U 1 1 5D40EB75
+P 9900 4900
+F 0 "H12" H 10000 4946 50  0000 L CNN
+F 1 "Furo6Dir" H 10000 4855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2mm" H 9900 4900 50  0001 C CNN
+F 3 "~" H 9900 4900 50  0001 C CNN
+	1    9900 4900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
