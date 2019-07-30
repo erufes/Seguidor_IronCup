@@ -19,6 +19,7 @@ int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de c
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
 
 int velEsq, velDir;
+int reduz = 0;                        // contador para deixar a velocidade reduzida
 int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
 
@@ -47,6 +48,8 @@ void loop() {
     velDir = VELMAX - erro;
 
   if (confereCurva())
+    reduz = 50;             //tempo para velo cidade ficar reduzida
+  if(reduz > 0)
     reduzVelocidade();
 
   anda(velEsq, velDir);
@@ -196,7 +199,15 @@ void freia() {
 }
 
 void reduzVelocidade() {
-  
+  if(reduz > 30){
+    velD = 0;
+    velE = 0;
+  }
+  else{
+    velD -= (reduz*2);
+    velE -= (reduz*2);
+  }
+  reduz--;
 }
 
 int PID(unsigned int linePosition) {
