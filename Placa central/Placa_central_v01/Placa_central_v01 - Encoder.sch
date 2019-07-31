@@ -273,7 +273,7 @@ F 3 "~" H 7600 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7300 4000 0    50   Input ~ 0
-GND
+GNDDir
 Text GLabel 7300 3600 0    50   Input ~ 0
 SinalEncoderDIr
 $Comp
@@ -290,7 +290,7 @@ $EndComp
 Text GLabel 6600 2200 0    50   Input ~ 0
 VccDir
 Text GLabel 7300 3800 0    50   Input ~ 0
-Vcc
+VccDir
 Wire Wire Line
 	6600 2200 6650 2200
 Wire Wire Line
