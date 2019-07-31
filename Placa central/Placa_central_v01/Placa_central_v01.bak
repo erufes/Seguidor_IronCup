@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 26 0
+LIBS:Placa_central_v01-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -72,20 +73,6 @@ F 3 "" H 9700 4700 50  0001 C CNN
 	1    9700 4500
 	1    0    0    -1  
 $EndComp
-Text GLabel 3400 4450 0    50   Input ~ 0
-Sensor1
-Text GLabel 3400 4550 0    50   Input ~ 0
-Sensor2
-Text GLabel 3400 4650 0    50   Input ~ 0
-Sensor3
-Text GLabel 3400 4750 0    50   Input ~ 0
-Sensor4
-Text GLabel 3400 4850 0    50   Input ~ 0
-Sensor5
-Text GLabel 3400 4950 0    50   Input ~ 0
-Sensor6
-Text GLabel 3400 5050 0    50   Input ~ 0
-Sensor7
 Text GLabel 1650 2850 0    50   Input ~ 0
 SensorDir
 Text GLabel 1650 2750 0    50   Input ~ 0
@@ -635,127 +622,6 @@ F 3 "~" H 2200 5350 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J14
-U 1 1 5D212C6D
-P 2200 5250
-F 0 "J14" H 2228 5276 50  0000 L CNN
-F 1 "Conn_01x01_Arduino15" H 2350 5300 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 5250 50  0001 C CNN
-F 3 "~" H 2200 5250 50  0001 C CNN
-	1    2200 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J13
-U 1 1 5D212DA6
-P 2200 5150
-F 0 "J13" H 2228 5176 50  0000 L CNN
-F 1 "Conn_01x01_Arduino14" H 2350 5200 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 5150 50  0001 C CNN
-F 3 "~" H 2200 5150 50  0001 C CNN
-	1    2200 5150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J12
-U 1 1 5D212E2C
-P 2200 5050
-F 0 "J12" H 2228 5076 50  0000 L CNN
-F 1 "Conn_01x01_Arduino13" H 2350 5100 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 5050 50  0001 C CNN
-F 3 "~" H 2200 5050 50  0001 C CNN
-	1    2200 5050
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J11
-U 1 1 5D212EB4
-P 2200 4950
-F 0 "J11" H 2228 4976 50  0000 L CNN
-F 1 "Conn_01x01_Arduino12" H 2350 5000 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4950 50  0001 C CNN
-F 3 "~" H 2200 4950 50  0001 C CNN
-	1    2200 4950
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J10
-U 1 1 5D212F3C
-P 2200 4850
-F 0 "J10" H 2228 4876 50  0000 L CNN
-F 1 "Conn_01x01_Arduino11" H 2350 4900 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4850 50  0001 C CNN
-F 3 "~" H 2200 4850 50  0001 C CNN
-	1    2200 4850
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J9
-U 1 1 5D212FC6
-P 2200 4750
-F 0 "J9" H 2228 4776 50  0000 L CNN
-F 1 "Conn_01x01_Arduino10" H 2350 4800 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4750 50  0001 C CNN
-F 3 "~" H 2200 4750 50  0001 C CNN
-	1    2200 4750
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J8
-U 1 1 5D213054
-P 2200 4650
-F 0 "J8" H 2228 4676 50  0000 L CNN
-F 1 "Conn_01x01_Arduino9" H 2350 4700 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4650 50  0001 C CNN
-F 3 "~" H 2200 4650 50  0001 C CNN
-	1    2200 4650
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J7
-U 1 1 5D2131AD
-P 2200 4550
-F 0 "J7" H 2228 4576 50  0000 L CNN
-F 1 "Conn_01x01_Arduino8" H 2350 4600 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4550 50  0001 C CNN
-F 3 "~" H 2200 4550 50  0001 C CNN
-	1    2200 4550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J6
-U 1 1 5D21323D
-P 2200 4450
-F 0 "J6" H 2228 4476 50  0000 L CNN
-F 1 "Conn_01x01_Arduino7" H 2350 4500 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4450 50  0001 C CNN
-F 3 "~" H 2200 4450 50  0001 C CNN
-	1    2200 4450
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J5
-U 1 1 5D2132CF
-P 2200 4350
-F 0 "J5" H 2228 4376 50  0000 L CNN
-F 1 "Conn_01x01_Arduino6" H 2350 4400 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4350 50  0001 C CNN
-F 3 "~" H 2200 4350 50  0001 C CNN
-	1    2200 4350
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J4
-U 1 1 5D213363
-P 2200 4250
-F 0 "J4" H 2228 4276 50  0000 L CNN
-F 1 "Conn_01x01_Arduino5" H 2350 4300 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 4250 50  0001 C CNN
-F 3 "~" H 2200 4250 50  0001 C CNN
-	1    2200 4250
-	-1   0    0    1   
-$EndComp
-$Comp
 L Connector:Conn_01x01_Female J25
 U 1 1 5D21B22A
 P 3750 5150
@@ -766,145 +632,10 @@ F 3 "~" H 3750 5150 50  0001 C CNN
 	1    3750 5150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x01_Female J24
-U 1 1 5D21B2CC
-P 3750 5050
-F 0 "J24" H 3778 5076 50  0000 L CNN
-F 1 "Conn_01x01_Arduino25" H 3900 5050 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 5050 50  0001 C CNN
-F 3 "~" H 3750 5050 50  0001 C CNN
-	1    3750 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J23
-U 1 1 5D21B36C
-P 3750 4950
-F 0 "J23" H 3778 4976 50  0000 L CNN
-F 1 "Conn_01x01_Arduino24" H 3900 4950 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4950 50  0001 C CNN
-F 3 "~" H 3750 4950 50  0001 C CNN
-	1    3750 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J22
-U 1 1 5D21B40E
-P 3750 4850
-F 0 "J22" H 3778 4876 50  0000 L CNN
-F 1 "Conn_01x01_Arduino23" H 3900 4850 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4850 50  0001 C CNN
-F 3 "~" H 3750 4850 50  0001 C CNN
-	1    3750 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J21
-U 1 1 5D21B4B2
-P 3750 4750
-F 0 "J21" H 3778 4776 50  0000 L CNN
-F 1 "Conn_01x01_Arduino22" H 3900 4750 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4750 50  0001 C CNN
-F 3 "~" H 3750 4750 50  0001 C CNN
-	1    3750 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J20
-U 1 1 5D21B558
-P 3750 4650
-F 0 "J20" H 3778 4676 50  0000 L CNN
-F 1 "Conn_01x01_Arduino21" H 3900 4650 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4650 50  0001 C CNN
-F 3 "~" H 3750 4650 50  0001 C CNN
-	1    3750 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J19
-U 1 1 5D21B602
-P 3750 4550
-F 0 "J19" H 3778 4576 50  0000 L CNN
-F 1 "Conn_01x01_Arduino20" H 3900 4550 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4550 50  0001 C CNN
-F 3 "~" H 3750 4550 50  0001 C CNN
-	1    3750 4550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J18
-U 1 1 5D21B6AE
-P 3750 4450
-F 0 "J18" H 3778 4476 50  0000 L CNN
-F 1 "Conn_01x01_Arduino19" H 3900 4450 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 4450 50  0001 C CNN
-F 3 "~" H 3750 4450 50  0001 C CNN
-	1    3750 4450
-	1    0    0    -1  
-$EndComp
-Text GLabel 2550 4250 2    50   Input ~ 0
-Encoder1
-Text GLabel 2550 4350 2    50   Input ~ 0
-Encoder2
-Text GLabel 2550 5250 2    50   Input ~ 0
-SensorDir
-Text GLabel 2550 5150 2    50   Input ~ 0
-SensorEsq
-Text GLabel 2550 4850 2    50   Input ~ 0
-Motor1PWM
-Text GLabel 2550 4750 2    50   Input ~ 0
-Motor2PWM
-Text GLabel 2550 4450 2    50   Input ~ 0
-Motor1Dir1
-Text GLabel 2550 4550 2    50   Input ~ 0
-Motor1Dir2
-Text GLabel 2550 4950 2    50   Input ~ 0
-Motor2Dir1
-Text GLabel 2550 5050 2    50   Input ~ 0
-Motor2Dir2
-Text GLabel 2550 4650 2    50   Input ~ 0
-Botao1
 Text GLabel 2550 5350 2    50   Input ~ 0
 ArduinoD6
 Wire Wire Line
-	3400 4450 3550 4450
-Wire Wire Line
-	3400 4550 3550 4550
-Wire Wire Line
-	3400 4650 3550 4650
-Wire Wire Line
-	3400 4750 3550 4750
-Wire Wire Line
-	3400 4850 3550 4850
-Wire Wire Line
-	3400 4950 3550 4950
-Wire Wire Line
-	3400 5050 3550 5050
-Wire Wire Line
 	3400 5150 3550 5150
-Wire Wire Line
-	2400 4250 2550 4250
-Wire Wire Line
-	2400 4350 2550 4350
-Wire Wire Line
-	2400 4450 2550 4450
-Wire Wire Line
-	2400 4550 2550 4550
-Wire Wire Line
-	2400 4650 2550 4650
-Wire Wire Line
-	2400 4750 2550 4750
-Wire Wire Line
-	2400 4850 2550 4850
-Wire Wire Line
-	2400 4950 2550 4950
-Wire Wire Line
-	2400 5050 2550 5050
-Wire Wire Line
-	2400 5150 2550 5150
-Wire Wire Line
-	2400 5250 2550 5250
 Wire Wire Line
 	2400 5350 2550 5350
 Text Notes 1700 3850 0    79   ~ 0

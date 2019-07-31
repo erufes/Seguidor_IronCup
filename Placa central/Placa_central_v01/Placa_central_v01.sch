@@ -157,8 +157,6 @@ Text GLabel 1650 2650 0    50   Input ~ 0
 Motor2Dir2
 Text GLabel 1650 2950 0    50   Input ~ 0
 Botao1
-Text GLabel 3400 5150 0    50   Input ~ 0
-LedAzul
 Text GLabel 3300 7350 2    50   Input ~ 0
 GND
 Wire Wire Line
@@ -610,34 +608,6 @@ Wire Wire Line
 Wire Wire Line
 	2750 6650 2750 6600
 Connection ~ 2750 6600
-$Comp
-L Connector:Conn_01x01_Female J15
-U 1 1 5D2129B1
-P 2200 5350
-F 0 "J15" H 2228 5376 50  0000 L CNN
-F 1 "Conn_01x01_Arduino16" H 2350 5400 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 5350 50  0001 C CNN
-F 3 "~" H 2200 5350 50  0001 C CNN
-	1    2200 5350
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J25
-U 1 1 5D21B22A
-P 3750 5150
-F 0 "J25" H 3778 5176 50  0000 L CNN
-F 1 "Conn_01x01_Arduino26" H 3900 5150 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 3750 5150 50  0001 C CNN
-F 3 "~" H 3750 5150 50  0001 C CNN
-	1    3750 5150
-	1    0    0    -1  
-$EndComp
-Text GLabel 2550 5350 2    50   Input ~ 0
-ArduinoD6
-Wire Wire Line
-	3400 5150 3550 5150
-Wire Wire Line
-	2400 5350 2550 5350
 Text Notes 1700 3850 0    79   ~ 0
 Arduino Nano V3.x - Pinos Extras Soltos
 Wire Notes Line
