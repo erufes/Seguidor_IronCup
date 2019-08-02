@@ -19,7 +19,7 @@ int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de c
 int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
 
-int velEsq, velDir;
+int tensaoEsq, tensaoDir;
 int reduz = 0;                        // contador para deixar a velocidade reduzida
 int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
@@ -44,16 +44,16 @@ void loop() {
   int erro = PID(linePosition);
 
   if (erro < 0)
-    velEsq = VELMAX + erro;
+    tensaoEsq = VELMAX + erro;
   else
-    velDir = VELMAX - erro;
+    tensaoDir = VELMAX - erro;
 //
   if(digitalRead(pin_curva))
   digitalWrite(pin_led, HIGH);
   else
   digitalWrite(pin_led, LOW);
 //
-  anda(velEsq, velDir);
+  anda(tensaoEsq, tensaoDir);
 
   confereSaiuDaLinha(linePosition);
 }
@@ -184,18 +184,18 @@ void freia() {
   digitalWrite(motorDir[0], LOW);
   digitalWrite(motorDir[1], HIGH);
   analogWrite(motorDir[2], 100);
-  delay(50);
+  delay(60);
   para();
 }
 
 void reduzVelocidade() {
   if(reduz > 30){
-    velD = 0;
-    velE = 0;
+    tensaoDir = 0;
+    tensaoEsq = 0;
   }
   else{
-    velD -= (reduz*2);
-    velE -= (reduz*2);
+    tensaoDir -= (reduz*2);
+    tensaoEsq -= (reduz*2);
   }
   reduz--;
 }
@@ -213,7 +213,7 @@ int PID(unsigned int linePosition) {
 }
 
 //acionamento dos motores
-void anda(int velE, int velD)
+void anda(int velE, int tensaoDir)
 {
   if (velE >= 40) {
     digitalWrite(motorEsq[0], HIGH);
@@ -228,18 +228,18 @@ void anda(int velE, int velD)
     digitalWrite(motorEsq[1], HIGH);
     analogWrite(motorEsq[2], -velE);
   }
-  if (velD >= 40) {
+  if (tensaoDir >= 40) {
     digitalWrite(motorDir[0], HIGH);
     digitalWrite(motorDir[1], LOW);
-    analogWrite(motorDir[2], (int)(1.09 * velD));
-  } else if (velD >= 0 && velD < 40) {
+    analogWrite(motorDir[2], (int)(1.09 * tensaoDir));
+  } else if (tensaoDir >= 0 && tensaoDir < 40) {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2], (int)(1.09 * (180 + 4 * velD)));
+    analogWrite(motorDir[2], (int)(1.09 * (180 + 4 * tensaoDir)));
   } else {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2], (int)(1.09 * (-velD)));
+    analogWrite(motorDir[2], (int)(1.09 * (-tensaoDir)));
   }
 }
 
