@@ -49,9 +49,9 @@ void loop() {
     velDir = VELMAX - erro;
 //
   if(digitalRead(pin_curva))
-	digitalWrite(pin_led, HIGH);
+  digitalWrite(pin_led, HIGH);
   else
-	digitalWrite(pin_led, LOW);
+  digitalWrite(pin_led, LOW);
 //
   anda(velEsq, velDir);
 
@@ -63,6 +63,7 @@ void loop() {
 void setPinos() {
   pinMode(pin_chegada, INPUT);
   pinMode(pin_curva, INPUT);
+  pinMode(pin_led, OUTPUT);
   for (int i = 0; i < 3; i++) {
     pinMode(motorEsq[i], OUTPUT);
     pinMode(motorDir[i], OUTPUT);
