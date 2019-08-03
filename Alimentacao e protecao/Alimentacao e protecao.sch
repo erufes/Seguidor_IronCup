@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Alimentacao e protecao-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -288,8 +289,8 @@ L Connector:Conn_01x01_Female J3
 U 1 1 5D3D07BC
 P 6450 2150
 F 0 "J3" H 6478 2176 50  0000 L CNN
-F 1 "Conn_01x01_MedidorBateriaVcc" H 6600 2150 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6450 2150 50  0001 C CNN
+F 1 "8.4V_PlacaCentral" H 6600 2150 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.2mm" H 6450 2150 50  0001 C CNN
 F 3 "~" H 6450 2150 50  0001 C CNN
 	1    6450 2150
 	-1   0    0    1   
@@ -299,8 +300,8 @@ L Connector:Conn_01x01_Female J4
 U 1 1 5D3D515E
 P 6450 3400
 F 0 "J4" H 6478 3426 50  0000 L CNN
-F 1 "Conn_01x01_MedidorBateriaGnd" H 6600 3400 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 6450 3400 50  0001 C CNN
+F 1 "GND_PlacaCentral" H 6600 3400 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.2mm" H 6450 3400 50  0001 C CNN
 F 3 "~" H 6450 3400 50  0001 C CNN
 	1    6450 3400
 	-1   0    0    1   
