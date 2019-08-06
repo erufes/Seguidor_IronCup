@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Placa_central_v01-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MCU_Module:Arduino_Nano_v3.x A1
-U 1 1 5C812F31
-P 2250 2250
-F 0 "A1" H 2250 1164 50  0000 C CNN
-F 1 "Arduino_Nano_v3.x" H 2250 1073 50  0000 C CNN
-F 2 "Sensores_e_componentes_SL:Arduino_Nano" H 2400 1300 50  0001 L CNN
-F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 2250 1250 50  0001 C CNN
-	1    2250 2250
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:LED D4
 U 1 1 5C81702D
@@ -54,7 +43,7 @@ GND
 NoConn ~ 2750 2050
 Text GLabel 1650 1850 0    50   Input ~ 0
 Encoder1
-Text GLabel 1650 1950 0    50   Input ~ 0
+Text GLabel 1650 2050 0    50   Input ~ 0
 Encoder2
 $Comp
 L Switch:SW_Push SW3
@@ -71,19 +60,19 @@ Text GLabel 1650 2850 0    50   Input ~ 0
 SensorDir
 Text GLabel 1650 2750 0    50   Input ~ 0
 SensorEsq
-Text GLabel 1650 2450 0    50   Input ~ 0
-Motor1PWM
-Text GLabel 1650 2350 0    50   Input ~ 0
-Motor2PWM
-Text GLabel 1650 2050 0    50   Input ~ 0
-Motor1Dir1
-Text GLabel 1650 2150 0    50   Input ~ 0
-Motor1Dir2
-Text GLabel 1650 2550 0    50   Input ~ 0
-Motor2Dir1
 Text GLabel 1650 2650 0    50   Input ~ 0
+Motor1PWM
+Text GLabel 1650 2150 0    50   Input ~ 0
+Motor2PWM
+Text GLabel 1650 2350 0    50   Input ~ 0
+Motor1Dir1
+Text GLabel 1650 2250 0    50   Input ~ 0
+Motor1Dir2
+Text GLabel 1650 2450 0    50   Input ~ 0
+Motor2Dir1
+Text GLabel 1650 2550 0    50   Input ~ 0
 Motor2Dir2
-Text GLabel 1650 2950 0    50   Input ~ 0
+Text GLabel 1650 1950 0    50   Input ~ 0
 Botao1
 Text GLabel 2550 1150 2    50   Input ~ 0
 5VArduino
@@ -343,11 +332,11 @@ Text GLabel 4550 1600 0    50   Input ~ 0
 Sensor5
 Text GLabel 4550 1500 0    50   Input ~ 0
 Sensor6
-Text GLabel 5250 1900 2    50   Input ~ 0
+Text GLabel 4550 1400 0    50   Input ~ 0
 Sensor7
 Text GLabel 4550 2100 0    50   Input ~ 0
 SensorEsq
-Text GLabel 5250 1400 2    50   Input ~ 0
+Text GLabel 5250 2000 2    50   Input ~ 0
 SensorDir
 Text Notes 4050 2400 0    59   ~ 0
 Alimentação da placa de sensores
@@ -406,7 +395,7 @@ ResetArduino
 Text GLabel 2550 4150 2    50   Input ~ 0
 ResetArduino
 NoConn ~ 2750 1650
-Text GLabel 4550 1400 0    50   Input ~ 0
+Text GLabel 5300 1400 2    50   Input ~ 0
 GND
 Text GLabel 5000 2600 2    50   Input ~ 0
 VccSensores
@@ -522,19 +511,6 @@ Text Notes 6700 2900 0    79   ~ 0
 Fusíveis dos Motores
 Text Notes 6300 3650 0    39   ~ 0
 Furos da PonteH para fixação na placa:
-$Comp
-L Connector_Generic:Conn_02x08_Odd_Even J26
-U 1 1 5D2D91DB
-P 4850 1700
-F 0 "J26" H 4900 2217 50  0000 C CNN
-F 1 "Conn_02x08_Odd_Even" H 4900 2126 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Horizontal" H 4850 1700 50  0001 C CNN
-F 3 "~" H 4850 1700 50  0001 C CNN
-	1    4850 1700
-	1    0    0    -1  
-$EndComp
-NoConn ~ 5150 2000
-NoConn ~ 5150 1800
 NoConn ~ 5150 1600
 NoConn ~ 5150 1700
 NoConn ~ 5150 1500
@@ -740,15 +716,10 @@ Wire Wire Line
 	4550 2100 4650 2100
 Wire Wire Line
 	5250 2100 5150 2100
-Wire Wire Line
-	5250 1900 5150 1900
-Wire Wire Line
-	5150 1400 5250 1400
 Wire Notes Line
 	4900 3650 4900 5500
 Wire Notes Line
 	1100 3650 1100 5500
-NoConn ~ 1750 2250
 Text Notes 1700 5950 0    79   ~ 0
 Circuito de Alimentação - Pads de Conexão
 Wire Notes Line
@@ -791,4 +762,39 @@ Text GLabel 2450 6200 0    50   Input ~ 0
 8.4V
 Text GLabel 9200 4500 0    59   Input ~ 0
 5VArduino
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A1
+U 1 1 5C812F31
+P 2250 2250
+F 0 "A1" H 2250 1164 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 2250 1073 50  0000 C CNN
+F 2 "Sensores_e_componentes_SL:Arduino_Nano" H 2400 1300 50  0001 L CNN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 2250 1250 50  0001 C CNN
+	1    2250 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2250 1650 2250
+Text GLabel 5250 1900 2    50   Input ~ 0
+ArduinoD13
+Wire Wire Line
+	5150 2000 5250 2000
+$Comp
+L Connector_Generic:Conn_02x08_Odd_Even J26
+U 1 1 5D2D91DB
+P 4850 1700
+F 0 "J26" H 4900 2217 50  0000 C CNN
+F 1 "Conn_02x08_Odd_Even" H 4900 2126 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Horizontal" H 4850 1700 50  0001 C CNN
+F 3 "~" H 4850 1700 50  0001 C CNN
+	1    4850 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1900 5150 1900
+NoConn ~ 5150 1800
+Wire Wire Line
+	5150 1400 5300 1400
+Text GLabel 1650 2950 0    50   Input ~ 0
+ArduinoD13
 $EndSCHEMATC
