@@ -18,7 +18,7 @@ int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de c
 int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
 
-int velEsq, velDir;
+int tensaoEsq, tensaoDir;             //tensao passada para os motores(0-255)
 int reduz = 0;                        // contador para deixar a velocidade reduzida
 int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
@@ -43,16 +43,16 @@ void loop() {
   int erro = PID(linePosition);
 
   if (erro < 0)
-    velEsq = VELMAX + erro;
+    tensaoEsq = VELMAX + erro;
   else
-    velDir = VELMAX - erro;
+    tensaoDir = VELMAX - erro;
 
   if (confereCurva())
     reduz = 50;             //tempo para velo cidade ficar reduzida
   if(reduz > 0)
     reduzVelocidade();
 
-  anda(velEsq, velDir);
+  anda(tensaoEsq, tensaoDir);
 
   confereSaiuDaLinha(linePosition);
 }
@@ -148,7 +148,7 @@ int readLine()
 
 void confereChegada() {
   if (digitalRead(pin_chegada)) {
-    if (!saiu && !leu_curva)
+    if (!saiu && !leu_curva) //verifica se saiu da linha ou tem cruzamento
       leu_chegada++;
   } else {
     leu_chegada = 0;
@@ -165,7 +165,7 @@ void confereChegada() {
 
 int confereCurva() {
   if (digitalRead(pin_curva)) {
-    if (!saiu && !leu_chegada) //verifica se esta seguindo a linha
+    if (!saiu && !leu_chegada) //verifica se saiu da linha ou tem cruzamento
       leu_curva++;
   } else
     leu_curva = 0;
@@ -200,12 +200,12 @@ void freia() {
 
 void reduzVelocidade() {
   if(reduz > 30){
-    velD = 0;
-    velE = 0;
+    tensaoDir = 0;
+    tensaoEsq = 0;
   }
   else{
-    velD -= (reduz*2);
-    velE -= (reduz*2);
+    tensaoDir -= (reduz*2);
+    tensaoEsq -= (reduz*2);
   }
   reduz--;
 }
