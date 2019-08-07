@@ -1,6 +1,6 @@
-update=ter 06 ago 2019 17:15:03 -03
+update=qua 07 ago 2019 11:31:59 -03
 version=1
-last_client=kicad
+last_client=pcbnew
 [general]
 version=1
 RootSch=
@@ -238,6 +238,39 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.3
+TrackWidth=0.9
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/1]
+Name=Critical Long trails
+Clearance=0.6
+TrackWidth=0.9
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
+Name=Custom
+Clearance=0.6
+TrackWidth=0.6
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/3]
+Name=POWER
+Clearance=0.6
 TrackWidth=0.9
 ViaDiameter=0.8
 ViaDrill=0.4

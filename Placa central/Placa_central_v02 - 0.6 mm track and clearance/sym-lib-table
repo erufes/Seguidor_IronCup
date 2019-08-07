@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name arduino_nano)(type Legacy)(uri ${KIPRJMOD}/libraries/kicad_ArduinoNano-master/kicad_ArduinoNano-master/libraries/arduino_nano.lib)(options "")(descr ""))
-  (lib (name Sensores_e_componentes_SL)(type Legacy)(uri ${KIPRJMOD}/libraries/Sensores_e_componentes_SL.lib)(options "")(descr ""))
-)
