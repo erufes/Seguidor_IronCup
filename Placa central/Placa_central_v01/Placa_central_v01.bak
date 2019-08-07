@@ -62,11 +62,11 @@ Text GLabel 1650 2750 0    50   Input ~ 0
 SensorEsq
 Text GLabel 1650 2650 0    50   Input ~ 0
 Motor1PWM
-Text GLabel 1650 2250 0    50   Input ~ 0
+Text GLabel 1650 2150 0    50   Input ~ 0
 Motor2PWM
 Text GLabel 1650 2350 0    50   Input ~ 0
 Motor1Dir1
-Text GLabel 1650 2150 0    50   Input ~ 0
+Text GLabel 1650 2250 0    50   Input ~ 0
 Motor1Dir2
 Text GLabel 1650 2450 0    50   Input ~ 0
 Motor2Dir1

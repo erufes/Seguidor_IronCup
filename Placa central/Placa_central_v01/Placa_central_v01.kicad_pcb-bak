@@ -1,4 +1,4 @@
-(kicad_pcb (version 20171130) (host pcbnew 5.1.4-e60b266~84~ubuntu18.04.1)
+(kicad_pcb (version 20171130) (host pcbnew 5.1.3-ffb9f22~84~ubuntu18.04.1)
 
   (general
     (thickness 1.6)
@@ -1167,12 +1167,12 @@
       (net 7 GND))
   )
 
+  (gr_line (start 24.61768 170.60536) (end 24.61768 122.6019) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD5))
+  (gr_line (start 176.6189 170.60536) (end 24.61768 170.60536) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD8))
+  (gr_line (start 176.62398 122.6019) (end 176.6189 170.60536) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD2))
+  (gr_line (start 24.61768 122.6019) (end 176.62398 122.6019) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDDB))
   (gr_circle (center 159.52724 165.86454) (end 161.51606 165.86454) (layer F.SilkS) (width 0.12))
   (gr_circle (center 159.50438 127.8255) (end 161.5059 127.8255) (layer F.SilkS) (width 0.12))
-  (gr_line (start 28.448 123.5456) (end 28.7274 170.2054) (layer F.SilkS) (width 0.2))
-  (gr_line (start 164.4142 170.3578) (end 28.7274 170.2054) (layer F.SilkS) (width 0.2))
-  (gr_line (start 164.5666 123.4694) (end 164.4142 170.3578) (layer F.SilkS) (width 0.2))
-  (gr_line (start 28.448 123.5456) (end 164.5666 123.4694) (layer F.SilkS) (width 0.2))
 
   (segment (start 115.25 159.004) (end 115.25 155.194) (width 0.6) (layer F.Cu) (net 1) (tstamp 5D4A1FB2))
   (segment (start 117.79 155.194) (end 118.298 154.686) (width 0.6) (layer F.Cu) (net 3))
@@ -1373,4 +1373,14 @@
   (segment (start 156.6 128) (end 153.4 124.8) (width 0.6) (layer B.Cu) (net 36))
   (segment (start 153.4 124.8) (end 142.65 124.8) (width 0.6) (layer B.Cu) (net 36))
 
+  (zone (net 7) (net_name GND) (layer B.Cu) (tstamp 0) (hatch edge 0.508)
+    (connect_pads (clearance 0.508))
+    (min_thickness 0.254)
+    (fill (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
+    (polygon
+      (pts
+        (xy 24.6126 122.6058) (xy 176.6316 122.6058) (xy 176.6316 170.6118) (xy 24.6126 170.6118)
+      )
+    )
+  )
 )
