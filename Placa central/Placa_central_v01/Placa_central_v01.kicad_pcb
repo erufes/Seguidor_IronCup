@@ -1167,12 +1167,12 @@
       (net 7 GND))
   )
 
+  (gr_line (start 24.61768 171.15536) (end 24.61768 123.1519) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD5))
+  (gr_line (start 176.6189 171.15536) (end 24.61768 171.15536) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD8))
+  (gr_line (start 176.62398 123.1519) (end 176.6189 171.15536) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDD2))
+  (gr_line (start 24.61768 123.1519) (end 176.62398 123.1519) (layer F.SilkS) (width 0.12) (tstamp 5D4AEDDB))
   (gr_circle (center 159.52724 165.86454) (end 161.51606 165.86454) (layer F.SilkS) (width 0.12))
   (gr_circle (center 159.50438 127.8255) (end 161.5059 127.8255) (layer F.SilkS) (width 0.12))
-  (gr_line (start 28.448 123.5456) (end 28.7274 170.2054) (layer F.SilkS) (width 0.2))
-  (gr_line (start 164.4142 170.3578) (end 28.7274 170.2054) (layer F.SilkS) (width 0.2))
-  (gr_line (start 164.5666 123.4694) (end 164.4142 170.3578) (layer F.SilkS) (width 0.2))
-  (gr_line (start 28.448 123.5456) (end 164.5666 123.4694) (layer F.SilkS) (width 0.2))
 
   (segment (start 115.25 159.004) (end 115.25 155.194) (width 0.6) (layer F.Cu) (net 1) (tstamp 5D4A1FB2))
   (segment (start 117.79 155.194) (end 118.298 154.686) (width 0.6) (layer F.Cu) (net 3))
