@@ -18,7 +18,7 @@ int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de c
 int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
 
-int tensaoEsq, tensaoDir;
+int tensaoEsq, tensaoDir;             //tensao passada para os motores (0-255)
 int reduz = 0;                        // contador para deixar a velocidade reduzida
 int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
