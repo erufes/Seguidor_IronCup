@@ -1,13 +1,13 @@
 #define NUM_SENSORS             8    // number of sensors used
 #define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
-#define VELMIN                  75   // velocidade minima
-#define VELMAX                  160  // velocidade maxima
+#define VELMIN                  94   // velocidade minima
+#define VELMAX                  200  // velocidade maxima
 
 int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 const int motorEsq[3] = {11, 10, 9};  // {dig, dig, pwm}
 const int motorDir[3] = {5, 4, 3};    // {dig, dig, pwm}
-const int pin_chegada = 2;            // sensor de linha de chegada
-const int pin_curva = 0;//COLOCAR PINO              // sensor de curva
+const int pin_chegada = 12;            // sensor de linha de chegada
+const int pin_curva = 2;//COLOCAR PINO              // sensor de curva
 const int pin_led = 0;//COLOCAR PINO
 
 int values[NUM_SENSORS];              // leituras atuais dos sensores
@@ -19,7 +19,7 @@ int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de c
 int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
 
-int tensaoEsq, tensaoDir;
+int tensaoEsq = 0, tensaoDir = 0;
 int reduz = 0;                        // contador para deixar a velocidade reduzida
 int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
@@ -43,16 +43,20 @@ void loop() {
 
   int erro = PID(linePosition);
 
-  if (erro < 0)
+  if (erro < 0) {
     tensaoEsq = VELMAX + erro;
-  else
+    tensaoDir = VELMAX;
+  }
+  else {
+    tensaoEsq = VELMAX;
     tensaoDir = VELMAX - erro;
-//
-  if(digitalRead(pin_curva))
-  digitalWrite(pin_led, HIGH);
-  else
-  digitalWrite(pin_led, LOW);
-//
+  }
+  //
+  //  if(digitalRead(pin_curva))
+  //  digitalWrite(pin_led, HIGH);
+  //  else
+  //  digitalWrite(pin_led, LOW);
+  //
   anda(tensaoEsq, tensaoDir);
 
   confereSaiuDaLinha(linePosition);
@@ -76,7 +80,7 @@ void calibracao() {
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
   }
-  for (int i = 0; i < 6; i++)
+  for (int i = 0; i < 4; i++)
   {
     if (i % 2 == 0)
       anda(VELMIN, -VELMIN - 5);
@@ -86,6 +90,7 @@ void calibracao() {
       calibrate();
     }
   }
+  para();
 }
 
 //le os sensores e compara com os valores maximos e minimos
@@ -156,7 +161,7 @@ void confereChegada() {
     leu_chegada = 0;
     return;
   }
-  if (leu_chegada == 7)
+  if (leu_chegada == 1)
     passou_chegada++;
   if (passou_chegada == 2) {
     freia();
@@ -180,22 +185,22 @@ void confereSaiuDaLinha(unsigned int linePosition) {
 void freia() {
   digitalWrite(motorEsq[0], LOW);
   digitalWrite(motorEsq[1], HIGH);
-  analogWrite(motorEsq[2], 100);
+  analogWrite(motorEsq[2], 240);
   digitalWrite(motorDir[0], LOW);
   digitalWrite(motorDir[1], HIGH);
-  analogWrite(motorDir[2], 100);
-  delay(60);
+  analogWrite(motorDir[2], 240);
+  delay(500);
   para();
 }
 
 void reduzVelocidade() {
-  if(reduz > 30){
+  if (reduz > 30) {
     tensaoDir = 0;
     tensaoEsq = 0;
   }
-  else{
-    tensaoDir -= (reduz*2);
-    tensaoEsq -= (reduz*2);
+  else {
+    tensaoDir -= (reduz * 2);
+    tensaoEsq -= (reduz * 2);
   }
   reduz--;
 }
