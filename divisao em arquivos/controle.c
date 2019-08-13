@@ -1,6 +1,10 @@
 #include "controle.h"
 
-int PID(unsigned int linePosition, int last_proportional) {
+int last_proportional = 0;
+int tensaoEsq = 0, tensaoDir = 0;
+int reduz = 0;                        // contador para deixar a velocidade reduzida
+
+int PID(unsigned int linePosition) {
   int proportional = (int)linePosition - 3500;
   int derivative = proportional - last_proportional;
   last_proportional = proportional;

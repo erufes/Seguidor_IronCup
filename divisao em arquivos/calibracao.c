@@ -1,5 +1,8 @@
 #include "calibracao.h"
 
+int calibratedMIN[NUM_SENSORS];       // valores de calibracao
+int calibratedMAX[NUM_SENSORS];		  //
+
 void calibracao() {
   for (int i = 0; i < NUM_SENSORS; i++) {
     calibratedMIN[i] = 999;

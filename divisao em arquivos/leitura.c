@@ -1,6 +1,13 @@
 #include "leitura.h"
 
-int readLine()
+int values[NUM_SENSORS];              // leituras atuais dos sensores
+int saiu = 0;                         // indica se o robo nao esta na linha
+int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de chegada leu preto
+int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
+int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
+int lastValue;                        // ultima posicao da linha lida
+
+int readLine(int* calibratedMIN, int* calibratedMAX)
 {
   int linePosition = 0, on_line = 0;
   long int value;
