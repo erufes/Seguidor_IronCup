@@ -803,7 +803,7 @@ U 1 1 5D4C0D66
 P 7700 4050
 F 0 "H1" H 7800 4096 50  0000 L CNN
 F 1 "FuroPlaca" H 7800 4005 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1mm" H 7700 4050 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill2.5mm" H 7700 4050 50  0001 C CNN
 F 3 "~" H 7700 4050 50  0001 C CNN
 	1    7700 4050
 	1    0    0    -1  
@@ -816,7 +816,7 @@ U 1 1 5D4C717E
 P 7695 4310
 F 0 "H2" H 7795 4356 50  0000 L CNN
 F 1 "FuroPlaca" H 7795 4265 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1mm" H 7695 4310 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill2.5mm" H 7695 4310 50  0001 C CNN
 F 3 "~" H 7695 4310 50  0001 C CNN
 	1    7695 4310
 	1    0    0    -1  
