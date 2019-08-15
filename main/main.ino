@@ -7,8 +7,8 @@
 #define NUM_SENSORS             8    // number of sensors used
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 #else
-#define NUM_SENSORS             7    // number of sensors used
-const int sensor[NUM_SENSORS] = {A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
+#define NUM_SENSORS             6    // number of sensors used
+const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
 #endif 
 
 const int motorEsq[3] = {11, 10, 9};  // {dig, dig, pwm}
