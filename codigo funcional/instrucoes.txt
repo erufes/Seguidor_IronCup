@@ -1,0 +1,1 @@
+deixar todos os arquivos .ino juntos numa pasta com o nome do arquivo principal
