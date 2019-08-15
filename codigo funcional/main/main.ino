@@ -1,7 +1,7 @@
 #define NUM_SENSORS             8    // number of sensors used
 #define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
 #define VELMIN                  94   // velocidade minima
-#define VELMAX                  200  // velocidade maxima
+#define VELMAX                  150  // velocidade maxima
 
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 const int motorEsq[3] = {11, 10, 9};  // {dig, dig, pwm}
