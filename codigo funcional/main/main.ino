@@ -51,12 +51,12 @@ void loop() {
     tensaoEsq = VELMAX;
     tensaoDir = VELMAX - erro;
   }
-  //
-  //  if(digitalRead(pin_curva))
-  //  digitalWrite(pin_led, HIGH);
-  //  else
-  //  digitalWrite(pin_led, LOW);
-  //
+  
+  if (confereCurva())
+    reduz = 50;             //tempo para velo cidade ficar reduzida
+  if(reduz > 0)
+    reduzVelocidade();
+  
   anda(tensaoEsq, tensaoDir);
 
   confereSaiuDaLinha(linePosition);
