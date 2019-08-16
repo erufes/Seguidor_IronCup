@@ -358,7 +358,7 @@ Text GLabel 2850 2750 2    50   Input ~ 0
 Sensor6
 Text GLabel 2850 2850 2    50   Input ~ 0
 Sensor7
-Text GLabel 2850 2950 2    50   Input ~ 0
+Text GLabel 1650 2950 0    50   Input ~ 0
 LedAzul
 Text GLabel 1650 1650 0    50   Input ~ 0
 Tx
@@ -513,7 +513,6 @@ Text Notes 6300 3650 0    39   ~ 0
 Furos da PonteH para fixação na placa:
 NoConn ~ 5150 1600
 NoConn ~ 5150 1700
-NoConn ~ 5150 1500
 Wire Wire Line
 	2150 1150 2150 1250
 Wire Wire Line
@@ -775,8 +774,6 @@ F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 2250 1250 50
 $EndComp
 Wire Wire Line
 	1750 2250 1650 2250
-Text GLabel 5250 1900 2    50   Input ~ 0
-ArduinoD13
 Wire Wire Line
 	5150 2000 5250 2000
 $Comp
@@ -790,20 +787,16 @@ F 3 "~" H 4850 1700 50  0001 C CNN
 	1    4850 1700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5250 1900 5150 1900
 NoConn ~ 5150 1800
 Wire Wire Line
 	5150 1400 5300 1400
-Text GLabel 1650 2950 0    50   Input ~ 0
-ArduinoD13
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5D4C0D66
 P 7700 4050
 F 0 "H1" H 7800 4096 50  0000 L CNN
 F 1 "FuroPlaca" H 7800 4005 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1mm" H 7700 4050 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill2.5mm" H 7700 4050 50  0001 C CNN
 F 3 "~" H 7700 4050 50  0001 C CNN
 	1    7700 4050
 	1    0    0    -1  
@@ -816,9 +809,16 @@ U 1 1 5D4C717E
 P 7695 4310
 F 0 "H2" H 7795 4356 50  0000 L CNN
 F 1 "FuroPlaca" H 7795 4265 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1mm" H 7695 4310 50  0001 C CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill2.5mm" H 7695 4310 50  0001 C CNN
 F 3 "~" H 7695 4310 50  0001 C CNN
 	1    7695 4310
 	1    0    0    -1  
 $EndComp
+Text GLabel 2850 2950 2    50   Input ~ 0
+Sensor8
+Text GLabel 5300 1500 2    50   Input ~ 0
+Sensor8
+Wire Wire Line
+	5300 1500 5150 1500
+NoConn ~ 5150 1900
 $EndSCHEMATC
