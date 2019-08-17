@@ -1,4 +1,4 @@
-update=sex 16 ago 2019 13:40:20 -03
+update=Sáb 17 Ago 2019 19:29:54 -03
 version=1
 last_client=kicad
 [general]

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Alimentacao e protecao-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -318,26 +318,4 @@ Text GLabel 6800 3500 3    50   Input ~ 0
 GND
 Wire Wire Line
 	6800 3500 6800 3400
-$Comp
-L Mechanical:MountingHole H3
-U 1 1 5D58B29C
-P 1900 3650
-F 0 "H3" H 2000 3696 50  0000 L CNN
-F 1 "Furos" H 2000 3605 50  0000 L CNN
-F 2 "Wire_Pads:SolderWirePad_single_2-5mmDrill" H 1900 3650 50  0001 C CNN
-F 3 "~" H 1900 3650 50  0001 C CNN
-	1    1900 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H4
-U 1 1 5D58BCCF
-P 1900 3900
-F 0 "H4" H 2000 3946 50  0000 L CNN
-F 1 "Furos" H 2000 3855 50  0000 L CNN
-F 2 "Wire_Pads:SolderWirePad_single_2-5mmDrill" H 1900 3900 50  0001 C CNN
-F 3 "~" H 1900 3900 50  0001 C CNN
-	1    1900 3900
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
