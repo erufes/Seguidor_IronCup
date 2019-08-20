@@ -42,13 +42,13 @@ int readLine()
 
 void confereChegada() {
   if (digitalRead(pin_chegada)) {
-    if (!saiu)
+    if (!saiu && !leu_curva)
       leu_chegada++;
   } else {
     leu_chegada = 0;
     return;
   }
-  if (leu_chegada == 1)
+  if (leu_chegada == 4)
     passou_chegada++;
   if (passou_chegada == 2) {
     freia();
@@ -63,11 +63,12 @@ int confereCurva() {
       leu_curva++;
   } else
     leu_curva = 0;
-  if (leu_curva == 7)
+  if (leu_curva == 3)
     return 1;
   else
     return 0;
 }
+
 
 void confereSaiuDaLinha(unsigned int linePosition) {
   if (linePosition == 0 || linePosition == (NUM_SENSORS-1)*1000) {

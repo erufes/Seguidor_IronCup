@@ -5,7 +5,7 @@ void freia() {
   digitalWrite(motorDir[0], LOW);
   digitalWrite(motorDir[1], HIGH);
   analogWrite(motorDir[2], 240);
-  delay(500);
+  delay(150);
   para();
 }
 

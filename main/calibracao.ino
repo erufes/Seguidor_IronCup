@@ -1,4 +1,4 @@
-void calibracao() {
+void calibracao1() {
   for (int i = 0; i < NUM_SENSORS; i++) {
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
@@ -10,6 +10,24 @@ void calibracao() {
     else
       anda(-VELMIN - 5, VELMIN);
     for (int j = 0; j < 15 ; j++) {
+      calibrate();
+    }
+  }
+  para();
+}
+
+void calibracao2() {
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    calibratedMIN[i] = 999;
+    calibratedMAX[i] = 0;
+  }
+  for (int i = 0; i < 3; i++) {
+    while (!digitalRead(pin_curva)) {
+      anda(VELMIN, -VELMIN - 5);
+      calibrate();
+    }
+    while (!digitalRead(pin_chegada)) {
+      anda(-VELMIN - 5, VELMIN);
       calibrate();
     }
   }
@@ -40,9 +58,9 @@ void posCalibracao() {
   unsigned int linePosition;
 
   //enquanto a posição da linha for aproximadamente no centro  (aproximadamente = +-50)
-  while (linePosition < (((NUM_SENSORS-1)*1000)/2) - 50 || linePosition > (((NUM_SENSORS-1)*1000)/2) + 50) { 
+  while (linePosition < (((NUM_SENSORS - 1) * 1000) / 2) - 50 || linePosition > (((NUM_SENSORS - 1) * 1000) / 2) + 50) {
     linePosition = readLine();
-    int erro = (int)(linePosition - ((NUM_SENSORS-1)*1000)/2) / 2; //erro = 'posição da linha atual' - 'posição central'
+    int erro = (int)(linePosition - ((NUM_SENSORS - 1) * 1000) / 2) / 2; //erro = 'posição da linha atual' - 'posição central'
     if (erro > VELMIN) erro = VELMIN + 5;
     if (erro < -VELMIN) erro = -VELMIN - 5;
     anda(erro, -erro);

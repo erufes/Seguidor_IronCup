@@ -1,6 +1,6 @@
 #define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
-#define VELMIN                  94   // velocidade minima
-#define VELMAX                  150  // velocidade maxima
+#define VELMIN                  100   // velocidade minima
+#define VELMAX                  170  // velocidade maxima
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
 
 #ifdef USANDO_PLACA_VERMELHA
@@ -36,7 +36,7 @@ unsigned int last_proportional = 0;
 void setup() {
 
   setPinos();
-  calibracao();
+  calibracao2();
   posCalibracao();
   delay(500);
 
@@ -59,10 +59,10 @@ void loop() {
     tensaoDir = VELMAX - erro;
   }
   
-  if (confereCurva())
-    reduz = 50;             //tempo para velo cidade ficar reduzida
-  if(reduz > 0)
-    reduzVelocidade();
+//  if (confereCurva())
+//    reduz = 50;             //tempo para velocidade ficar reduzida
+//  if(reduz > 0)
+//    reduzVelocidade();
   
   anda(tensaoEsq, tensaoDir);
 
