@@ -57,6 +57,18 @@ void confereChegada() {
   }
 }
 
+int confereCurva() {
+  if (digitalRead(pin_curva)) {
+    if (!saiu && !leu_chegada) //verifica se esta seguindo a linha
+      leu_curva++;
+  } else
+    leu_curva = 0;
+  if (leu_curva == 7)
+    return 1;
+  else
+    return 0;
+}
+
 void confereSaiuDaLinha(unsigned int linePosition) {
   if (linePosition == 0 || linePosition == (NUM_SENSORS-1)*1000) {
     saiu++;
