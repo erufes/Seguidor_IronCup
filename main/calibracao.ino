@@ -34,6 +34,15 @@ void calibracao2() {
   para();
 }
 
+//com encoder
+void calibracao3(){
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    calibratedMIN[i] = 999;
+    calibratedMAX[i] = 0;
+  }
+  //...
+}
+
 //le os sensores e compara com os valores maximos e minimos
 //essa funcao eh rodada varias vezes na calibracao
 void calibrate() {
