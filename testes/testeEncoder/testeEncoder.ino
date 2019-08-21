@@ -32,10 +32,10 @@ int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
 
 //Variáveis de Contagem de pulsos
-const byte encoderPinA = 2;
-const byte encoderPinB = 3;
-volatile long int nPulsosA = 0;
-volatile long int nPulsosB = 0;
+const byte encoderPinD = 2;
+const byte encoderPinE = 3;
+volatile long int nPulsosD = 0;
+volatile long int nPulsosE = 0;
 
 //Variáveis de temporização:
 long int N_OVF = 65535L;                  //número máximo de pulsos contados pelo timer (16 bits)
@@ -45,11 +45,12 @@ long int PRESC = 1024L;                   //Valor do prescaler
 long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número de pulsos a se cronometrar
 
 //Variáveis para cálculo de velocidade
-volatile int velA = 0;
-volatile int velB = 0;
+volatile int velD = 0;
+volatile int velE = 0;
 const int nDentes = 10;
 const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
+const float kEnc = 0; //constante proporcional para o erro do encoder
 
 
 //********************************************************************
@@ -71,14 +72,7 @@ void loop() {
 
   int erro = PID(linePosition);
 
-  if (erro < 0) {
-    tensaoEsq = VELMAX + erro;
-    tensaoDir = VELMAX;
-  }
-  else {
-    tensaoEsq = VELMAX;
-    tensaoDir = VELMAX - erro;
-  }
+  ajustaVelocidade(erro);
   
 //  if (confereCurva())
 //    reduz = 50;             //tempo para velocidade ficar reduzida

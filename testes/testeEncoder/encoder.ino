@@ -1,6 +1,6 @@
 void initEncoder(){
-  attachInterrupt(digitalPinToInterrupt(encoderPinA), countEncoderA, RISING);
-  attachInterrupt(digitalPinToInterrupt(encoderPinB), countEncoderB, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoderPinD), countEncoderD, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoderPinE), countEncoderE, RISING);
 
   // initialize timer1
   TCCR1A = 0;
@@ -16,20 +16,32 @@ void initEncoder(){
   //Serial.println(kRoda);
 }
 
-void countEncoderA() {
-  nPulsosA++;
+void countEncoderD() {
+  nPulsosD++;
 }
 
-void countEncoderB() {
-  nPulsosB++;
+void countEncoderE() {
+  nPulsosE++;
 }
 
 ISR(TIMER1_OVF_vect) {
-  velA = nPulsosA * kRoda;
-  velB = nPulsosB * kRoda;
+  velD = nPulsosD * kRoda;
+  velE = nPulsosE * kRoda;
 
-  nPulsosA = 0;
-  nPulsosB = 0;
+  nPulsosD = 0;
+  nPulsosE = 0;
 
   TCNT1 = nAlvo;            // preload timer
+}
+
+void ajustaVelocidade(int erro){
+  int erroEncoder = velD - (velE + kEnc*erro);
+  if(erroEncoder > 0){
+    tensaoDir = VELMAX - erroEncoder;
+    tensaoEsq = VELMAX;
+  }
+  if(erroEncoder < 0){
+    tensaoDir = VELMAX;
+    tensaoEsq = VELMAX + erroEncoder;
+  }
 }
