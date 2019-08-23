@@ -34,8 +34,14 @@ ISR(TIMER1_OVF_vect) {
   TCNT1 = nAlvo;            // preload timer
 }
 
+//funcao que calcula a tensao que sera mandada para os motores
+//uitilizando o erro do PID e as velocidades lidas pelo encoder
 void ajustaVelocidade(int erro){
+  // o erro do encoder sera a diferenca das velocidades considerando
+  // a posicao da linha, entao por exemplo, se a linha estiver no meio,
+  // o erro sera a diferenca das velocidades, buscando deixar igual.
   int erroEncoder = velD - (velE + kEnc*erro);
+  // a ideia eh ajustar as velocidades sempre deixando uma na VELMAX
   if(erroEncoder > 0){
     tensaoDir = VELMAX - erroEncoder;
     tensaoEsq = VELMAX;
