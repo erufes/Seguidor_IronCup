@@ -68,7 +68,7 @@ void loop() {
 
   int linePosition = readLine();
 
-  confereChegada();
+  //confereChegada();
 
   int erro = PID(linePosition);
 
