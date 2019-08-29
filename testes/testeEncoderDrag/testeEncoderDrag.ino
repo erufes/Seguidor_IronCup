@@ -51,6 +51,8 @@ const int nDentes = 10;
 const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
 const float kEnc = 0; //constante proporcional para o erro do encoder
+// ^^^^
+// tem que ajustar o valor de KEnc testando.
 
 //********************************************************************
 
