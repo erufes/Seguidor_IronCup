@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:Placa_sensores_v1_2 - Conector QTR-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -257,26 +256,4 @@ Wire Wire Line
 	1950 2600 2100 2600
 Wire Wire Line
 	2100 2500 1950 2500
-$Comp
-L Mechanical:MountingHole H1
-U 1 1 5D682DB8
-P 1600 4000
-F 0 "H1" H 1700 4046 50  0000 L CNN
-F 1 "MountingHole" H 1700 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3mm" H 1600 4000 50  0001 C CNN
-F 3 "~" H 1600 4000 50  0001 C CNN
-	1    1600 4000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H2
-U 1 1 5D6833E0
-P 2150 4000
-F 0 "H2" H 2250 4046 50  0000 L CNN
-F 1 "MountingHole" H 2250 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3mm" H 2150 4000 50  0001 C CNN
-F 3 "~" H 2150 4000 50  0001 C CNN
-	1    2150 4000
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
