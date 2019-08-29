@@ -1,3 +1,8 @@
+// se for usar o led, coloca o pino certo e descomenta o pedaço do loop.
+// esse codigo eh para testar o encoder na pista de drag,
+// testar e ajustar o valor de kEnc,
+// será que haverá necessidade de mudar as constantes do PID também?
+
 #define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
 #define VELMIN                  95   // velocidade minima
 #define VELMAX                  150  // velocidade maxima
@@ -51,8 +56,6 @@ const int nDentes = 10;
 const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
 const float kEnc = 0; //constante proporcional para o erro do encoder
-// ^^^^
-// tem que ajustar o valor de KEnc testando.
 
 //********************************************************************
 
