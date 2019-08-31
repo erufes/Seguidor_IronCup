@@ -52,6 +52,9 @@ const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
 const float kEnc = 1; //constante proporcional para o erro do encoder
 
+//caso use PID
+//int lastProporcionalE = 0, lastProporcionalD = 0;
+//int integralE = 0, integralE = 0;
 
 //********************************************************************
 
