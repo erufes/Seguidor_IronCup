@@ -45,12 +45,12 @@ long int PRESC = 1024L;                   //Valor do prescaler
 long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número de pulsos a se cronometrar
 
 //Variáveis para cálculo de velocidade
-volatile int velD = 0;
-volatile int velE = 0;
+volatile int velDreal = 0;
+volatile int velEreal = 0;
 const int nDentes = 10;
 const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
-const float kEnc = 0; //constante proporcional para o erro do encoder
+const float kEnc = 1; //constante proporcional para o erro do encoder
 
 
 //********************************************************************
@@ -72,7 +72,10 @@ void loop() {
 
   int erro = PID(linePosition);
 
-  ajustaVelocidade(erro);
+  if(erro < 0)
+    ajustaVelocidade(VELMAX + erro, VELMAX);
+  if(erro > 0)
+    ajustaVelocidade(VELMAX + erro, VELMAX);
   
 //  if (confereCurva())
 //    reduz = 50;             //tempo para velocidade ficar reduzida
