@@ -16,7 +16,7 @@ int readLine()
     //calcula o valor de acordo com a calibracao
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
     
-    //para linha branca:
+    //APRA LINHA BRANCA:
     //value = 1000 - value;
     
     values[j] = value;

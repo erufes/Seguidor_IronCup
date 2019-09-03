@@ -48,6 +48,8 @@ void ajustaVelocidade(int velE, int velD){
 }
 
 /*
+ * 
+ * //PID do encoder
 void ajustaVelocidade(int velE, int velD){
 
   int proporcionalE = velE - velEreal;
