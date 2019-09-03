@@ -40,19 +40,7 @@ void calibracao3(){
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
   }
-  for (int i = 0; i < 3; i++) {
-    while (!digitalRead(pin_curva)) {
-      ajustaVelocidade(+++++, -----);
-      anda(tensaoE, tensaoD);
-      calibrate();
-    }
-    while (!digitalRead(pin_chegada)) {
-      ajustaVelocidade(-----, +++++);
-      anda(tensaoE, tensaoD);
-      calibrate();
-    }
-  }
-  para();
+  //...
 }
 
 //le os sensores e compara com os valores maximos e minimos
@@ -87,7 +75,10 @@ void posCalibracao() {
     anda(erro, -erro);
   }
   para();
-
+//  while(!digitalRead(pin_botao)){
+//    digitalWrite(pin_led?, HIGH);  
+//  }
+//  digitalWrite(pin_led?, LOW);
 }
 
 //printa os valores de calibracao

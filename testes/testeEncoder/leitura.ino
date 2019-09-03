@@ -15,6 +15,10 @@ int readLine()
     value = samples / NUM_SAMPLES_PER_SENSOR;
     //calcula o valor de acordo com a calibracao
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
+    
+    //para linha branca:
+    //value = 1000 - value;
+    
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
     // keep track of whether we see the line at all
@@ -40,6 +44,7 @@ int readLine()
   return lastValue;
 }
 
+//confere a marcacao de chegada, se ler duas vezes o robo para por 11 seg
 void confereChegada() {
   if (digitalRead(pin_chegada)) {
     if (!saiu && !leu_curva)
@@ -52,11 +57,12 @@ void confereChegada() {
     passou_chegada++;
   if (passou_chegada == 2) {
     freia();
-    delay(99999); //aqui tem que colocar os 10 segundos
+    delay(11000); //esperar pelo menos 10 segundos
     passou_chegada = 0;
   }
 }
 
+//confere a marcacao de curva
 int confereCurva() {
   if (digitalRead(pin_curva)) {
     if (!saiu && !leu_chegada) //verifica se esta seguindo a linha
@@ -69,7 +75,7 @@ int confereCurva() {
     return 0;
 }
 
-
+//se nao estiver vendo a linha por um certo tempo, o robo para
 void confereSaiuDaLinha(unsigned int linePosition) {
   if (linePosition == 0 || linePosition == (NUM_SENSORS-1)*1000) {
     saiu++;

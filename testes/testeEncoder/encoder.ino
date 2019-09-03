@@ -53,12 +53,10 @@ void ajustaVelocidade(int velE, int velD){
   int proporcionalE = velE - velEreal;
   int derivativeE = proporcionalE - lastProporcionalE;
   lastProporcionalE = proporcionalE;
-  integralE += proporcionalE;
 
   int proporcionalD = velD - velDreal;
   int derivativeD = proporcionalD - lastProporcionalD;
   lastProporcionalD = proporcionalD;
-  integralD += proporcionalD;
 
   int erroVelE = proporcionalE * kpEnc + derivativeE * kdEnc;
   int erroVelD = proporcionalD * kpEnc + derivativeD * kdEnc;
