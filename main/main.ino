@@ -76,10 +76,10 @@ void loop() {
 
   int erro = PID(linePosition);
 
-  if(erro < 0)
-    ajustaVelocidade(VELMAX + erro, VELMAX);
-  if(erro > 0)
-    ajustaVelocidade(VELMAX + erro, VELMAX);
+//  if(erro < 0)
+//    ajustaVelocidade(VELMAX + erro, VELMAX);
+//  if(erro > 0)
+//    ajustaVelocidade(VELMAX + erro, VELMAX);
   
 //  if (confereCurva())
 //    reduz = 50;             //tempo para velocidade ficar reduzida
