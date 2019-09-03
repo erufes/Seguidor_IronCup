@@ -25,29 +25,45 @@ void countEncoderE() {
 }
 
 ISR(TIMER1_OVF_vect) {
-  velD = nPulsosD * kRoda;
-  velE = nPulsosE * kRoda;
+  velDreal = nPulsosD * kRoda;
+  velEreal = nPulsosE * kRoda;
 
   nPulsosD = 0;
   nPulsosE = 0;
 
-  TCNT1 = nAlvo;            // preload timer
+  TCNT1 = nAlvo;    // preload timer
 }
 
 //funcao que calcula a tensao que sera mandada para os motores
-//uitilizando o erro do PID e as velocidades lidas pelo encoder
-void ajustaVelocidade(int erro){
+//uitilizando as velocidades desejadas e as velocidades lidas pelo encoder
+void ajustaVelocidade(int velE, int velD){
   // o erro do encoder sera a diferenca das velocidades considerando
   // a posicao da linha, entao por exemplo, se a linha estiver no meio,
   // o erro sera a diferenca das velocidades, buscando deixar igual.
-  int erroEncoder = velD - (velE + kEnc*erro);
-  // a ideia eh ajustar as velocidades sempre deixando uma na VELMAX
-  if(erroEncoder > 0){
-    tensaoDir = VELMAX - erroEncoder;
-    tensaoEsq = VELMAX;
-  }
-  if(erroEncoder < 0){
-    tensaoDir = VELMAX;
-    tensaoEsq = VELMAX + erroEncoder;
-  }
+  int erroVelE = (velE - velEreal) * kEnc;
+  int erroVelD = (velD - velDreal) * kEnc;
+  
+    tensaoDir = velE + erroVelE;
+    tensaoEsq = velD + erroVelD;
 }
+
+/*
+ * 
+ * //PID do encoder
+void ajustaVelocidade(int velE, int velD){
+
+  int proporcionalE = velE - velEreal;
+  int derivativeE = proporcionalE - lastProporcionalE;
+  lastProporcionalE = proporcionalE;
+
+  int proporcionalD = velD - velDreal;
+  int derivativeD = proporcionalD - lastProporcionalD;
+  lastProporcionalD = proporcionalD;
+
+  int erroVelE = proporcionalE * kpEnc + derivativeE * kdEnc;
+  int erroVelD = proporcionalD * kpEnc + derivativeD * kdEnc;
+  
+  tensaoDir = velE + erroVelE;
+  tensaoEsq = velD + erroVelD;
+}
+*/
