@@ -3,17 +3,19 @@ void calibracao1() {
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
   }
+  digitalWrite(pin_led, HIGH);
   for (int i = 0; i < 4; i++)
   {
     if (i % 2 == 0)
       anda(VELMIN, -VELMIN - 5);
     else
       anda(-VELMIN - 5, VELMIN);
-    for (int j = 0; j < 15 ; j++) {
+    for (int j = 0; j < 13 ; j++) {
       calibrate();
     }
   }
   para();
+  digitalWrite(pin_led, LOW);
 }
 
 void calibracao2() {
@@ -21,6 +23,7 @@ void calibracao2() {
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
   }
+  digitalWrite(pin_led, HIGH);
   for (int i = 0; i < 3; i++) {
     while (!digitalRead(pin_curva)) {
       anda(VELMIN, -VELMIN - 5);
@@ -32,6 +35,7 @@ void calibracao2() {
     }
   }
   para();
+  digitalWrite(pin_led, LOW);
 }
 
 //com encoder
@@ -40,19 +44,21 @@ void calibracao3(){
     calibratedMIN[i] = 999;
     calibratedMAX[i] = 0;
   }
+  digitalWrite(pin_led, HIGH);
   for (int i = 0; i < 3; i++) {
     while (!digitalRead(pin_curva)) {
-      ajustaVelocidade(+++++, -----);
+      ajustaVelocidade(1, -1);
       anda(tensaoEsq, tensaoDir);
       calibrate();
     }
     while (!digitalRead(pin_chegada)) {
-      ajustaVelocidade(-----, +++++);
+      ajustaVelocidade(-1, 1);
       anda(tensaoEsq, tensaoDir);
       calibrate();
     }
   }
   para();
+  digitalWrite(pin_led, LOW);
 }
 
 //le os sensores e compara com os valores maximos e minimos
@@ -75,6 +81,8 @@ void calibrate() {
 
 //procurar a linha e centralizar apos a calibracao
 void posCalibracao() {
+  
+  verificaEncoderParado(); 
 
   unsigned int linePosition;
 

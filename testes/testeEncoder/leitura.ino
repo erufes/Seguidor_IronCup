@@ -16,13 +16,13 @@ int readLine()
     //calcula o valor de acordo com a calibracao
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
     
-    //APRA LINHA BRANCA:
+    //PARA LINHA BRANCA:
     //value = 1000 - value;
     
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
     // keep track of whether we see the line at all
-    if (value > 200) {
+    if (value > 400) {
       on_line = 1;
     }
     // only average in values that are above a noise threshold
@@ -44,7 +44,7 @@ int readLine()
   return lastValue;
 }
 
-//confere a marcacao de chegada, se ler duas vezes o robo para por 11 seg
+//confere a marcacao de chegada, se ler duas vezes o robo para por pelo menos 10 seg
 void confereChegada() {
   if (digitalRead(pin_chegada)) {
     if (!saiu && !leu_curva)
@@ -57,7 +57,12 @@ void confereChegada() {
     passou_chegada++;
   if (passou_chegada == 2) {
     freia();
-    delay(11000); //esperar pelo menos 10 segundos
+    for(int i = 0; i < 53; i++){ //parar pelo menos 10 segundos
+      digitalWrite(pin_led, HIGH);
+      delay(100);
+      digitalWrite(pin_led, LOW);
+      delay(100);
+    }
     passou_chegada = 0;
   }
 }
