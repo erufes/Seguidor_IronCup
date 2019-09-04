@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Placa_central_v01-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -43,7 +43,7 @@ GND
 NoConn ~ 2750 2050
 Text GLabel 1650 1850 0    50   Input ~ 0
 Encoder1
-Text GLabel 1650 2050 0    50   Input ~ 0
+Text GLabel 1650 1950 0    50   Input ~ 0
 Encoder2
 $Comp
 L Switch:SW_Push SW3
@@ -72,7 +72,7 @@ Text GLabel 1650 2450 0    50   Input ~ 0
 Motor2Dir1
 Text GLabel 1650 2550 0    50   Input ~ 0
 Motor2Dir2
-Text GLabel 1650 1950 0    50   Input ~ 0
+Text GLabel 1650 2050 0    50   Input ~ 0
 Botao1
 Text GLabel 2550 1150 2    50   Input ~ 0
 5VArduino

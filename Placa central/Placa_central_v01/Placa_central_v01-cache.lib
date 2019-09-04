@@ -145,7 +145,7 @@ ENDDEF
 #
 # MCU_Module_Arduino_Nano_v3.x
 #
-DEF MCU_Module_Arduino_Nano_v3.x A 0 20 Y Y 1 F N
+DEF MCU_Module_Arduino_Nano_v3.x A 0 40 Y Y 1 F N
 F0 "A" -200 1025 50 H V R CNN
 F1 "MCU_Module_Arduino_Nano_v3.x" -200 950 50 H V R CNN
 F2 "Module:Arduino_Nano" 150 -950 50 H I L CNN
