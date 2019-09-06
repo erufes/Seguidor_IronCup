@@ -79,7 +79,7 @@ void loop() {
   if(erro < 0)
     ajustaVelocidade(VELMAX + erro, VELMAX);
   if(erro > 0)
-    ajustaVelocidade(VELMAX + erro, VELMAX);
+    ajustaVelocidade(VELMAX, VELMAX - erro);
   
 //  if (confereCurva())
 //    reduz = 50;             //tempo para velocidade ficar reduzida
