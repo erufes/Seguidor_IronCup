@@ -41,6 +41,14 @@ int PID(unsigned int linePosition) {
     return VELMAX;
   if (erro < -VELMAX)
     return -VELMAX;
+  if(erro < 0){
+    tensaoEsq = VELMAX + erro;
+    tensaoDir = VELMAX;
+  }
+  else{
+    tensaoEsq = VELMAX;
+    tensaoDir = VELMAX - erro;
+  }
   return erro;
 }
 
