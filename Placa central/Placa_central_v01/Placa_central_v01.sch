@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Placa_central_v01-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -60,10 +60,6 @@ Text GLabel 1650 2850 0    50   Input ~ 0
 SensorDir
 Text GLabel 1650 2750 0    50   Input ~ 0
 SensorEsq
-Text GLabel 1650 2650 0    50   Input ~ 0
-Motor1PWM
-Text GLabel 1650 2150 0    50   Input ~ 0
-Motor2PWM
 Text GLabel 1650 2350 0    50   Input ~ 0
 Motor1Dir1
 Text GLabel 1650 2250 0    50   Input ~ 0
@@ -236,78 +232,12 @@ Text GLabel 9950 5000 0    59   Input ~ 0
 GND
 Text Notes 9250 4100 0    79   ~ 0
 Botoes da pcb
-$Comp
-L Connector:Conn_01x01_Female J48
-U 1 1 5D18DC68
-P 9650 1450
-F 0 "J48" H 9678 1476 50  0000 L CNN
-F 1 "Conn_01x01_5VEncoderEsq" H 9650 1550 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 9650 1450 50  0001 C CNN
-F 3 "~" H 9650 1450 50  0001 C CNN
-	1    9650 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J49
-U 1 1 5D18E3FC
-P 9650 1600
-F 0 "J49" H 9678 1626 50  0000 L CNN
-F 1 "Conn_01x01_OutputEncoderEsq" H 9650 1700 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 9650 1600 50  0001 C CNN
-F 3 "~" H 9650 1600 50  0001 C CNN
-	1    9650 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J50
-U 1 1 5D18E464
-P 9650 1750
-F 0 "J50" H 9677 1776 50  0000 L CNN
-F 1 "Conn_01x01_GNDEncoderEsq" H 9650 1850 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 9650 1750 50  0001 C CNN
-F 3 "~" H 9650 1750 50  0001 C CNN
-	1    9650 1750
-	1    0    0    -1  
-$EndComp
 Text GLabel 9350 1600 0    50   Input ~ 0
 Encoder1
 Text GLabel 9350 1450 0    50   Input ~ 0
 5VArduino
 Text GLabel 9350 1750 0    50   Input ~ 0
 GND
-$Comp
-L Connector:Conn_01x01_Female J51
-U 1 1 5D19974C
-P 9650 2100
-F 0 "J51" H 9678 2126 50  0000 L CNN
-F 1 "Conn_01x01_5VEncoderDir" H 9650 2200 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 9650 2100 50  0001 C CNN
-F 3 "~" H 9650 2100 50  0001 C CNN
-	1    9650 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J52
-U 1 1 5D199753
-P 9650 2250
-F 0 "J52" H 9678 2276 50  0000 L CNN
-F 1 "Conn_01x01_OutputEncoderDir" H 9650 2350 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 9650 2250 50  0001 C CNN
-F 3 "~" H 9650 2250 50  0001 C CNN
-	1    9650 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x01_Female J53
-U 1 1 5D19975A
-P 9650 2400
-F 0 "J53" H 9677 2426 50  0000 L CNN
-F 1 "Conn_01x01_GNDEncoderDir" H 9650 2500 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill0.8mm" H 9650 2400 50  0001 C CNN
-F 3 "~" H 9650 2400 50  0001 C CNN
-	1    9650 2400
-	1    0    0    -1  
-$EndComp
 Text GLabel 9350 2250 0    50   Input ~ 0
 Encoder2
 Text GLabel 9350 2100 0    50   Input ~ 0
@@ -631,18 +561,6 @@ Wire Notes Line
 	3250 3550 1100 3550
 Wire Notes Line
 	1100 900  3250 900 
-Wire Wire Line
-	9350 1450 9450 1450
-Wire Wire Line
-	9350 1600 9450 1600
-Wire Wire Line
-	9350 1750 9450 1750
-Wire Wire Line
-	9350 2100 9450 2100
-Wire Wire Line
-	9350 2250 9450 2250
-Wire Wire Line
-	9350 2400 9450 2400
 Wire Notes Line
 	8700 950  10850 950 
 Wire Notes Line
@@ -821,4 +739,50 @@ Sensor8
 Wire Wire Line
 	5300 1500 5150 1500
 NoConn ~ 5150 1900
+Wire Wire Line
+	9650 1450 9650 1500
+Wire Wire Line
+	9350 1450 9650 1450
+Wire Wire Line
+	9350 1600 9650 1600
+Wire Wire Line
+	9650 1750 9650 1700
+Wire Wire Line
+	9350 1750 9650 1750
+Wire Wire Line
+	9650 2100 9650 2150
+Wire Wire Line
+	9350 2100 9650 2100
+Wire Wire Line
+	9350 2250 9650 2250
+Wire Wire Line
+	9650 2400 9650 2350
+Wire Wire Line
+	9350 2400 9650 2400
+$Comp
+L Connector:Conn_01x03_Female J5
+U 1 1 5D730FE8
+P 9850 1600
+F 0 "J5" H 9878 1626 50  0000 L CNN
+F 1 "Conn_01x03_Female" H 9878 1535 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 9850 1600 50  0001 C CNN
+F 3 "~" H 9850 1600 50  0001 C CNN
+	1    9850 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Female J6
+U 1 1 5D731C8E
+P 9850 2250
+F 0 "J6" H 9878 2276 50  0000 L CNN
+F 1 "Conn_01x03_Female" H 9878 2185 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical" H 9850 2250 50  0001 C CNN
+F 3 "~" H 9850 2250 50  0001 C CNN
+	1    9850 2250
+	1    0    0    -1  
+$EndComp
+Text GLabel 1650 2150 0    50   Input ~ 0
+Motor1PWM
+Text GLabel 1650 2650 0    50   Input ~ 0
+Motor2PWM
 $EndSCHEMATC

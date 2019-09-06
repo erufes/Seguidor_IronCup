@@ -15,53 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_02x08_Odd_Even J1
-U 1 1 5D67E687
-P 1950 1850
-F 0 "J1" H 2000 2367 50  0000 C CNN
-F 1 "Conn_02x08_Odd_Even" H 2000 2276 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Horizontal" H 1950 1850 50  0001 C CNN
-F 3 "~" H 1950 1850 50  0001 C CNN
-	1    1950 1850
-	1    0    0    -1  
-$EndComp
-Text GLabel 1650 2250 0    50   Input ~ 0
-SensorDir
-Text GLabel 1650 1550 0    50   Input ~ 0
-Sensor8
-Text GLabel 1650 1650 0    50   Input ~ 0
-GND
-Text GLabel 1650 2150 0    50   Input ~ 0
-VccSensores
-Wire Wire Line
-	1650 1650 1750 1650
-Wire Wire Line
-	1650 1550 1750 1550
-Wire Wire Line
-	1650 2150 1750 2150
-Wire Wire Line
-	1650 2250 1750 2250
-Wire Wire Line
-	2250 2250 2350 2250
-Wire Wire Line
-	2250 2150 2350 2150
-Wire Wire Line
-	2250 2050 2350 2050
-Wire Wire Line
-	2250 1950 2350 1950
-Wire Wire Line
-	2250 1850 2350 1850
-Wire Wire Line
-	2350 1750 2250 1750
-Wire Wire Line
-	2250 1650 2350 1650
-Wire Wire Line
-	2250 1550 2350 1550
-NoConn ~ 1750 2050
-NoConn ~ 1750 1950
-NoConn ~ 1750 1850
-NoConn ~ 1750 1750
-$Comp
 L Connector:Conn_01x01_Female J2
 U 1 1 5D682220
 P 2300 2500
@@ -83,22 +36,6 @@ F 3 "~" H 2300 2600 50  0001 C CNN
 	1    2300 2600
 	1    0    0    -1  
 $EndComp
-Text GLabel 2350 1950 2    50   Input ~ 0
-Sensor3
-Text GLabel 2350 1550 2    50   Input ~ 0
-Sensor7
-Text GLabel 2350 1650 2    50   Input ~ 0
-Sensor6
-Text GLabel 2350 1750 2    50   Input ~ 0
-Sensor5
-Text GLabel 2350 1850 2    50   Input ~ 0
-Sensor4
-Text GLabel 2350 2050 2    50   Input ~ 0
-Sensor2
-Text GLabel 2350 2150 2    50   Input ~ 0
-Sensor1
-Text GLabel 2350 2250 2    50   Input ~ 0
-SensorEsq
 Text GLabel 1950 2800 0    50   Input ~ 0
 Sensor3
 Text GLabel 1950 3200 0    50   Input ~ 0
@@ -260,23 +197,146 @@ Wire Wire Line
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5D682DB8
-P 1600 4000
-F 0 "H1" H 1700 4046 50  0000 L CNN
-F 1 "MountingHole" H 1700 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3mm" H 1600 4000 50  0001 C CNN
-F 3 "~" H 1600 4000 50  0001 C CNN
-	1    1600 4000
+P 1600 4400
+F 0 "H1" H 1700 4446 50  0000 L CNN
+F 1 "MountingHole" H 1700 4355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 1600 4400 50  0001 C CNN
+F 3 "~" H 1600 4400 50  0001 C CNN
+	1    1600 4400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5D6833E0
-P 2150 4000
-F 0 "H2" H 2250 4046 50  0000 L CNN
-F 1 "MountingHole" H 2250 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3mm" H 2150 4000 50  0001 C CNN
-F 3 "~" H 2150 4000 50  0001 C CNN
-	1    2150 4000
+P 2150 4400
+F 0 "H2" H 2250 4446 50  0000 L CNN
+F 1 "MountingHole" H 2250 4355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 2150 4400 50  0001 C CNN
+F 3 "~" H 2150 4400 50  0001 C CNN
+	1    2150 4400
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:Conn_01x01_Female J17
+U 1 1 5D71832F
+P 2300 4150
+F 0 "J17" H 2328 4176 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 2450 4150 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2300 4150 50  0001 C CNN
+F 3 "~" H 2300 4150 50  0001 C CNN
+	1    2300 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J15
+U 1 1 5D719335
+P 2300 3850
+F 0 "J15" H 2328 3876 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 2450 3850 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2300 3850 50  0001 C CNN
+F 3 "~" H 2300 3850 50  0001 C CNN
+	1    2300 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J16
+U 1 1 5D719525
+P 2300 4050
+F 0 "J16" H 2328 4076 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 2450 4050 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2300 4050 50  0001 C CNN
+F 3 "~" H 2300 4050 50  0001 C CNN
+	1    2300 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J14
+U 1 1 5D71A00F
+P 2300 3750
+F 0 "J14" H 2328 3776 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 2450 3750 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2300 3750 50  0001 C CNN
+F 3 "~" H 2300 3750 50  0001 C CNN
+	1    2300 3750
+	1    0    0    -1  
+$EndComp
+Text GLabel 1950 4150 0    50   Input ~ 0
+GND
+Text GLabel 1950 3850 0    50   Input ~ 0
+GND
+Text GLabel 1950 3750 0    50   Input ~ 0
+VccSensores
+Text GLabel 1950 4050 0    50   Input ~ 0
+VccSensores
+Wire Wire Line
+	1950 3750 2100 3750
+Wire Wire Line
+	2100 3850 1950 3850
+Wire Wire Line
+	1950 4050 2100 4050
+Wire Wire Line
+	2100 4150 1950 4150
+Text GLabel 1650 1550 0    50   Input ~ 0
+SensorDir
+Text GLabel 1650 2250 0    50   Input ~ 0
+Sensor8
+Text GLabel 1650 2150 0    50   Input ~ 0
+GND
+Text GLabel 2350 1850 2    50   Input ~ 0
+Sensor3
+Text GLabel 2350 2250 2    50   Input ~ 0
+Sensor7
+Text GLabel 2350 2150 2    50   Input ~ 0
+Sensor6
+Text GLabel 2350 2050 2    50   Input ~ 0
+Sensor5
+Text GLabel 2350 1950 2    50   Input ~ 0
+Sensor4
+Text GLabel 2350 1750 2    50   Input ~ 0
+Sensor2
+Text GLabel 2350 1650 2    50   Input ~ 0
+Sensor1
+Text GLabel 2350 1550 2    50   Input ~ 0
+SensorEsq
+NoConn ~ 1750 1750
+NoConn ~ 1750 1850
+NoConn ~ 1750 1950
+NoConn ~ 1750 2050
+Wire Wire Line
+	2250 1550 2350 1550
+Wire Wire Line
+	2250 1650 2350 1650
+Wire Wire Line
+	2350 1750 2250 1750
+Wire Wire Line
+	2250 1850 2350 1850
+Wire Wire Line
+	2250 1950 2350 1950
+Wire Wire Line
+	2250 2050 2350 2050
+Wire Wire Line
+	2250 2150 2350 2150
+Wire Wire Line
+	2250 2250 2350 2250
+Wire Wire Line
+	1650 2250 1750 2250
+Wire Wire Line
+	1650 2150 1750 2150
+Wire Wire Line
+	1650 1550 1750 1550
+Wire Wire Line
+	1650 1650 1750 1650
+$Comp
+L Connector_Generic:Conn_02x08_Odd_Even J1
+U 1 1 5D67E687
+P 1950 1850
+F 0 "J1" H 2000 2367 50  0000 C CNN
+F 1 "Conn_02x08_Odd_Even" H 2000 2276 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Horizontal" H 1950 1850 50  0001 C CNN
+F 3 "~" H 1950 1850 50  0001 C CNN
+	1    1950 1850
+	1    0    0    -1  
+$EndComp
+Text GLabel 1650 1650 0    50   Input ~ 0
+VccSensores
 $EndSCHEMATC
