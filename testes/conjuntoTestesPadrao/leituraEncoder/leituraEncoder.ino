@@ -2,7 +2,7 @@
   Breno Odnan
   ERUS - Equipe de RObótica da UFES
 
-  Código final para leitura de encoders
+  Código de teste para medição de velocidade(rpm)
 
   Crédito a RobotFreak pelo código exemplo de uso de timers
   more infos: http://www.letmakerobots.com/node/28278
@@ -92,7 +92,6 @@ void loop() {
   Serial.print(60 * (velA/(PI * Diametro)));
   Serial.print("  ");
   Serial.println(60 * (velB/(PI * Diametro)));
-  delay(100);
 }
 
 void countEncoderA() {

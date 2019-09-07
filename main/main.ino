@@ -1,6 +1,6 @@
 #define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
-#define VELMIN                  95   // velocidade minima
-#define VELMAX                  150  // velocidade maxima
+#define VELMIN                  120   // velocidade minima
+#define VELMAX                  200  // velocidade maxima
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
 
 #ifdef USANDO_PLACA_VERMELHA
@@ -40,7 +40,7 @@ volatile long int nPulsosE = 0;
 
 //Variáveis de temporização:
 long int N_OVF = 65535L;                  //número máximo de pulsos contados pelo timer (16 bits)
-long int tAlvo = 1000L;                      //tempo a se cronometrar, em segundos
+long int tAlvo = 50L;                      //tempo a se cronometrar, em segundos
 long int FREQ_CLK = 16000000L;          //frequencia do clock
 long int PRESC = 1024L;                   //Valor do prescaler
 long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número de pulsos a se cronometrar
@@ -49,8 +49,8 @@ long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número 
 volatile int velDreal = 0;
 volatile int velEreal = 0;
 const int nDentes = 10;
-const float Diametro = 2.33;//em cm
-const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
+const float Diametro = 3.19;//em cm
+const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms, velocidade em cm/s
 const float kEnc = 1; //constante proporcional para o erro do encoder
 
 //caso use PID do encoder

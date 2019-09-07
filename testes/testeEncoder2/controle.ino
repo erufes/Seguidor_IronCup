@@ -1,7 +1,7 @@
 void setPinos() {
-  //pinMode(pin_chegada, INPUT);
-  //pinMode(pin_curva, INPUT);
-  //pinMode(pin_led, OUTPUT);
+  pinMode(pin_chegada, INPUT);
+  pinMode(pin_curva, INPUT);
+  pinMode(pin_led, OUTPUT);
   for (int i = 0; i < 3; i++) {
     pinMode(motorEsq[i], OUTPUT);
     pinMode(motorDir[i], OUTPUT);
@@ -33,7 +33,7 @@ void reduzVelocidade() {
 }
 
 int PID(unsigned int linePosition) {
-  int proportional = (int)linePosition - ((NUM_SENSORS - 1) * 1000) / 2; //erro proporcional = 'posição atual da linha' - 'posição central'
+  int proportional = (int)linePosition - ((NUM_SENSORS-1)*1000)/2; //erro proporcional = 'posição atual da linha' - 'posição central'
   int derivative = proportional - last_proportional;
   last_proportional = proportional;
   int erro = proportional * 2 / 21 + derivative * 5 / 8;
@@ -41,11 +41,11 @@ int PID(unsigned int linePosition) {
     return VELMAX;
   if (erro < -VELMAX)
     return -VELMAX;
-  if (erro < 0) {
+  if(erro < 0){
     tensaoEsq = VELMAX + erro;
     tensaoDir = VELMAX;
   }
-  else {
+  else{
     tensaoEsq = VELMAX;
     tensaoDir = VELMAX - erro;
   }
@@ -71,7 +71,7 @@ void anda(int velE, int velD)
   if (velD >= 40) {
     digitalWrite(motorDir[0], HIGH);
     digitalWrite(motorDir[1], LOW);
-    analogWrite(motorDir[2], 200);
+    analogWrite(motorDir[2], velD);
   } else if (velD >= 0 && velD < 40) {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);

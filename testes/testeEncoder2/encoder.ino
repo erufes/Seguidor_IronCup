@@ -12,8 +12,8 @@ void initEncoder() {
   TIMSK1 |= (1 << TOIE1);   // enable timer overflow interrupt
 
 
-  //Serial.print("kRoda = ");
-  //Serial.println(kRoda);
+  Serial.print("kRoda = ");
+  Serial.println(kRoda);
 }
 
 void countEncoderD() {
@@ -45,7 +45,7 @@ void verificaEncoderParado() {
   }
 }
 
-void verficaEncoderAndando(){
+void verficaEncoderAndando() {
   if (velEreal == 0 || velDreal == 0) {
     for (int i = 0; i < 9999; i++) {
       digitalWrite(pin_led, HIGH);
@@ -56,23 +56,25 @@ void verficaEncoderAndando(){
   }
 }
 
-//funcao que calcula a tensao que sera mandada para os motores
-//uitilizando as velocidades desejadas e as velocidades lidas pelo encoder
-void ajustaVelocidade(int velE, int velD) {
+/*
+  //funcao que calcula a tensao que sera mandada para os motores
+  //uitilizando as velocidades desejadas e as velocidades lidas pelo encoder
+  void ajustaVelocidade(int velE, int velD) {
+  float kEnc = 0.2; //constante proporcional para o erro do encoder
   // o erro do encoder sera a diferenca das velocidades considerando
   // a posicao da linha, entao por exemplo, se a linha estiver no meio,
   // o erro sera a diferenca das velocidades, buscando deixar igual.
-  int erroVelE = (velE - velEreal) * kEnc;
-  int erroVelD = (velD - velDreal) * kEnc;
+  int erroVelE = (velE - velEreal);
+  int erroVelD = (velD - velDreal);
 
-  tensaoEsq = velE + erroVelE;
-  tensaoDir = velD + erroVelD;
-}
+  tensaoEsq = (velE + erroVelE)*kEnc;
+  tensaoDir = (velD + erroVelD)*kEnc;
+  }
+*/
 
-/*
 
-   //PID do encoder
-  void ajustaVelocidade(int velE, int velD){
+//PID do encoder
+void ajustaVelocidade(int velE, int velD) {
 
   int proporcionalE = velE - velEreal;
   int derivativeE = proporcionalE - lastProporcionalE;
@@ -85,7 +87,24 @@ void ajustaVelocidade(int velE, int velD) {
   int erroVelE = proporcionalE * kpEnc + derivativeE * kdEnc;
   int erroVelD = proporcionalD * kpEnc + derivativeD * kdEnc;
 
-  tensaoDir = velE + erroVelE;
-  tensaoEsq = velD + erroVelD;
+  tensaoDir = erroVelE;
+  tensaoEsq = erroVelD;
+
+  //filtro de segurança para evitar tensões acima de 255 / abaixo de 0
+  //Há um aviso, via serial, caso isso ocorra.
+  if (tensaoEsq > 255 || tensaoEsq < 0) {
+    Serial.print("---WARNING -- tensaoEsq = ");
+    Serial.print(tensaoEsq);
+    Serial.println(" - Lowering Voltage---");
+    if (tensaoEsq > 255) tensaoEsq = 255;
+    else if(tensaoEsq < 0) tensaoEsq = 0;
   }
-*/
+  
+  if (tensaoDir > 255 || tensaoDir < 0) {
+    Serial.print("---WARNING -- tensaoEsq = ");
+    Serial.print(tensaoDir);
+    Serial.println(" - Lowering Voltage---");
+    if (tensaoDir > 255) tensaoDir= 255;
+    else if(tensaoDir < 0) tensaoDir = 0;
+  }
+}

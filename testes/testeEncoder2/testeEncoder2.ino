@@ -50,51 +50,41 @@ volatile int velDreal = 0;
 volatile int velEreal = 0;
 const int nDentes = 10;
 const float Diametro = 3.19;//em cm
-const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
+const float kRoda = (1000 * PI * Diametro) / (nDentes*tAlvo); //tAlvo em ms
 
 //caso use PID no encoder
-//int lastProporcionalE = 0, lastProporcionalD = 0;
-//int integralE = 0, integralE = 0;
+int lastProporcionalE = 0, lastProporcionalD = 0;
+int integralE = 0, integralD = 0;
+int kpEnc = 0.1, kdEnc = 1;
 
 //********************************************************************
 
 void setup() {
-
   Serial.begin(9600);
-
   setPinos();
-  //calibracao1();
-  //posCalibracao();
-  delay(500);
-
-  Serial.print("kRoda = ");
-  Serial.println(kRoda);
-
+  initEncoder(); 
 }
 
 void loop() {
 
-  //int linePosition = readLine();
-
-  //confereChegada();
-
-//  int erro = PID(linePosition);
-//
-//  if(erro < 0)
-//    ajustaVelocidade(VELMAX + erro, VELMAX);
-//  if(erro > 0)
-//    ajustaVelocidade(VELMAX, VELMAX - erro);
-  
-//  if (confereCurva())
-//    reduz = 50;             //tempo para velocidade ficar reduzida
-//  if(reduz > 0)
-//    reduzVelocidade();
-  ajustaVelocidade(200, 200);
+  //ajustaVelocidade(200, 200);
+  ajustaVelocidade(100, 100);
   anda(tensaoEsq, tensaoDir);
+//  //em rpm
+//  Serial.print((velDreal/(PI * Diametro))*60);
+//  Serial.print("  ");
+//  Serial.println((velEreal/(PI * Diametro))*60);
+
+  //em cm/s
+  Serial.println("---velocidades---");
   Serial.print(velDreal);
   Serial.print("  ");
   Serial.println(velEreal);
-  delay(100);
 
-  //confereSaiuDaLinha(linePosition);
+  Serial.println("---tensões---");
+  Serial.print(tensaoEsq);
+  Serial.print("  ");
+  Serial.println(tensaoDir);
+
+  delay(80);
 }
