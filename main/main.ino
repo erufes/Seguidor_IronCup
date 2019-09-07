@@ -11,8 +11,8 @@ const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores d
 const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
 #endif 
 
-const int motorEsq[3] = {7, 6, 10};  // {dig, dig, pwm} //CONFERIR SE ESTA CERTO!
-const int motorDir[3] = {8, 9, 5};    // {dig, dig, pwm}
+const int motorEsq[3] = {8, 9, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
+const int motorDir[3] = {7, 10, 6};   // {dig, dig, pwm}
 const int pin_chegada = 12;           // sensor de linha de chegada
 const int pin_curva = 11;              // sensor de curva
 const int pin_led = 13;               // led para indicar estados/erros
