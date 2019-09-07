@@ -11,8 +11,8 @@ const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores d
 const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
 #endif 
 
-const int motorEsq[3] = {7, 6, 10};  // {dig, dig, pwm} //CONFERIR SE ESTA CERTO!
-const int motorDir[3] = {8, 9, 5};    // {dig, dig, pwm}
+const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
+const int motorDir[3] = {10, 7, 6};   // {dig, dig, pwm}
 const int pin_chegada = 12;           // sensor de linha de chegada
 const int pin_curva = 11;              // sensor de curva
 const int pin_led = 13;               // led para indicar estados/erros
@@ -40,7 +40,7 @@ volatile long int nPulsosE = 0;
 
 //Variáveis de temporização:
 long int N_OVF = 65535L;                  //número máximo de pulsos contados pelo timer (16 bits)
-long int tAlvo = 1000L;                      //tempo a se cronometrar, em segundos
+long int tAlvo = 50L;                      //tempo a se cronometrar, em segundos
 long int FREQ_CLK = 16000000L;          //frequencia do clock
 long int PRESC = 1024L;                   //Valor do prescaler
 long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número de pulsos a se cronometrar
@@ -51,7 +51,6 @@ volatile int velEreal = 0;
 const int nDentes = 10;
 const float Diametro = 2.33;//em cm
 const float kRoda = (1000 * PI*Diametro) / (nDentes*tAlvo); //tAlvo em ms
-const float kEnc = 1; //constante proporcional para o erro do encoder
 
 //caso use PID no encoder
 //int lastProporcionalE = 0, lastProporcionalD = 0;
@@ -62,31 +61,31 @@ const float kEnc = 1; //constante proporcional para o erro do encoder
 void setup() {
 
   setPinos();
-  calibracao2();
-  posCalibracao();
+  //calibracao1();
+  //posCalibracao();
   delay(500);
 
 }
 
 void loop() {
 
-  int linePosition = readLine();
+  //int linePosition = readLine();
 
   //confereChegada();
 
-  int erro = PID(linePosition);
-
-  if(erro < 0)
-    ajustaVelocidade(VELMAX + erro, VELMAX);
-  if(erro > 0)
-    ajustaVelocidade(VELMAX, VELMAX - erro);
+//  int erro = PID(linePosition);
+//
+//  if(erro < 0)
+//    ajustaVelocidade(VELMAX + erro, VELMAX);
+//  if(erro > 0)
+//    ajustaVelocidade(VELMAX, VELMAX - erro);
   
 //  if (confereCurva())
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
-  
+  ajustaVelocidade(200, 200);
   anda(tensaoEsq, tensaoDir);
 
-  confereSaiuDaLinha(linePosition);
+  //confereSaiuDaLinha(linePosition);
 }
