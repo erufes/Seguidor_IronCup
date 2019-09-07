@@ -13,6 +13,7 @@ const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
 
 const int pin_chegada = 12;           // sensor de linha de chegada
 const int pin_curva = 11;              // sensor de curva
+const int pin_led = 13;
 
 int values[NUM_SENSORS];              // leituras atuais dos sensores
 int calibratedMIN[NUM_SENSORS];       // valores de calibracao minimos
@@ -29,8 +30,11 @@ int lastValue;                        // ultima posicao da linha lida
 void setup()
 {
   delay(500);
+  pinMode(pin_led, OUTPUT);
+  pinMode(pin_chegada, INPUT);
+  pinMode(pin_curva, INPUT);
   Serial.begin(9600); // set the data rate in bits per second for serial data transmission
-  calibracao2();
+  calibracao1();
   printaCalibracao();
   delay(1000);
 }
@@ -103,6 +107,26 @@ int readLine()
   }
   lastValue = avg / sum;
   return lastValue;
+}
+
+void calibracao1() {
+  for (int i = 0; i < NUM_SENSORS; i++) {
+    calibratedMIN[i] = 999;
+    calibratedMAX[i] = 0;
+  }
+  digitalWrite(pin_led, HIGH);
+  for (int i = 0; i < 4; i++)
+  {
+//    if (i % 2 == 0)
+//      anda(VELMIN, -VELMIN - 5);
+//    else
+//      anda(-VELMIN - 5, VELMIN);
+    for (int j = 0; j < 13 ; j++) {
+      calibrate();
+    }
+  }
+  //para();
+  digitalWrite(pin_led, LOW);
 }
 
 void calibracao2() {
