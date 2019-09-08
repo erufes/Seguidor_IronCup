@@ -77,19 +77,19 @@ void verficaEncoderAndando() {
 
 void ajustaVelocidade(int velE, int velD) {
   erroE = velE - velEreal;
-  if (erroE1 != erroE) {
+  
     //  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
-    uE = uE1 + erroE * kpEnc;
+    uE = erroE * kpEnc;
     uE1 = uE;
     erroE2 = erroE1;
     erroE1 = erroE;
 
     tensaoEsq = uE;
-  }
+  
 
   erroD = velD - velDreal;
   //  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
-  uD = uD1 + erroD * kpEnc;
+  uD = erroD * kpEnc;
   uD1 = uD;
   erroD2 = erroD1;
   erroD1 = erroD;
