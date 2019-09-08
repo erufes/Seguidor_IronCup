@@ -9,10 +9,10 @@ const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores d
 #else
 #define NUM_SENSORS             6    // number of sensors used
 const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
-#endif 
+#endif
 
-const int motorEsq[3] = {8, 9, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
-const int motorDir[3] =  {7, 10, 6};   // {dig, dig, pwm}
+const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
+const int motorDir[3] =  {10, 7, 6};   // {dig, dig, pwm}
 const int pin_chegada = 12;           // sensor de linha de chegada
 const int pin_curva = 11;              // sensor de curva
 const int pin_led = 13;               // led para indicar estados/erros
@@ -53,16 +53,28 @@ const float Diametro = 3.19;//em cm
 const float kRoda = (1000 * PI * Diametro) / (nDentes*tAlvo); //tAlvo em ms
 
 //caso use PID no encoder
-int lastProporcionalE = 0, lastProporcionalD = 0;
-int integralE = 0, integralD = 0;
-int kpEnc = 0.1, kdEnc = 50/tAlvo;
+double uE = 0,
+       uE1 = 0,
+       uD = 0,
+       uD1 = 0;
 
+double erroE = 0,
+       erroE1 = 0,
+       erroE2 = 0;
+
+double erroD = 0,
+       erroD1 = 0,
+       erroD2 = 0;
+
+double kpEnc = 0.01,
+       kdEnc = 0 / tAlvo,
+       kiEnc = 0.0;
 //********************************************************************
 
 void setup() {
   Serial.begin(9600);
   setPinos();
-  initEncoder(); 
+  initEncoder();
 }
 
 void loop() {
@@ -70,21 +82,22 @@ void loop() {
   //ajustaVelocidade(200, 200);
   ajustaVelocidade(100, 100);
   anda(tensaoEsq, tensaoDir);
-//  //em rpm
-//  Serial.print((velDreal/(PI * Diametro))*60);
-//  Serial.print("  ");
-//  Serial.println((velEreal/(PI * Diametro))*60);
+ 
+  //  //em rpm
+  //  Serial.print((velDreal/(PI * Diametro))*60);
+  //  Serial.print("  ");
+  //  Serial.println((velEreal/(PI * Diametro))*60);
 
   //em cm/s
-  Serial.println("---velocidades---");
+  
   Serial.print(velDreal);
-  Serial.print("  ");
-  Serial.println(velEreal);
-
-  Serial.println("---tensões---");
+  Serial.print(" ---velocidades--- ");
+  Serial.print(velEreal);
+  Serial.print("   ");
   Serial.print(tensaoEsq);
-  Serial.print("  ");
+  Serial.print(" ---tensoes--- ");
   Serial.println(tensaoDir);
+  
 
   delay(80);
 }

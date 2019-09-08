@@ -74,41 +74,43 @@ void verficaEncoderAndando() {
 
 
 //PID do encoder
-//uE = erroVelE = sinal de saida do controle [da roda esquerda]
-//proporcionalE = erro, diferenca entre a velocidade desejada e a velocidade medida [da roda esquerda]
-//derivativeE = termo derivativo, definido como a variacao do erro no tempo [da roda esquerda]
 
 void ajustaVelocidade(int velE, int velD) {
 
-  int proporcionalE = velE - velEreal;
-  int derivativeE = proporcionalE - lastProporcionalE;
-  lastProporcionalE = proporcionalE;
+  erroE = velE - velEreal;
+  erroD = velD - velDreal;
 
-  int proporcionalD = velD - velDreal;
-  int derivativeD = proporcionalD - lastProporcionalD;
-  lastProporcionalD = proporcionalD;
+//  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
+//  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
+  uE = erroE * kpEnc;
+  uD = erroD * kpEnc;
 
-  int uE = proporcionalE * kpEnc + derivativeE * kdEnc;
-  int uD = proporcionalD * kpEnc + derivativeD * kdEnc;
+  uE1 = uE;
+  erroE2 = erroE1;
+  erroE1 = erroE;
 
-  tensaoDir = tensaoDir + uE;
-  tensaoEsq = tensaoEsq + uD;
+  uD1 = uD;
+  erroD2 = erroD1;
+  erroD1 = erroD;
 
-  //filtro de segurança para evitar tensões acima de 255 / abaixo de 0
+  tensaoDir = tensaoDir + uD;
+  tensaoEsq = tensaoEsq + uE;
+
+  //filtro de segurança para evitar tensões acima de 255 / abaixo de -255
   //Há um aviso, via serial, caso isso ocorra.
-  if (tensaoEsq > 255 || tensaoEsq < 0) {
+  if (tensaoEsq > 255 || tensaoEsq < -255) {
     Serial.print("---WARNING -- tensaoEsq = ");
     Serial.print(tensaoEsq);
     Serial.println(" - Lowering Voltage---");
     if (tensaoEsq > 255) tensaoEsq = 255;
-    else if(tensaoEsq < 0) tensaoEsq = 0;
+    else if (tensaoEsq < -255) tensaoEsq = -255;
   }
-  
-  if (tensaoDir > 255 || tensaoDir < 0) {
-    Serial.print("---WARNING -- tensaoEsq = ");
+
+  if (tensaoDir > 255 || tensaoDir < -255) {
+    Serial.print("---WARNING -- tensaoDir = ");
     Serial.print(tensaoDir);
     Serial.println(" - Lowering Voltage---");
-    if (tensaoDir > 255) tensaoDir= 255;
-    else if(tensaoDir < 0) tensaoDir = 0;
+    if (tensaoDir > 255) tensaoDir = 255;
+    else if (tensaoDir < -255) tensaoDir = -255;
   }
 }
