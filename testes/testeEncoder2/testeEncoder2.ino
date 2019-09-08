@@ -55,7 +55,7 @@ const float kRoda = (1000 * PI * Diametro) / (nDentes*tAlvo); //tAlvo em ms
 //caso use PID no encoder
 int lastProporcionalE = 0, lastProporcionalD = 0;
 int integralE = 0, integralD = 0;
-int kpEnc = 0.1, kdEnc = 1;
+int kpEnc = 0.1, kdEnc = 50/tAlvo;
 
 //********************************************************************
 
