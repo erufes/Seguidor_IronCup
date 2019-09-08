@@ -40,7 +40,7 @@ volatile long int nPulsosE = 0;
 
 //Variáveis de temporização:
 long int N_OVF = 65535L;                  //número máximo de pulsos contados pelo timer (16 bits)
-long int tAlvo = 50L;                      //tempo a se cronometrar, em segundos
+long int tAlvo = 40L;                      //tempo a se cronometrar, em segundos
 long int FREQ_CLK = 16000000L;          //frequencia do clock
 long int PRESC = 1024L;                   //Valor do prescaler
 long int nAlvo = N_OVF -  (FREQ_CLK / PRESC) * ((float)tAlvo / 1000); //número de pulsos a se cronometrar

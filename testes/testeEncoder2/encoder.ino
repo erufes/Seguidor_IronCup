@@ -76,25 +76,25 @@ void verficaEncoderAndando() {
 //PID do encoder
 
 void ajustaVelocidade(int velE, int velD) {
-
   erroE = velE - velEreal;
+  if (erroE1 != erroE) {
+    //  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
+    uE = uE1 + erroE * kpEnc;
+    uE1 = uE;
+    erroE2 = erroE1;
+    erroE1 = erroE;
+
+    tensaoEsq = uE;
+  }
+
   erroD = velD - velDreal;
-
-//  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
-//  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
-  uE = erroE * kpEnc;
-  uD = erroD * kpEnc;
-
-  uE1 = uE;
-  erroE2 = erroE1;
-  erroE1 = erroE;
-
+  //  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
+  uD = uD1 + erroD * kpEnc;
   uD1 = uD;
   erroD2 = erroD1;
   erroD1 = erroD;
 
-  tensaoDir = tensaoDir + uD;
-  tensaoEsq = tensaoEsq + uE;
+  tensaoDir = uD;
 
   //filtro de segurança para evitar tensões acima de 255 / abaixo de -255
   //Há um aviso, via serial, caso isso ocorra.
