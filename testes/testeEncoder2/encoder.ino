@@ -74,6 +74,9 @@ void verficaEncoderAndando() {
 
 
 //PID do encoder
+//erroVelE = sinal de saida do controle da roda esquerda
+//erroVelD = sinal de saida do controle da roda direita
+
 void ajustaVelocidade(int velE, int velD) {
 
   int proporcionalE = velE - velEreal;
@@ -87,8 +90,8 @@ void ajustaVelocidade(int velE, int velD) {
   int erroVelE = proporcionalE * kpEnc + derivativeE * kdEnc;
   int erroVelD = proporcionalD * kpEnc + derivativeD * kdEnc;
 
-  tensaoDir = erroVelE;
-  tensaoEsq = erroVelD;
+  tensaoDir = tensaoDir + erroVelE;
+  tensaoEsq = tensaoEsq + erroVelD;
 
   //filtro de segurança para evitar tensões acima de 255 / abaixo de 0
   //Há um aviso, via serial, caso isso ocorra.
