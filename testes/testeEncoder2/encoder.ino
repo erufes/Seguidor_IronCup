@@ -77,15 +77,31 @@ void verficaEncoderAndando() {
 
 void ajustaVelocidade(int velE, int velD) {
   erroE = velE - velEreal;
-  
-    //  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
-    uE = erroE * kpEnc;
-    uE1 = uE;
-    erroE2 = erroE1;
-    erroE1 = erroE;
 
-    tensaoEsq = uE;
-  
+  //  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
+  uE = erroE * kpEnc;
+  erroE2 = erroE1;
+  erroE1 = erroE;
+  if (velE < 0) {
+    if (uE < -90) {
+      Serial.print("---Warning: uE = ");
+      Serial.print(uE);
+      Serial.println(", locking---");
+      uE = -90;
+    }
+  }
+  else {//if velE <= 0
+    if (uE > 90) {
+      Serial.print("---Reversal Warning: uE = ");
+      Serial.print(uE);
+      Serial.println(", locking---");
+      uE = 90;
+    }
+  }
+  uE1 = uE;
+
+  tensaoEsq = uE;
+
 
   erroD = velD - velDreal;
   //  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
@@ -95,6 +111,7 @@ void ajustaVelocidade(int velE, int velD) {
   erroD1 = erroD;
 
   tensaoDir = uD;
+
 
   //filtro de segurança para evitar tensões acima de 255 / abaixo de -255
   //Há um aviso, via serial, caso isso ocorra.
