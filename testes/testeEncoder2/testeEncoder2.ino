@@ -80,7 +80,9 @@ void setup() {
 void loop() {
 
   //ajustaVelocidade(200, 200);
+  digitalWrite(pin_led, HIGH);//teste de tempo do PID
   ajustaVelocidade(100, 100);
+  digitalWrite(pin_led, LOW);//teste de tempo do PID
   anda(tensaoEsq, tensaoDir);
  
   //  //em rpm

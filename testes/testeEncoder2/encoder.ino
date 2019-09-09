@@ -1,3 +1,5 @@
+int state = 0; //teste de tempo do encoder
+
 void initEncoder() {
   attachInterrupt(digitalPinToInterrupt(encoderPinD), countEncoderD, RISING);
   attachInterrupt(digitalPinToInterrupt(encoderPinE), countEncoderE, RISING);
@@ -27,6 +29,9 @@ void countEncoderE() {
 ISR(TIMER1_OVF_vect) {
   velDreal = nPulsosD * kRoda;
   velEreal = nPulsosE * kRoda;
+  //teste de tempo do encoder
+  state = !state;
+  digitalWrite(pinBotao, state);
 
   nPulsosD = 0;
   nPulsosE = 0;
