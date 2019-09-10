@@ -84,7 +84,7 @@ int confereCurva() {
 void confereSaiuDaLinha(unsigned int linePosition) {
   if (linePosition == 0 || linePosition == (NUM_SENSORS-1)*1000) {
     saiu++;
-    if (saiu > 150) {
+    if (saiu > 160) {
       freia();
       delay(99999);
     }

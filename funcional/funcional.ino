@@ -1,6 +1,6 @@
-#define NUM_SAMPLES_PER_SENSOR  4    // samples per sensor reading
-#define VELMIN                  130   // velocidade minima
-#define VELMAX                  180  // velocidade maxima
+#define NUM_SAMPLES_PER_SENSOR  3    // samples per sensor reading
+#define VELMIN                  128   // velocidade minima
+#define VELMAX                  210  // velocidade maxima
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
 
 #ifdef USANDO_PLACA_VERMELHA
@@ -40,6 +40,7 @@ void setup() {
   calibracao1();
   posCalibracao();
   delay(500);
+  //Serial.begin(9600);
 }
 
 void loop() {
@@ -56,6 +57,5 @@ void loop() {
 //    reduzVelocidade();
     
   anda(tensaoEsq, tensaoDir);
-
-  //confereSaiuDaLinha(linePosition);
+  confereSaiuDaLinha(linePosition);
 }
