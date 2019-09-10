@@ -100,6 +100,4 @@ void loop() {
   Serial.print(" ---tensoes--- ");
   Serial.println(tensaoDir);
   
-
-  delay(80);
 }
