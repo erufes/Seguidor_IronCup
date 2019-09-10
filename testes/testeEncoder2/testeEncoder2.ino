@@ -33,8 +33,8 @@ int lastValue;                        // ultima posicao da linha lida
 unsigned int last_proportional = 0;
 
 //Variáveis de Contagem de pulsos
-const byte encoderPinD = 2;
-const byte encoderPinE = 3;
+const byte encoderPinD = 3;
+const byte encoderPinE = 2;
 volatile long int nPulsosD = 0;
 volatile long int nPulsosE = 0;
 
@@ -66,9 +66,10 @@ double erroD = 0,
        erroD1 = 0,
        erroD2 = 0;
 
-double kpEnc = 0.01,
+double kpEnc = 0.1,
        kdEnc = 0 / tAlvo,
        kiEnc = 0.0;
+int reverseThreshold = 50;
 //********************************************************************
 
 void setup() {
@@ -79,25 +80,23 @@ void setup() {
 
 void loop() {
 
-  //ajustaVelocidade(200, 200);
-  digitalWrite(pin_led, HIGH);//teste de tempo do PID
-  ajustaVelocidade(100, 100);
-  digitalWrite(pin_led, LOW);//teste de tempo do PID
+  ajustaVelocidade(0, 100);
   anda(tensaoEsq, tensaoDir);
- 
-  //  //em rpm
-  //  Serial.print((velDreal/(PI * Diametro))*60);
-  //  Serial.print("  ");
-  //  Serial.println((velEreal/(PI * Diametro))*60);
+  //anda(255,255); 
+    //em rpm
+//    Serial.print((velDreal/(PI * Diametro))*60);
+//    Serial.print(" ---velocidades--- ");
+//    Serial.println((velEreal/(PI * Diametro))*60);
 
   //em cm/s
   
+  
+  Serial.print("Velocidade --- ");
   Serial.print(velDreal);
-  Serial.print(" ---velocidades--- ");
-  Serial.print(velEreal);
-  Serial.print("   ");
-  Serial.print(tensaoEsq);
-  Serial.print(" ---tensoes--- ");
+  //Serial.print(velEreal);
+  Serial.print("    ");
+  Serial.print("Tensoes --- ");
   Serial.println(tensaoDir);
+  //Serial.println(tensaoEsq);
   
 }

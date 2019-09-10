@@ -1,4 +1,4 @@
-int state = 0; //teste de tempo do encoder
+
 
 void initEncoder() {
   attachInterrupt(digitalPinToInterrupt(encoderPinD), countEncoderD, RISING);
@@ -29,9 +29,7 @@ void countEncoderE() {
 ISR(TIMER1_OVF_vect) {
   velDreal = nPulsosD * kRoda;
   velEreal = nPulsosE * kRoda;
-  //teste de tempo do encoder
-  state = !state;
-  digitalWrite(pinBotao, state);
+
 
   nPulsosD = 0;
   nPulsosE = 0;
@@ -81,36 +79,38 @@ void verficaEncoderAndando() {
 //PID do encoder
 
 void ajustaVelocidade(int velE, int velD) {
-  erroE = velE - velEreal;
+  //erroE = velE - velEreal;
 
   //  uE = uE1 + (kpEnc + kdEnc) * erroE + (kiEnc - kpEnc - 2 * kdEnc) * erroE1 + kdEnc * erroE2;
-  uE = erroE * kpEnc;
-  erroE2 = erroE1;
-  erroE1 = erroE;
-  if (velE < 0) {
-    if (uE < -90) {
-      Serial.print("---Warning: uE = ");
-      Serial.print(uE);
-      Serial.println(", locking---");
-      uE = -90;
-    }
-  }
-  else {//if velE <= 0
-    if (uE > 90) {
-      Serial.print("---Reversal Warning: uE = ");
-      Serial.print(uE);
-      Serial.println(", locking---");
-      uE = 90;
-    }
-  }
-  uE1 = uE;
-
-  tensaoEsq = uE;
+  //  uE = erroE * kpEnc;
+  //  erroE2 = erroE1;
+  //  erroE1 = erroE;
+  //  uE1 = uE;
+  //
+  //  tensaoEsq = uE;
 
 
   erroD = velD - velDreal;
-  //  uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
-  uD = erroD * kpEnc;
+    uD = uD1 + (kpEnc + kdEnc) * erroD + (kiEnc - kpEnc - 2 * kdEnc) * erroD1 + kdEnc * erroD2;
+  //uD = erroD * kpEnc;   //teste mais básico
+
+  if (velD > 0) {
+    if (uD < -reverseThreshold) {
+      Serial.print("---Warning: uE = ");
+      Serial.print(uE);
+      Serial.println(", locking---");
+      uD = -reverseThreshold;
+    }
+  }
+  else {//if velD <= 0
+    if (uD > reverseThreshold) {
+      Serial.print("---Reversal Warning: uE = ");
+      Serial.print(uE);
+      Serial.println(", locking---");
+      uD = reverseThreshold;
+    }
+  }
+
   uD1 = uD;
   erroD2 = erroD1;
   erroD1 = erroD;
@@ -120,13 +120,13 @@ void ajustaVelocidade(int velE, int velD) {
 
   //filtro de segurança para evitar tensões acima de 255 / abaixo de -255
   //Há um aviso, via serial, caso isso ocorra.
-  if (tensaoEsq > 255 || tensaoEsq < -255) {
-    Serial.print("---WARNING -- tensaoEsq = ");
-    Serial.print(tensaoEsq);
-    Serial.println(" - Lowering Voltage---");
-    if (tensaoEsq > 255) tensaoEsq = 255;
-    else if (tensaoEsq < -255) tensaoEsq = -255;
-  }
+  //  if (tensaoEsq > 255 || tensaoEsq < -255) {
+  //    Serial.print("---WARNING -- tensaoEsq = ");
+  //    Serial.print(tensaoEsq);
+  //    Serial.println(" - Lowering Voltage---");
+  //    if (tensaoEsq > 255) tensaoEsq = 255;
+  //    else if (tensaoEsq < -255) tensaoEsq = -255;
+  //  }
 
   if (tensaoDir > 255 || tensaoDir < -255) {
     Serial.print("---WARNING -- tensaoDir = ");
