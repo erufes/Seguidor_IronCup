@@ -24,7 +24,7 @@ void calibracao2() {
     calibratedMAX[i] = 0;
   }
   digitalWrite(pin_led, HIGH);
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 2; i++) {
     while (digitalRead(pin_curva) != COR) {
       anda(VELMIN, -VELMIN - 5);
       calibrate();

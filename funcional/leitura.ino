@@ -17,7 +17,7 @@ int readLine()
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
 
     //PARA LINHA BRANCA:
-    //value = 1000 - value;
+    value = 1000 - value;
 
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
