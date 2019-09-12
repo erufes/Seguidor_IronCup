@@ -1,6 +1,6 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  130   // velocidade minima
-#define VELMAX                  205   // velocidade maxima
+#define VELMAX                  200   // velocidade maxima
 #define COR                      1    // cor da linha(branca:0 / preta: 1)
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
 
@@ -38,25 +38,25 @@ unsigned int last_proportional = 0;
 void setup() {
 
   setPinos();
-  calibracao1();
-  posCalibracao();
+  //calibracao1();
+  //posCalibracao();
   delay(500);
   //Serial.begin(9600);
 }
 
 void loop() {
 
-  int linePosition = readLine();
+  //int linePosition = readLine();
 
   confereChegada();
 
-  int erro = PID(linePosition);
+  //int erro = PID(linePosition);
   
   confereCurva();
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
     
-  anda(tensaoEsq, tensaoDir);
-  confereSaiuDaLinha(linePosition);
+  //anda(tensaoEsq, tensaoDir);
+  //confereSaiuDaLinha(linePosition);
 }

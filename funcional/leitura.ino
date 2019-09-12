@@ -47,7 +47,7 @@ int readLine()
 //confere a marcacao de chegada, se ler duas vezes o robo para por pelo menos 10 seg
 void confereChegada() {
   if (digitalRead(pin_chegada) == COR) {
-    if (!saiu && digitalRead(pin_curva) != COR)
+    if (!saiu && (digitalRead(pin_curva) != COR))
       leu_chegada++;
   } else {
     leu_chegada = 0;
@@ -70,7 +70,7 @@ void confereChegada() {
 //confere a marcacao de curva
 int confereCurva() {
   if (digitalRead(pin_curva) == COR) {
-    if (!saiu && digitalRead(pin_chegada) != COR) //verifica se esta seguindo a linha
+    if (!saiu && (digitalRead(pin_chegada) != COR)) //verifica se esta seguindo a linha
       leu_curva++;
   } else
     leu_curva = 0;
