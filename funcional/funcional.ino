@@ -1,6 +1,7 @@
-#define NUM_SAMPLES_PER_SENSOR  3    // samples per sensor reading
+#define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  130   // velocidade minima
-#define VELMAX                  205  // velocidade maxima
+#define VELMAX                  205   // velocidade maxima
+#define COR                      1    // cor da linha(branca:0 / preta: 1)
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
 
 #ifdef USANDO_PLACA_VERMELHA

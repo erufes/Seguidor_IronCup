@@ -25,11 +25,11 @@ void calibracao2() {
   }
   digitalWrite(pin_led, HIGH);
   for (int i = 0; i < 3; i++) {
-    while (!digitalRead(pin_curva)) {
+    while (digitalRead(pin_curva) != COR) {
       anda(VELMIN, -VELMIN - 5);
       calibrate();
     }
-    while (!digitalRead(pin_chegada)) {
+    while (digitalRead(pin_chegada) != COR) {
       anda(-VELMIN - 5, VELMIN);
       calibrate();
     }
