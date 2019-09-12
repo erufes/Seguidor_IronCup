@@ -46,17 +46,17 @@ void setup() {
 
 void loop() {
 
-  //int linePosition = readLine();
+  int linePosition = readLine();
 
   confereChegada();
 
-  //int erro = PID(linePosition);
+  int erro = PID(linePosition);
   
   confereCurva();
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
     
-  //anda(tensaoEsq, tensaoDir);
+  anda(tensaoEsq, tensaoDir);
   //confereSaiuDaLinha(linePosition);
 }

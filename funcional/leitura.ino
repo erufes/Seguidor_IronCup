@@ -53,7 +53,7 @@ void confereChegada() {
     leu_chegada = 0;
     return;
   }
-  if (leu_chegada == 4)
+  if (leu_chegada == 10)
     passou_chegada++;
   if (passou_chegada == 2) {
     freia();
