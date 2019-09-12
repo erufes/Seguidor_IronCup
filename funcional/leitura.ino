@@ -15,10 +15,10 @@ int readLine()
     value = samples / NUM_SAMPLES_PER_SENSOR;
     //calcula o valor de acordo com a calibracao
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
-    
+
     //PARA LINHA BRANCA:
     //value = 1000 - value;
-    
+
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
     // keep track of whether we see the line at all
@@ -46,18 +46,31 @@ int readLine()
 
 //confere a marcacao de chegada, se ler duas vezes o robo para por pelo menos 10 seg
 void confereChegada() {
+  if (chegada_recente > 0) {
+    chegada_recente--;
+    if (chegada_recente == 0) {
+      if (!cancela_marcacao)
+        passou_chegada++;
+      cancela_marcacao = 0;
+    }
+  }
+
   if (digitalRead(pin_chegada) == COR) {
-    if (!saiu && (digitalRead(pin_curva) != COR))
+    if (!saiu && !curva_recente)
       leu_chegada++;
+    else {
+      //curva_recente = 0;
+      cancela_marcacao = 1;
+    }
   } else {
     leu_chegada = 0;
-    return;
   }
-  if (leu_chegada == 10)
-    passou_chegada++;
+  if (leu_chegada == 8)
+    chegada_recente = 140;
+
   if (passou_chegada == 2) {
     freia();
-    for(int i = 0; i < 52; i++){ //parar pelo menos 10 segundos
+    for (int i = 0; i < 52; i++) { //parar pelo menos 10 segundos
       digitalWrite(pin_led, HIGH);
       delay(100);
       digitalWrite(pin_led, LOW);
@@ -69,22 +82,35 @@ void confereChegada() {
 
 //confere a marcacao de curva
 int confereCurva() {
+  if (curva_recente > 0) {
+    curva_recente--;
+    if (curva_recente == 0) {
+      if (!cancela_marcacao)
+        return 1;
+    }
+  }
   if (digitalRead(pin_curva) == COR) {
-    if (!saiu && (digitalRead(pin_chegada) != COR)) //verifica se esta seguindo a linha
+    if (!saiu && !chegada_recente) //verifica se esta seguindo a linha
       leu_curva++;
-  } else
+    else {
+      //chegada_recente = 0;
+      cancela_marcacao = 1;
+    }
+  }
+  else {
     leu_curva = 0;
-  if (leu_curva == 3)
-    return 1;
+  }
+  if (leu_curva == 8)
+    curva_recente = 140;
   else
     return 0;
 }
 
 //se nao estiver vendo a linha por um certo tempo, o robo para
 void confereSaiuDaLinha(unsigned int linePosition) {
-  if (linePosition == 0 || linePosition == (NUM_SENSORS-1)*1000) {
+  if (linePosition == 0 || linePosition == (NUM_SENSORS - 1) * 1000) {
     saiu++;
-    if (saiu > 200) {
+    if (saiu > 400) {
       freia();
       delay(99999);
     }

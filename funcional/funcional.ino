@@ -1,5 +1,5 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
-#define VELMIN                  130   // velocidade minima
+#define VELMIN                  100   // velocidade minima
 #define VELMAX                  200   // velocidade maxima
 #define COR                      1    // cor da linha(branca:0 / preta: 1)
 #define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
@@ -27,6 +27,9 @@ int saiu = 0;                         // indica se o robo nao esta na linha
 int leu_chegada = 0;                  // qtd de vezes SEGUIDAS que o sensor de chegada leu preto
 int leu_curva = 0;                    // qtd de vezes SEGUIDAS que o sensor de curva leu preto
 int passou_chegada = 0;               // qtd de vezes que passou a marcacao de chegada
+int curva_recente = 0;
+int chegada_recente = 0;
+int cancela_marcacao = 0;
 
 int tensaoEsq = 0, tensaoDir = 0;
 int reduz = 0;                        // contador para deixar a velocidade reduzida
@@ -45,14 +48,15 @@ void setup() {
 }
 
 void loop() {
-
+  
   int linePosition = readLine();
 
   confereChegada();
 
   int erro = PID(linePosition);
   
-  confereCurva();
+  if(confereCurva())
+    cancela_marcacao = 0;
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
