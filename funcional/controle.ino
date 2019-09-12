@@ -69,7 +69,6 @@ void anda(int velE, int velD)
     analogWrite(motorEsq[2], -velE);
   }
   
-  //Serial.print(" ");
   if(velD > 230)
     velD = 255;
   if (velD >= 40) {

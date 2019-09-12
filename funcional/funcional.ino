@@ -47,11 +47,11 @@ void loop() {
 
   int linePosition = readLine();
 
-  //confereChegada();
+  confereChegada();
 
   int erro = PID(linePosition);
   
-//  if (confereCurva())
+  confereCurva();
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
