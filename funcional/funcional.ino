@@ -60,6 +60,6 @@ void loop() {
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
 //    reduzVelocidade();
-  anda(250, 250);
+  anda(tensaoEsq, tensaoDir);
   confereSaiuDaLinha(linePosition);
 }
