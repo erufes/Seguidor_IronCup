@@ -1,7 +1,7 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  37   // velocidade minima
 #define VELMAX                  180   // velocidade maxima
-#define COR                      0    // cor da linha(branca:0 / preta: 1)
+#define COR                      1    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 
@@ -46,7 +46,7 @@ void loop() {
 
   confereChegada();
 
-  int erro = PID(linePosition); //erro eh variavel de teste
+  int erro = PID(linePosition);
   
   if(confereCurva())
     cancela_marcacao = 0;
