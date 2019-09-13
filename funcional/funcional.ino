@@ -1,6 +1,6 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  35   // velocidade minima
-#define VELMAX                  210   // velocidade maxima
+#define VELMAX                  200   // velocidade maxima
 #define COR                      0    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
@@ -36,7 +36,7 @@ void setup() {
   calibracao2();
   posCalibracao();
   delay(500);
-  Serial.begin(9600);
+  //Serial.begin(9600);
 }
 
 void loop() {
