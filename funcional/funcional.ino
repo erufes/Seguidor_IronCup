@@ -36,7 +36,7 @@ void setup() {
   calibracao2();
   posCalibracao();
   delay(500);
-  //Serial.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop() {

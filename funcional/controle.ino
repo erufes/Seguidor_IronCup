@@ -36,7 +36,7 @@ int PID(unsigned int linePosition) {
   int proportional = (int)linePosition - ((NUM_SENSORS-1)*1000)/2; //erro proporcional = 'posição atual da linha' - 'posição central'
   int derivative = proportional - last_proportional;
   last_proportional = proportional;
-  int erro = proportional * 2 / 23 + derivative * 5 / 20;
+  int erro = proportional * 2 / 23 + derivative * 5 / 20; //22 16
   if (erro > VELMAX)
     return VELMAX;
   if (erro < -VELMAX)
@@ -76,7 +76,7 @@ void anda(int velE, int velD)
   } else if (velD >= 0 && velD < VELMIN) {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2],(255 - 5 * velD));
+    analogWrite(motorDir[2],(250 - 5 * velD));
   } else {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
