@@ -1,16 +1,9 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
-#define VELMIN                  45   // velocidade minima
+#define VELMIN                  37   // velocidade minima
 #define VELMAX                  180   // velocidade maxima
-#define COR                      0    // cor da linha(branca:0 / preta: 1)
-#define USANDO_PLACA_VERMELHA        //Se usando placa vermelha, deixe essa linha aqui. Se não, comente ela
-
-#ifdef USANDO_PLACA_VERMELHA
+#define COR                      1    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
-#else
-#define NUM_SENSORS             6    // number of sensors used
-const int sensor[NUM_SENSORS] = {A5, A4, A3, A2, A1, A0};   //sensores de linha
-#endif 
 
 const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
 const int motorDir[3] =  {10, 7, 6};   // {dig, dig, pwm}

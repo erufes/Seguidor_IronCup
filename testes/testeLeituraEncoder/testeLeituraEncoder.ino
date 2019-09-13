@@ -39,8 +39,8 @@ const int buttonPin = 4;
 int state = 0;
 
 //Variáveis de acionamento dos motores
-const int motorEsq[3] = {8, 9, 5};    // {dig, dig, pwm}
-const int motorDir[3] = {7, 10, 6};   // {dig, dig, pwm}
+const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm}
+const int motorDir[3] = {10, 7, 6};   // {dig, dig, pwm}
 
 void setup() {
   attachInterrupt(digitalPinToInterrupt(encoderPinA), countEncoderA, RISING);
@@ -74,18 +74,18 @@ void loop() {
     Serial.println(velB);
   }
   //Teste do encoder de fato
-  anda(255, 255);
+  anda(255, 0);
 
   //em rpm
-  Serial.print((velA/(PI * Diametro))*60);
-  Serial.print("   ");
-  Serial.println((velB/(PI * Diametro))*60);
+  //Serial.print((velA/(PI * Diametro))*60);
+  //Serial.print("   ");
+  //Serial.println((velB/(PI * Diametro))*60);
 
   //em cm/s
   
-  //Serial.print(velA);
-  //Serial.print("   ");
-  //Serial.println(velB);
+  Serial.print(velA);
+  Serial.print("   ");
+  Serial.println(velB);
 }
 
 void countEncoderA() {

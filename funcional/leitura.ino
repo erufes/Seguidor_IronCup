@@ -17,7 +17,8 @@ int readLine()
     value = ((value - calibratedMIN[j]) * 1000) / (calibratedMAX[j] - calibratedMIN[j]);
 
     //PARA LINHA BRANCA:
-    value = 1000 - value;
+    if (!COR)
+      value = 1000 - value;
 
     values[j] = value;
     if (values[j] < 5) values[j] = 0;
@@ -111,8 +112,14 @@ void confereSaiuDaLinha(unsigned int linePosition) {
   if (linePosition == 0 || linePosition == (NUM_SENSORS - 1) * 1000) {
     saiu++;
     if (saiu > 400) {
-      freia();
-      delay(99999);
+      para();
+      //ficar parado ate o botao ser apertado
+      while (!digitalRead(pin_botao)) {
+        delay(50);
+        digitalWrite(pin_led, HIGH);
+        delay(50);
+        digitalWrite(pin_led, LOW);
+      }
     }
   }
   else
