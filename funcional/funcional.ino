@@ -46,7 +46,7 @@ void loop() {
 
   confereChegada();
 
-  int erro = PID(linePosition);
+  int erro = PID(linePosition); //erro eh variavel de teste
   
   if(confereCurva())
     cancela_marcacao = 0;
