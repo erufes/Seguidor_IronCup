@@ -24,12 +24,12 @@ void calibracao2() {
     calibratedMAX[i] = 0;
   }
   digitalWrite(pin_led, HIGH);
-  for (int i = 0; i < 3; i++) {
-    while (!digitalRead(pin_curva)) {
+  for (int i = 0; i < 2; i++) {
+    while (digitalRead(pin_curva) != COR) {
       anda(VELMIN, -VELMIN - 5);
       calibrate();
     }
-    while (!digitalRead(pin_chegada)) {
+    while (digitalRead(pin_chegada) != COR) {
       anda(-VELMIN - 5, VELMIN);
       calibrate();
     }
@@ -64,10 +64,10 @@ void posCalibracao() {
   //enquanto a posição da linha for aproximadamente no centro  (aproximadamente = +-50)
   while (linePosition < (((NUM_SENSORS - 1) * 1000) / 2) - 50 || linePosition > (((NUM_SENSORS - 1) * 1000) / 2) + 50) {
     linePosition = readLine();
-    int erro = (int)(linePosition - ((NUM_SENSORS - 1) * 1000) / 2) / 2; //erro = 'posição da linha atual' - 'posição central'
-    if (erro > VELMIN) erro = VELMIN + 5;
-    if (erro < -VELMIN) erro = -VELMIN - 5;
-    anda(erro, -erro);
+//    int erro = (int)(linePosition - ((NUM_SENSORS - 1) * 1000) / 2) / 2; //erro = 'posição da linha atual' - 'posição central'
+//    if (erro > VELMIN) erro = VELMIN;
+//    if (erro < -VELMIN) erro = -VELMIN;
+    anda(45, -45);
   }
   para();
   //ficar parado ate o botao ser apertado

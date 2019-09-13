@@ -36,7 +36,7 @@ int PID(unsigned int linePosition) {
   int proportional = (int)linePosition - ((NUM_SENSORS-1)*1000)/2; //erro proporcional = 'posição atual da linha' - 'posição central'
   int derivative = proportional - last_proportional;
   last_proportional = proportional;
-  int erro = proportional * 2 / 12 + derivative * 5 / 35;
+  int erro = proportional * 2 / 16 + derivative * 5 / 30;
   if (erro > VELMAX)
     return VELMAX;
   if (erro < -VELMAX)
@@ -55,35 +55,34 @@ int PID(unsigned int linePosition) {
 //acionamento dos motores
 void anda(int velE, int velD)
 {
-  if (velE >= 40) {
+  if (velE >= VELMIN) {
     digitalWrite(motorEsq[0], HIGH);
     digitalWrite(motorEsq[1], LOW);
     analogWrite(motorEsq[2], velE);
-  } else if (velE >= 0 && velE < 45) {
+  } else if (velE >= 0 && velE < VELMIN) {
     digitalWrite(motorEsq[0], LOW);
     digitalWrite(motorEsq[1], HIGH);
-    analogWrite(motorEsq[2], 250 - 4 * velE);
+    analogWrite(motorEsq[2], 250 - 5 * velE);
   } else {
     digitalWrite(motorEsq[0], LOW);
     digitalWrite(motorEsq[1], HIGH);
     analogWrite(motorEsq[2], -velE);
   }
   
-  //Serial.print(" ");
-  if(velD > 230)
-    velD = 255;
-  if (velD >= 40) {
+  if(velD > 240)
+    velD = 240;
+  if (velD >= VELMIN) {
     digitalWrite(motorDir[0], HIGH);
     digitalWrite(motorDir[1], LOW);
-    analogWrite(motorDir[2], (int)(1.06 * velD));
-  } else if (velD >= 0 && velD < 45) {
+    analogWrite(motorDir[2], (int)(1.0 * velD));
+  } else if (velD >= 0 && velD < VELMIN) {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2],(255 - 4 * velD));
+    analogWrite(motorDir[2],(255 - 5 * velD));
   } else {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2], (int)(1.06 * (-velD)));
+    analogWrite(motorDir[2], (int)(1.0 * (-velD)));
   }
 }
 
