@@ -66,8 +66,8 @@ void confereChegada() {
   } else {
     leu_chegada = 0;
   }
-  if (leu_chegada == 8)
-    chegada_recente = 140;
+  if (leu_chegada == 4)
+    chegada_recente = 100;
 
   if (passou_chegada == 2) {
     freia();
@@ -101,8 +101,8 @@ int confereCurva() {
   else {
     leu_curva = 0;
   }
-  if (leu_curva == 8)
-    curva_recente = 140;
+  if (leu_curva == 4)
+    curva_recente = 100;
   else
     return 0;
 }
