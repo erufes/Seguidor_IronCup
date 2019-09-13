@@ -55,11 +55,11 @@ int PID(unsigned int linePosition) {
 //acionamento dos motores
 void anda(int velE, int velD)
 {
-  if (velE >= 40) {
+  if (velE >= VELMIN) {
     digitalWrite(motorEsq[0], HIGH);
     digitalWrite(motorEsq[1], LOW);
     analogWrite(motorEsq[2], velE);
-  } else if (velE >= 0 && velE < 40) {
+  } else if (velE >= 0 && velE < VELMIN) {
     digitalWrite(motorEsq[0], LOW);
     digitalWrite(motorEsq[1], HIGH);
     analogWrite(motorEsq[2], 250 - 5 * velE);
