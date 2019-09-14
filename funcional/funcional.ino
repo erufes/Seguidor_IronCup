@@ -43,11 +43,11 @@ void loop() {
   
   int linePosition = readLine();
 
-  confereChegada();
+  confereChegada(linePosition);
 
   int erro = PID(linePosition);
   
-  if(confereCurva())
+  if(confereCurva(linePosition))
     cancela_marcacao = 0;
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
