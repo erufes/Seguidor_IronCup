@@ -50,8 +50,12 @@ void confereChegada() {
   if (chegada_recente > 0) {
     chegada_recente--;
     if (chegada_recente == 0) {
-      if (!cancela_marcacao)
+      if (!cancela_marcacao) {
         passou_chegada++;
+        digitalWrite(pin_led, HIGH);
+        delay(20);
+        digitalWrite(pin_led, LOW);
+      }
       cancela_marcacao = 0;
     }
   }
