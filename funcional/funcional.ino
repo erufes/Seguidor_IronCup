@@ -1,10 +1,9 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
-#define VELMIN                  37   // velocidade minima
-#define VELMAX                  180   // velocidade maxima
+#define VELMIN                  35   // velocidade minima
+#define VELMAX                  200   // velocidade maxima
 #define COR                      0    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
-
 const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
 const int motorDir[3] =  {10, 7, 6};   // {dig, dig, pwm}
 const int pin_chegada = 12;           // sensor de linha de chegada
@@ -46,7 +45,7 @@ void loop() {
 
   confereChegada();
 
-  int erro = PID(linePosition); //erro eh variavel de teste
+  int erro = PID(linePosition);
   
   if(confereCurva())
     cancela_marcacao = 0;

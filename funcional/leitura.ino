@@ -66,11 +66,11 @@ void confereChegada() {
   } else {
     leu_chegada = 0;
   }
-  if (leu_chegada == 5)
+  if (leu_chegada == 4)
     chegada_recente = 200;
 
   if (passou_chegada == 2) {
-    freia();
+    para();
     for (int i = 0; i < 52; i++) { //parar pelo menos 10 segundos
       digitalWrite(pin_led, HIGH);
       delay(100);
@@ -101,7 +101,7 @@ int confereCurva() {
   else {
     leu_curva = 0;
   }
-  if (leu_curva == 5)
+  if (leu_curva == 4)
     curva_recente = 140;
   else
     return 0;

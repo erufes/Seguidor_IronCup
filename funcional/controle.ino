@@ -36,11 +36,11 @@ int PID(unsigned int linePosition) {
   int proportional = (int)linePosition - ((NUM_SENSORS-1)*1000)/2; //erro proporcional = 'posição atual da linha' - 'posição central'
   int derivative = proportional - last_proportional;
   last_proportional = proportional;
-  int erro = proportional * 2 / 16 + derivative * 5 / 30;
+  int erro = proportional * 2 / 20 + derivative * 5 / 30; //15 20
   if (erro > VELMAX)
-    return VELMAX;
+    erro = VELMAX;
   if (erro < -VELMAX)
-    return -VELMAX;
+    erro = -VELMAX;
   if(erro < 0){
     tensaoEsq = VELMAX + erro;
     tensaoDir = VELMAX;
@@ -55,34 +55,38 @@ int PID(unsigned int linePosition) {
 //acionamento dos motores
 void anda(int velE, int velD)
 {
+  //Serial.print("velE: ");
   if (velE >= VELMIN) {
     digitalWrite(motorEsq[0], HIGH);
     digitalWrite(motorEsq[1], LOW);
     analogWrite(motorEsq[2], velE);
+    //Serial.print(velE);
   } else if (velE >= 0 && velE < VELMIN) {
     digitalWrite(motorEsq[0], LOW);
     digitalWrite(motorEsq[1], HIGH);
-    analogWrite(motorEsq[2], 250 - 5 * velE);
+    analogWrite(motorEsq[2], (250 - 7 * velE));
+    //Serial.print(-(250 - 5 * velE));
   } else {
     digitalWrite(motorEsq[0], LOW);
     digitalWrite(motorEsq[1], HIGH);
     analogWrite(motorEsq[2], -velE);
   }
-  
-  if(velD > 240)
-    velD = 240;
+  //Serial.print("  ");
+  //Serial.print("velD: ");
   if (velD >= VELMIN) {
     digitalWrite(motorDir[0], HIGH);
     digitalWrite(motorDir[1], LOW);
-    analogWrite(motorDir[2], (int)(1.0 * velD));
+    analogWrite(motorDir[2], velD);
+    //Serial.println(velD);
   } else if (velD >= 0 && velD < VELMIN) {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2],(255 - 5 * velD));
+    analogWrite(motorDir[2],(250 - 7 * velD));
+    //Serial.println(-(250 - 5 * velD));
   } else {
     digitalWrite(motorDir[0], LOW);
     digitalWrite(motorDir[1], HIGH);
-    analogWrite(motorDir[2], (int)(1.0 * (-velD)));
+    analogWrite(motorDir[2], -velD);
   }
 }
 
