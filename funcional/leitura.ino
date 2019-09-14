@@ -53,7 +53,7 @@ void confereChegada(int linePosition) {
       if (!cancela_marcacao){
         passou_chegada++;
         digitalWrite(pin_led, HIGH);
-        delay(20);
+        delay(10);
         digitalWrite(pin_led, LOW);
       }
       cancela_marcacao = 0;
@@ -72,8 +72,8 @@ void confereChegada(int linePosition) {
   } else {
     leu_chegada = 0;
   }
-  if (leu_chegada == 5)
-    chegada_recente = 40;
+  if (leu_chegada == 3)
+    chegada_recente = 50;
 
   if (passou_chegada == 2) {
     para();
@@ -110,7 +110,7 @@ int confereCurva(int linePosition) {
     leu_curva = 0;
   }
   if (leu_curva == 4)
-    curva_recente = 40;
+    curva_recente = 50;
   else
     return 0;
 }
