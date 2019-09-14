@@ -36,7 +36,7 @@ int PID(unsigned int linePosition) {
   int proportional = (int)linePosition - ((NUM_SENSORS-1)*1000)/2; //erro proporcional = 'posição atual da linha' - 'posição central'
   int derivative = proportional - last_proportional;
   last_proportional = proportional;
-  int erro = proportional * 2 / 26 + derivative * 5 / 22; //24 24
+  int erro = proportional * 2 / 24 + derivative * 5 / 20 ; //p = 15
   if (erro > VELMAX)
     erro = VELMAX;
   if (erro < -VELMAX)
