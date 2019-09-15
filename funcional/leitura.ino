@@ -46,23 +46,27 @@ int readLine()
 }
 
 //confere a marcacao de chegada, se ler duas vezes o robo para por pelo menos 10 seg
-void confereChegada() {
+void confereChegada(int linePosition) {
   if (chegada_recente > 0) {
     chegada_recente--;
     if (chegada_recente == 0) {
-      if (!cancela_marcacao) {
+      if (!cancela_marcacao && (millis() - tempo_chegada) > FILTRO_TEMPO ){
         passou_chegada++;
         digitalWrite(pin_led, HIGH);
-        delay(20);
+        delay(30);
         digitalWrite(pin_led, LOW);
+        //Serial.println((millis() - tempo_chegada));
+        tempo_chegada = millis();
       }
       cancela_marcacao = 0;
     }
   }
 
   if (digitalRead(pin_chegada) == COR) {
-    if (!saiu && !curva_recente)
-      leu_chegada++;
+    if (!saiu && !curva_recente) {
+      //if (linePosition > 1500 && linePosition < 5500)
+        leu_chegada++;
+    }
     else {
       //curva_recente = 0;
       cancela_marcacao = 1;
@@ -70,8 +74,8 @@ void confereChegada() {
   } else {
     leu_chegada = 0;
   }
-  if (leu_chegada == 4)
-    chegada_recente = 200;
+  if (leu_chegada == 3)
+    chegada_recente = 40;
 
   if (passou_chegada == 2) {
     para();
@@ -86,7 +90,7 @@ void confereChegada() {
 }
 
 //confere a marcacao de curva
-int confereCurva() {
+int confereCurva(int linePosition) {
   if (curva_recente > 0) {
     curva_recente--;
     if (curva_recente == 0) {
@@ -95,8 +99,10 @@ int confereCurva() {
     }
   }
   if (digitalRead(pin_curva) == COR) {
-    if (!saiu && !chegada_recente) //verifica se esta seguindo a linha
-      leu_curva++;
+    if (!saiu && !chegada_recente) { //verifica se esta seguindo a linha
+      //if (linePosition > 1500 && linePosition < 5500)
+        leu_curva++;
+    }
     else {
       //chegada_recente = 0;
       cancela_marcacao = 1;
@@ -106,7 +112,7 @@ int confereCurva() {
     leu_curva = 0;
   }
   if (leu_curva == 4)
-    curva_recente = 140;
+    curva_recente = 40;
   else
     return 0;
 }

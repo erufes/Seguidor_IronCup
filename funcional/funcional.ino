@@ -1,8 +1,9 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  35   // velocidade minima
-#define VELMAX                  200   // velocidade maxima
-#define COR                      0    // cor da linha(branca:0 / preta: 1)
+#define VELMAX                  255   // velocidade maxima
+#define COR                     0    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
+#define FILTRO_TEMPO            26750   // time filter in milisseconds 
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
 const int motorDir[3] =  {10, 7, 6};   // {dig, dig, pwm}
@@ -22,6 +23,7 @@ int passou_chegada = 0;               // qtd de vezes que passou a marcacao de c
 int curva_recente = 0;
 int chegada_recente = 0;
 int cancela_marcacao = 0;
+unsigned long tempo_chegada = 0;
 
 int tensaoEsq = 0, tensaoDir = 0;
 int reduz = 0;                        // contador para deixar a velocidade reduzida
@@ -36,18 +38,21 @@ void setup() {
   calibracao2();
   posCalibracao();
   delay(500);
+  tempo_chegada = millis() - FILTRO_TEMPO;
   //Serial.begin(9600);
+  //Serial.println(tempo_chegada);
+  
 }
 
 void loop() {
   
   int linePosition = readLine();
 
-  confereChegada();
+  confereChegada(linePosition);
 
   int erro = PID(linePosition);
   
-  if(confereCurva())
+  if(confereCurva(linePosition))
     cancela_marcacao = 0;
 //    reduz = 50;             //tempo para velocidade ficar reduzida
 //  if(reduz > 0)
