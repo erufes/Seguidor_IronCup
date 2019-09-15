@@ -3,7 +3,7 @@
 #define VELMAX                  255   // velocidade maxima
 #define COR                     0    // cor da linha(branca:0 / preta: 1)
 #define NUM_SENSORS             8    // number of sensors used
-#define FILTRO_TEMPO            26500   // time filter in seg
+#define FILTRO_TEMPO            5000   // time filter in seg
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
 const int motorDir[3] =  {10, 7, 6};   // {dig, dig, pwm}
