@@ -112,7 +112,7 @@ int confereCurva(int linePosition) {
     leu_curva = 0;
   }
   if (leu_curva == 4)
-    curva_recente = 20;
+    curva_recente = 40;
   else
     return 0;
 }

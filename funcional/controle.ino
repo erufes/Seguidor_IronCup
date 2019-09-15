@@ -25,7 +25,7 @@ void reduzVelocidade() {
     tensaoDir = 0;
     tensaoEsq = 0;
   }
-  else {
+    else {
     tensaoDir -= (reduz * 2);
     tensaoEsq -= (reduz * 2);
   }
