@@ -105,7 +105,7 @@ int confereCurva(int linePosition) {
     }
     else {
       //chegada_recente = 0;
-      cancela_marcacao = 0;
+      cancela_marcacao = 1;
     }
   }
   else {
