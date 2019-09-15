@@ -50,11 +50,13 @@ void confereChegada(int linePosition) {
   if (chegada_recente > 0) {
     chegada_recente--;
     if (chegada_recente == 0) {
-      if (!cancela_marcacao){
+      if (!cancela_marcacao && (millis() - tempo_chegada) > FILTRO_TEMPO ){
         passou_chegada++;
         digitalWrite(pin_led, HIGH);
-        delay(10);
+        delay(30);
         digitalWrite(pin_led, LOW);
+        //Serial.println((millis() - tempo_chegada));
+        tempo_chegada = millis();
       }
       cancela_marcacao = 0;
     }
@@ -73,7 +75,7 @@ void confereChegada(int linePosition) {
     leu_chegada = 0;
   }
   if (leu_chegada == 3)
-    chegada_recente = 50;
+    chegada_recente = 40;
 
   if (passou_chegada == 2) {
     para();
@@ -103,14 +105,14 @@ int confereCurva(int linePosition) {
     }
     else {
       //chegada_recente = 0;
-      cancela_marcacao = 1;
+      cancela_marcacao = 0;gvyhjfvgjvfj
     }
   }
   else {
     leu_curva = 0;
   }
   if (leu_curva == 4)
-    curva_recente = 50;
+    curva_recente = 40;
   else
     return 0;
 }
