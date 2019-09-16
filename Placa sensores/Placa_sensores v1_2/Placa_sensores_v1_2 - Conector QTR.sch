@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:Placa_sensores_v1_2 - Conector QTR-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -339,4 +339,10 @@ F 3 "~" H 1950 1850 50  0001 C CNN
 $EndComp
 Text GLabel 1650 1650 0    50   Input ~ 0
 VccSensores
+$Sheet
+S 3700 1500 2200 1250
+U 5D800EAA
+F0 "Seguidor_QTR" 50
+F1 "Seguidor_QTR.sch" 50
+$EndSheet
 $EndSCHEMATC

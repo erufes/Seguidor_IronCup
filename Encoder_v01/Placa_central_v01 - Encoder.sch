@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:Placa_central_v01 - Encoder-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -550,4 +550,10 @@ F 3 "~" H 9900 4900 50  0001 C CNN
 	1    9900 4900
 	1    0    0    -1  
 $EndComp
+$Sheet
+S 2250 5500 2250 1350
+U 5D8012D5
+F0 "Seguidor_Encoder" 50
+F1 "Seguidor_Encoder.sch" 50
+$EndSheet
 $EndSCHEMATC

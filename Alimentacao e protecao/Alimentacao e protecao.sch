@@ -1,10 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:Alimentacao e protecao-cache
-EELAYER 29 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -342,4 +342,10 @@ Wire Wire Line
 Wire Wire Line
 	6650 3400 6800 3400
 Connection ~ 6800 3400
+$Sheet
+S 2500 4950 2500 1150
+U 5D800951
+F0 "Seguidor_Alimentacao-protecao" 50
+F1 "Seguidor_Alimentacao-protecao.sch" 50
+$EndSheet
 $EndSCHEMATC
