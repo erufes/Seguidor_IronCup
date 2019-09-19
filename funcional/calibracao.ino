@@ -67,7 +67,7 @@ void posCalibracao() {
 //    int erro = (int)(linePosition - ((NUM_SENSORS - 1) * 1000) / 2) / 2; //erro = 'posição da linha atual' - 'posição central'
 //    if (erro > VELMIN) erro = VELMIN;
 //    if (erro < -VELMIN) erro = -VELMIN;
-    anda(40, -40);
+    anda(65, -65);
   }
   para();
   //ficar parado ate o botao ser apertado
