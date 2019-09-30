@@ -1,8 +1,12 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
-#define VELMIN                  65   // velocidade minima
-#define VELMAX                  190   // velocidade maxima
-#define COR                     1    // cor da linha(branca:0 / preta: 1)
-#define NUM_SENSORS             8    // number of sensors used
+#define VELMIN                  60    // velocidade minima
+#define VELMAX                  255   // velocidade maxima
+#define VELCALI                 60    //velocidade usada na calibração
+#define VELMAXCURVA             180   //velocidade maxima reversa usada
+#define VELMINCURVA             0     //velocidade maxima 
+#define VELFREIO                240   //velocidade (tensão de 255) de freio
+#define COR                     1     // cor da linha(branca:0 / preta: 1)
+#define NUM_SENSORS             8     // number of sensors used
 #define FILTRO_TEMPO            26750   // time filter in milisseconds 
 const int sensor[NUM_SENSORS] = {A7, A6, A5, A4, A3, A2, A1, A0};   //sensores de linha
 const int motorEsq[3] = {9, 8, 5};    // {dig, dig, pwm} //CONFERIR SE ESTA CERTO! - Foi Conferido 06/09/2019
