@@ -1,7 +1,7 @@
 #define NUM_SAMPLES_PER_SENSOR  3     // samples per sensor reading
 #define VELMIN                  60    // velocidade minima
 #define VELMAX                  255   // velocidade maxima
-#define VELCALI                 60    //velocidade usada na calibração
+#define VELCALI                 50    //velocidade usada na calibração
 #define VELMAXCURVA             180   //velocidade maxima reversa usada
 #define VELMINCURVA             0     //velocidade maxima 
 #define VELFREIO                240   //velocidade (tensão de 255) de freio
