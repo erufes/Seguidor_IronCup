@@ -1,4 +1,0 @@
-criar estados com led - FEITO
-mudar para seguir branco - FEITO (tem que testar, pode dar merda)
-git^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-criar conjunto de testes padrao
