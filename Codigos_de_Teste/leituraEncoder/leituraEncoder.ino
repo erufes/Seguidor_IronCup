@@ -2,7 +2,7 @@
   Breno Odnan
   ERUS - Equipe de RObótica da UFES
 
-  Código final para leitura de encoders
+  Código  padrão para teste de leitura de encoders
 
   Crédito a RobotFreak pelo código exemplo de uso de timers
   more infos: http://www.letmakerobots.com/node/28278
