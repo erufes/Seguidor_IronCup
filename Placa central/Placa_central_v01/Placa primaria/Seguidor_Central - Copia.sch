@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:Placa_central_v01-cache
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -661,7 +662,7 @@ Text GLabel 2850 -1100 0    50   Input ~ 0
 Text GLabel 9050 -1600 0    59   Input ~ 0
 5VArduino
 $Comp
-L Placa_central_v01-rescue:Arduino_Nano_v3.x-MCU_Module A?
+L MCU_Module:Arduino_Nano_v3.x A?
 U 1 1 5D80BAE9
 P 2100 -3850
 F 0 "A?" H 2100 -4936 50  0000 C CNN

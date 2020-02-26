@@ -1,11 +1,4 @@
-16942588834499658
-Arduino nano
-arduino_nano
-
-
-0
-30
-30
+16936298323778883
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2218,13 +2211,6 @@ SMD 8540
 0
 4
 4
-CUSTOM_Placa_central_v01
-Solder_Pad_Custom
-
-
-0
-2
-2
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -6096,20 +6082,6 @@ capacitor tantalum
 0
 2
 2
-Componentes_soltos
-L298 HM (h-bridge)
-MULTIWATT 15 LEAD
-MULTIWATT 15 LEAD
-0
-15
-15
-Componentes_soltos
-L298_H-Bridge
-MULTIWATT 15 LEAD
-MULTIWATT 15 LEAD
-0
-15
-15
 Connector
 Banana_Jack_1Pin
 Single banana socket, footprint - 6mm drill

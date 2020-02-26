@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:Placa_central_v01 - Encoder-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 1
 Title ""
 Date ""
 Rev ""
@@ -170,11 +169,11 @@ Wire Wire Line
 	2850 2350 2850 2400
 NoConn ~ 2850 2700
 Wire Wire Line
-	2100 3950 2200 3950
+	2100 3950 2150 3950
 Wire Wire Line
-	2100 3750 2200 3750
+	2100 3750 2150 3750
 Wire Wire Line
-	2100 3550 2200 3550
+	2100 3550 2150 3550
 $Comp
 L Device:R R2
 U 1 1 5D410C75
@@ -355,11 +354,11 @@ Wire Wire Line
 	8050 2400 8050 2450
 NoConn ~ 8050 2750
 Wire Wire Line
-	7300 4000 7400 4000
+	7300 4000 7350 4000
 Wire Wire Line
-	7300 3800 7400 3800
+	7300 3800 7350 3800
 Wire Wire Line
-	7300 3600 7400 3600
+	7300 3600 7350 3600
 $Comp
 L Device:R R5
 U 1 1 5D434CB2
@@ -550,10 +549,58 @@ F 3 "~" H 9900 4900 50  0001 C CNN
 	1    9900 4900
 	1    0    0    -1  
 $EndComp
-$Sheet
-S 2250 5500 2250 1350
-U 5D8012D5
-F0 "Seguidor_Encoder" 50
-F1 "Seguidor_Encoder.sch" 50
-$EndSheet
+Text HLabel 2100 3650 0    50   Output ~ 0
+Sinal_OutEncoderEsquerdo
+Text HLabel 2100 3850 0    50   Input ~ 0
+Vcc_InEncoderEsquerdo
+Text HLabel 2100 4050 0    50   Input ~ 0
+GND_InEncoderEsquerdo
+Text HLabel 7300 3700 0    50   Output ~ 0
+Sinal_OutEncoderDireito
+Text HLabel 7300 3900 0    50   Input ~ 0
+Vcc_InEncoderDireito
+Text HLabel 7300 4100 0    50   Input ~ 0
+GND_InEncoderDireito
+Wire Wire Line
+	2100 3650 2150 3650
+Wire Wire Line
+	2150 3650 2150 3550
+Connection ~ 2150 3550
+Wire Wire Line
+	2150 3550 2200 3550
+Wire Wire Line
+	2100 3850 2150 3850
+Wire Wire Line
+	2150 3850 2150 3750
+Connection ~ 2150 3750
+Wire Wire Line
+	2150 3750 2200 3750
+Wire Wire Line
+	2100 4050 2150 4050
+Wire Wire Line
+	2150 4050 2150 3950
+Connection ~ 2150 3950
+Wire Wire Line
+	2150 3950 2200 3950
+Wire Wire Line
+	7300 3700 7350 3700
+Wire Wire Line
+	7350 3700 7350 3600
+Connection ~ 7350 3600
+Wire Wire Line
+	7350 3600 7400 3600
+Wire Wire Line
+	7300 3900 7350 3900
+Wire Wire Line
+	7350 3900 7350 3800
+Connection ~ 7350 3800
+Wire Wire Line
+	7350 3800 7400 3800
+Wire Wire Line
+	7300 4100 7350 4100
+Wire Wire Line
+	7350 4100 7350 4000
+Connection ~ 7350 4000
+Wire Wire Line
+	7350 4000 7400 4000
 $EndSCHEMATC

@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Alimentacao e protecao-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -28,23 +27,23 @@ $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H1
 U 1 1 5D0BE091
-P 2850 1700
-F 0 "H1" H 2950 1751 50  0000 L CNN
-F 1 "V8.4 - Lipo" H 2600 1650 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 2850 1700 50  0001 C CNN
-F 3 "~" H 2850 1700 50  0001 C CNN
-	1    2850 1700
+P 2850 1600
+F 0 "H1" H 2950 1651 50  0000 L CNN
+F 1 "V8.4 - Lipo" H 2600 1550 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 2850 1600 50  0001 C CNN
+F 3 "~" H 2850 1600 50  0001 C CNN
+	1    2850 1600
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole_Pad H2
 U 1 1 5D0BE14B
-P 3300 1700
-F 0 "H2" H 3400 1751 50  0000 L CNN
-F 1 "GND - Lipo" H 3100 1650 50  0000 L CNN
-F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3300 1700 50  0001 C CNN
-F 3 "~" H 3300 1700 50  0001 C CNN
-	1    3300 1700
+P 3300 1600
+F 0 "H2" H 3400 1651 50  0000 L CNN
+F 1 "GND - Lipo" H 3100 1550 50  0000 L CNN
+F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3300 1600 50  0001 C CNN
+F 3 "~" H 3300 1600 50  0001 C CNN
+	1    3300 1600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -85,12 +84,10 @@ Wire Wire Line
 Wire Wire Line
 	3400 2050 3300 2050
 Connection ~ 3300 2050
-Wire Wire Line
-	3300 2050 3300 1800
-Text Notes 1300 1500 0    79   ~ 0
+Text Notes 1300 1400 0    79   ~ 0
 Circuito de Alimentação da placa e Sistema de proteção
 Wire Notes Line
-	1200 1300 5000 1300
+	1200 1200 5000 1200
 Wire Notes Line
 	5000 3500 1200 3500
 Wire Wire Line
@@ -311,8 +308,6 @@ $EndComp
 Wire Wire Line
 	2750 1950 2850 1950
 Wire Wire Line
-	2850 1800 2850 1850
-Wire Wire Line
 	2850 1950 2850 2000
 Connection ~ 2850 1950
 Wire Wire Line
@@ -328,18 +323,50 @@ Text GLabel 6800 1900 2    50   Input ~ 0
 8.4VCircuitoMedidor
 Wire Wire Line
 	6800 1900 6800 2150
-Wire Notes Line
-	5000 1300 5000 3500
-Wire Notes Line
-	1200 1300 1200 3500
 Wire Wire Line
-	2850 3100 2850 3400
+	2850 3100 2850 3300
 Wire Wire Line
-	3300 3400 3300 3050
+	3300 3400 3300 3300
 Connection ~ 3300 3050
 Wire Wire Line
 	7650 3400 6800 3400
 Wire Wire Line
 	6650 3400 6800 3400
 Connection ~ 6800 3400
+Text HLabel 2650 3300 0    50   Output ~ 0
+8.4V_OutPlacaCentral
+Text HLabel 3500 3300 2    50   Output ~ 0
+8.4V_OutPlacaCentral
+Text HLabel 2700 1750 0    50   Input ~ 0
+8.4V_InBateria
+Text HLabel 3550 1750 2    50   Input ~ 0
+GND_InBateria
+Wire Notes Line
+	1200 1200 1200 3500
+Wire Notes Line
+	5000 1200 5000 3500
+Wire Wire Line
+	2700 1750 2850 1750
+Wire Wire Line
+	2850 1750 2850 1700
+Wire Wire Line
+	2850 1750 2850 1850
+Connection ~ 2850 1750
+Wire Wire Line
+	3300 1700 3300 1750
+Wire Wire Line
+	3300 1750 3550 1750
+Connection ~ 3300 1750
+Wire Wire Line
+	3300 1750 3300 2050
+Wire Wire Line
+	2650 3300 2850 3300
+Connection ~ 2850 3300
+Wire Wire Line
+	2850 3300 2850 3400
+Wire Wire Line
+	3500 3300 3300 3300
+Connection ~ 3300 3300
+Wire Wire Line
+	3300 3300 3300 3050
 $EndSCHEMATC
