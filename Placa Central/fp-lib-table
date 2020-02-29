@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Sensores_e_componentes_SL)(type KiCad)(uri ${KIPRJMOD}/Bibliotecas/Sensores_e_componentes_SL.pretty)(options "")(descr ""))
+)

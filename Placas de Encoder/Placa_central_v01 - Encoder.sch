@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 3 7
 Title ""
 Date ""
 Rev ""
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:R_POT_TRIM_US RV2
+L Device:R_POT_TRIM_US RV?
 U 1 1 5D400987
 P 3650 2550
-F 0 "RV2" H 3550 2600 50  0000 R CNN
+F 0 "RV?" H 3550 2600 50  0000 R CNN
 F 1 "R10KPOT_TRIMEsq" H 3850 2300 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_ACP_CA9-V10_Vertical" H 3650 2550 50  0001 C CNN
 F 3 "~" H 3650 2550 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "~" H 3650 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_POT_TRIM_US RV1
+L Device:R_POT_TRIM_US RV?
 U 1 1 5D4015A7
 P 2850 2550
-F 0 "RV1" H 2782 2504 50  0000 R CNN
+F 0 "RV?" H 2782 2504 50  0000 R CNN
 F 1 "R10KPOT_TRIMEsq" H 3100 2800 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_ACP_CA9-V10_Vertical" H 2850 2550 50  0001 C CNN
 F 3 "~" H 2850 2550 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "~" H 2850 2550 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R1
+L Device:R R?
 U 1 1 5D402880
 P 1600 2000
-F 0 "R1" V 1807 2000 50  0000 C CNN
+F 0 "R?" V 1807 2000 50  0000 C CNN
 F 1 "R220ledIREsq" V 1716 2000 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1530 2000 50  0001 C CNN
 F 3 "~" H 1600 2000 50  0001 C CNN
@@ -47,10 +47,10 @@ F 3 "~" H 1600 2000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R3
+L Device:R R?
 U 1 1 5D4030B7
 P 3950 2750
-F 0 "R3" H 4020 2796 50  0000 L CNN
+F 0 "R?" H 4020 2796 50  0000 L CNN
 F 1 "R10kEsq" H 4020 2705 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3880 2750 50  0001 C CNN
 F 3 "~" H 3950 2750 50  0001 C CNN
@@ -58,10 +58,10 @@ F 3 "~" H 3950 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J2
+L Connector:Conn_01x01_Female J?
 U 1 1 5D403B8C
 P 2400 3750
-F 0 "J2" H 2428 3776 50  0000 L CNN
+F 0 "J?" H 2428 3776 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 2428 3685 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2400 3750 50  0001 C CNN
 F 3 "~" H 2400 3750 50  0001 C CNN
@@ -69,10 +69,10 @@ F 3 "~" H 2400 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J1
+L Connector:Conn_01x01_Female J?
 U 1 1 5D4040C9
 P 2400 3550
-F 0 "J1" H 2428 3576 50  0000 L CNN
+F 0 "J?" H 2428 3576 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 2428 3485 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2400 3550 50  0001 C CNN
 F 3 "~" H 2400 3550 50  0001 C CNN
@@ -80,10 +80,10 @@ F 3 "~" H 2400 3550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J3
+L Connector:Conn_01x01_Female J?
 U 1 1 5D4042C4
 P 2400 3950
-F 0 "J3" H 2428 3976 50  0000 L CNN
+F 0 "J?" H 2428 3976 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 2428 3885 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2400 3950 50  0001 C CNN
 F 3 "~" H 2400 3950 50  0001 C CNN
@@ -93,10 +93,10 @@ $EndComp
 Text GLabel 2100 3550 0    50   Input ~ 0
 SinalEncoderEsq
 $Comp
-L Sensores_e_componentes_SL:TCRT5000 U1
+L Sensores_e_componentes_SL:TCRT5000 U?
 U 1 1 5D3FFB2A
 P 2300 2050
-F 0 "U1" H 2300 2537 60  0000 C CNN
+F 0 "U?" H 2300 2537 60  0000 C CNN
 F 1 "TCRT5000Esq" H 2300 2431 60  0000 C CNN
 F 2 "Sensores_e_componentes_SL:TCRT5000Extendido" H 2300 2050 60  0001 C CNN
 F 3 "" H 2300 2050 60  0000 C CNN
@@ -121,10 +121,10 @@ GNDEsq
 Wire Wire Line
 	2850 2100 2800 2100
 $Comp
-L Amplifier_Operational:LM741 U2
+L Amplifier_Operational:LM741 U?
 U 1 1 5D406FDF
 P 4450 2450
-F 0 "U2" H 4500 2600 50  0000 L CNN
+F 0 "U?" H 4500 2600 50  0000 L CNN
 F 1 "LM741Esq" H 4600 2300 50  0000 L CNN
 F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 4500 2500 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm741.pdf" H 4600 2600 50  0001 C CNN
@@ -175,10 +175,10 @@ Wire Wire Line
 Wire Wire Line
 	2100 3550 2150 3550
 $Comp
-L Device:R R2
+L Device:R R?
 U 1 1 5D410C75
 P 2550 2700
-F 0 "R2" V 2550 2700 50  0000 C CNN
+F 0 "R?" V 2550 2700 50  0000 C CNN
 F 1 "R1KEsq" V 2450 2700 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2480 2700 50  0001 C CNN
 F 3 "~" H 2550 2700 50  0001 C CNN
@@ -195,10 +195,10 @@ Pinos Encoder Esquerdo
 Text Notes 1800 1450 0    79   ~ 0
 Encoder Esquerda
 $Comp
-L Device:R_POT_TRIM_US RV4
+L Device:R_POT_TRIM_US RV?
 U 1 1 5D434C2F
 P 8850 2600
-F 0 "RV4" H 8750 2650 50  0000 R CNN
+F 0 "RV?" H 8750 2650 50  0000 R CNN
 F 1 "R10KPOT_TRIM" H 9050 2350 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_ACP_CA9-V10_Vertical" H 8850 2600 50  0001 C CNN
 F 3 "~" H 8850 2600 50  0001 C CNN
@@ -206,10 +206,10 @@ F 3 "~" H 8850 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_POT_TRIM_US RV3
+L Device:R_POT_TRIM_US RV?
 U 1 1 5D434C39
 P 8050 2600
-F 0 "RV3" H 7982 2554 50  0000 R CNN
+F 0 "RV?" H 7982 2554 50  0000 R CNN
 F 1 "R10KPOT_TRIMDir" H 8300 2850 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_ACP_CA9-V10_Vertical" H 8050 2600 50  0001 C CNN
 F 3 "~" H 8050 2600 50  0001 C CNN
@@ -217,10 +217,10 @@ F 3 "~" H 8050 2600 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R4
+L Device:R R?
 U 1 1 5D434C43
 P 6800 2050
-F 0 "R4" V 7007 2050 50  0000 C CNN
+F 0 "R?" V 7007 2050 50  0000 C CNN
 F 1 "R220ledIRDir" V 6916 2050 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6730 2050 50  0001 C CNN
 F 3 "~" H 6800 2050 50  0001 C CNN
@@ -228,10 +228,10 @@ F 3 "~" H 6800 2050 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:R R6
+L Device:R R?
 U 1 1 5D434C4D
 P 9150 2800
-F 0 "R6" H 9220 2846 50  0000 L CNN
+F 0 "R?" H 9220 2846 50  0000 L CNN
 F 1 "R10k" H 9220 2755 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9080 2800 50  0001 C CNN
 F 3 "~" H 9150 2800 50  0001 C CNN
@@ -239,10 +239,10 @@ F 3 "~" H 9150 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J5
+L Connector:Conn_01x01_Female J?
 U 1 1 5D434C57
 P 7600 3800
-F 0 "J5" H 7628 3826 50  0000 L CNN
+F 0 "J?" H 7628 3826 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 7628 3735 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7600 3800 50  0001 C CNN
 F 3 "~" H 7600 3800 50  0001 C CNN
@@ -250,10 +250,10 @@ F 3 "~" H 7600 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J4
+L Connector:Conn_01x01_Female J?
 U 1 1 5D434C61
 P 7600 3600
-F 0 "J4" H 7628 3626 50  0000 L CNN
+F 0 "J?" H 7628 3626 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 7628 3535 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7600 3600 50  0001 C CNN
 F 3 "~" H 7600 3600 50  0001 C CNN
@@ -261,10 +261,10 @@ F 3 "~" H 7600 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J6
+L Connector:Conn_01x01_Female J?
 U 1 1 5D434C6B
 P 7600 4000
-F 0 "J6" H 7628 4026 50  0000 L CNN
+F 0 "J?" H 7628 4026 50  0000 L CNN
 F 1 "Conn_01x01_Female" H 7628 3935 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 7600 4000 50  0001 C CNN
 F 3 "~" H 7600 4000 50  0001 C CNN
@@ -276,10 +276,10 @@ GNDDir
 Text GLabel 7300 3600 0    50   Input ~ 0
 SinalEncoderDIr
 $Comp
-L Sensores_e_componentes_SL:TCRT5000 U3
+L Sensores_e_componentes_SL:TCRT5000 U?
 U 1 1 5D434C77
 P 7500 2100
-F 0 "U3" H 7500 2587 60  0000 C CNN
+F 0 "U?" H 7500 2587 60  0000 C CNN
 F 1 "TCRT5000Dir" H 7500 2481 60  0000 C CNN
 F 2 "Sensores_e_componentes_SL:TCRT5000Extendido" H 7500 2100 60  0001 C CNN
 F 3 "" H 7500 2100 60  0000 C CNN
@@ -306,10 +306,10 @@ GNDDir
 Wire Wire Line
 	8050 2150 8000 2150
 $Comp
-L Amplifier_Operational:LM741 U4
+L Amplifier_Operational:LM741 U?
 U 1 1 5D434C8B
 P 9650 2500
-F 0 "U4" H 9700 2650 50  0000 L CNN
+F 0 "U?" H 9700 2650 50  0000 L CNN
 F 1 "LM741" H 9800 2350 50  0000 L CNN
 F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 9700 2550 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm741.pdf" H 9800 2650 50  0001 C CNN
@@ -360,10 +360,10 @@ Wire Wire Line
 Wire Wire Line
 	7300 3600 7350 3600
 $Comp
-L Device:R R5
+L Device:R R?
 U 1 1 5D434CB2
 P 7750 2750
-F 0 "R5" V 7750 2750 50  0000 C CNN
+F 0 "R?" V 7750 2750 50  0000 C CNN
 F 1 "R1KDir" V 7650 2750 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7680 2750 50  0001 C CNN
 F 3 "~" H 7750 2750 50  0001 C CNN
@@ -412,10 +412,10 @@ GNDDir
 Text Notes 3400 3300 0    79   ~ 0
 Furos Suporte Encoder Esquerdo
 $Comp
-L Mechanical:MountingHole H1
+L Mechanical:MountingHole H?
 U 1 1 5D406AF8
 P 3850 3550
-F 0 "H1" H 3950 3596 50  0000 L CNN
+F 0 "H?" H 3950 3596 50  0000 L CNN
 F 1 "Furo1Esq" H 3950 3505 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3mm" H 3850 3550 50  0001 C CNN
 F 3 "~" H 3850 3550 50  0001 C CNN
@@ -423,10 +423,10 @@ F 3 "~" H 3850 3550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H2
+L Mechanical:MountingHole H?
 U 1 1 5D4070A4
 P 3850 3900
-F 0 "H2" H 3950 3946 50  0000 L CNN
+F 0 "H?" H 3950 3946 50  0000 L CNN
 F 1 "Furo2Esq" H 3950 3855 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3mm" H 3850 3900 50  0001 C CNN
 F 3 "~" H 3850 3900 50  0001 C CNN
@@ -436,10 +436,10 @@ $EndComp
 Text Notes 8700 3350 0    79   ~ 0
 Furos Suporte Encoder Direito
 $Comp
-L Mechanical:MountingHole H3
+L Mechanical:MountingHole H?
 U 1 1 5D407741
 P 9150 3600
-F 0 "H3" H 9250 3646 50  0000 L CNN
+F 0 "H?" H 9250 3646 50  0000 L CNN
 F 1 "Furo1Dir" H 9250 3555 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3mm" H 9150 3600 50  0001 C CNN
 F 3 "~" H 9150 3600 50  0001 C CNN
@@ -447,10 +447,10 @@ F 3 "~" H 9150 3600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H4
+L Mechanical:MountingHole H?
 U 1 1 5D40774B
 P 9150 3950
-F 0 "H4" H 9250 3996 50  0000 L CNN
+F 0 "H?" H 9250 3996 50  0000 L CNN
 F 1 "Furo2Dir" H 9250 3905 50  0000 L CNN
 F 2 "MountingHole:MountingHole_3mm" H 9150 3950 50  0001 C CNN
 F 3 "~" H 9150 3950 50  0001 C CNN
@@ -462,10 +462,10 @@ Furos Motor Case Encoder Esquerdo
 Text Notes 8700 4300 0    79   ~ 0
 Furos Motor Case Encoder Direito
 $Comp
-L Mechanical:MountingHole H5
+L Mechanical:MountingHole H?
 U 1 1 5D40CB8F
 P 3850 4550
-F 0 "H5" H 3950 4596 50  0000 L CNN
+F 0 "H?" H 3950 4596 50  0000 L CNN
 F 1 "Furo3Esq" H 3950 4505 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 3850 4550 50  0001 C CNN
 F 3 "~" H 3850 4550 50  0001 C CNN
@@ -473,10 +473,10 @@ F 3 "~" H 3850 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H6
+L Mechanical:MountingHole H?
 U 1 1 5D40CB95
 P 3850 4900
-F 0 "H6" H 3950 4946 50  0000 L CNN
+F 0 "H?" H 3950 4946 50  0000 L CNN
 F 1 "Furo4Esq" H 3950 4855 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 3850 4900 50  0001 C CNN
 F 3 "~" H 3850 4900 50  0001 C CNN
@@ -484,10 +484,10 @@ F 3 "~" H 3850 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H7
+L Mechanical:MountingHole H?
 U 1 1 5D40DDE5
 P 4600 4550
-F 0 "H7" H 4700 4596 50  0000 L CNN
+F 0 "H?" H 4700 4596 50  0000 L CNN
 F 1 "Furo5Esq" H 4700 4505 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 4600 4550 50  0001 C CNN
 F 3 "~" H 4600 4550 50  0001 C CNN
@@ -495,10 +495,10 @@ F 3 "~" H 4600 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H8
+L Mechanical:MountingHole H?
 U 1 1 5D40DDEB
 P 4600 4900
-F 0 "H8" H 4700 4946 50  0000 L CNN
+F 0 "H?" H 4700 4946 50  0000 L CNN
 F 1 "Furo6Esq" H 4700 4855 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 4600 4900 50  0001 C CNN
 F 3 "~" H 4600 4900 50  0001 C CNN
@@ -506,10 +506,10 @@ F 3 "~" H 4600 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H9
+L Mechanical:MountingHole H?
 U 1 1 5D40EB57
 P 9150 4550
-F 0 "H9" H 9250 4596 50  0000 L CNN
+F 0 "H?" H 9250 4596 50  0000 L CNN
 F 1 "Furo3Dir" H 9250 4505 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 9150 4550 50  0001 C CNN
 F 3 "~" H 9150 4550 50  0001 C CNN
@@ -517,10 +517,10 @@ F 3 "~" H 9150 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H10
+L Mechanical:MountingHole H?
 U 1 1 5D40EB61
 P 9150 4900
-F 0 "H10" H 9250 4946 50  0000 L CNN
+F 0 "H?" H 9250 4946 50  0000 L CNN
 F 1 "Furo4Dir" H 9250 4855 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 9150 4900 50  0001 C CNN
 F 3 "~" H 9150 4900 50  0001 C CNN
@@ -528,10 +528,10 @@ F 3 "~" H 9150 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H11
+L Mechanical:MountingHole H?
 U 1 1 5D40EB6B
 P 9900 4550
-F 0 "H11" H 10000 4596 50  0000 L CNN
+F 0 "H?" H 10000 4596 50  0000 L CNN
 F 1 "Furo5Dir" H 10000 4505 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 9900 4550 50  0001 C CNN
 F 3 "~" H 9900 4550 50  0001 C CNN
@@ -539,10 +539,10 @@ F 3 "~" H 9900 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H12
+L Mechanical:MountingHole H?
 U 1 1 5D40EB75
 P 9900 4900
-F 0 "H12" H 10000 4946 50  0000 L CNN
+F 0 "H?" H 10000 4946 50  0000 L CNN
 F 1 "Furo6Dir" H 10000 4855 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2mm" H 9900 4900 50  0001 C CNN
 F 3 "~" H 9900 4900 50  0001 C CNN

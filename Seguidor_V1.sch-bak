@@ -1,0 +1,163 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 1000 2400 1550 1350
+U 5E60F01E
+F0 "Placa de Alimentação" 50
+F1 "Placa de Alimentação e Proteção/Alimentacao e protecao.sch" 50
+F2 "8.4V_OutPlacaCentral" O R 2550 3300 55 
+F3 "8.4V_InBateria" I L 1000 3000 55 
+F4 "GND_InBateria" I L 1000 3100 55 
+F5 "Botão_Out" O R 2550 2600 55 
+F6 "Botão_In" I R 2550 2700 55 
+F7 "GND_OutPlacaCentral" O R 2550 3400 55 
+$EndSheet
+$Sheet
+S 6450 4500 3800 1350
+U 5E60FC11
+F0 "Placa de Encoder" 50
+F1 "Placas de Encoder/Placa_central_v01 - Encoder.sch" 50
+F2 "Sinal_OutEncoderEsquerdo" O L 6450 4900 55 
+F3 "Vcc_InEncoderEsquerdo" I L 6450 4600 55 
+F4 "GND_InEncoderEsquerdo" I L 6450 4750 55 
+F5 "Sinal_OutEncoderDireito" O L 6450 5000 55 
+$EndSheet
+$Sheet
+S 6450 2500 3800 1750
+U 5E60FD40
+F0 "Placa Sensores" 50
+F1 "Placa Sensores/Placa_sensores v1_2/Placa_sensores_v1_2.sch" 50
+F2 "Vcc_In" I L 6450 4050 55 
+F3 "GND_In" I L 6450 4150 55 
+F4 "SensorDireita_Out" O L 6450 2850 55 
+F5 "SensorEsquerda_Out" O L 6450 2950 55 
+F6 "Sensor1_Out" O L 6450 3150 55 
+F7 "Sensor2_Out" O L 6450 3250 55 
+F8 "Sensor3_Out" O L 6450 3350 55 
+F9 "Sensor4_Out" O L 6450 3450 55 
+F10 "Sensor5_Out" O L 6450 3550 55 
+F11 "Sensor6_Out" O L 6450 3650 55 
+F12 "Sensor7_Out" O L 6450 3750 55 
+F13 "Sensor8_Out" O L 6450 3850 55 
+$EndSheet
+$Sheet
+S 3650 1100 1900 4050
+U 5E5E8AC3
+F0 "Placa Central" 50
+F1 "Placa Central/Placa_central_v01.sch" 50
+F2 "8.4V_InPlacaCentral" I L 3650 3300 55 
+F3 "GND_InPlacaCentral" I L 3650 3400 55 
+F4 "8.4V_OutPonteH" O L 3650 1500 55 
+F5 "5VPonteH_InPonteH" I L 3650 1700 55 
+F6 "GND_OutPonteH" O L 3650 1600 55 
+F7 "M1PWM_OutPonteH" O L 3650 1900 55 
+F8 "M1Dir1_OutPonteH" O L 3650 2000 55 
+F9 "M1Dir2_OutPonteH" O L 3650 2100 55 
+F10 "M2Dir1_OutPonteH" O L 3650 2200 55 
+F11 "M2Dir2_OutPonteH" O L 3650 2300 55 
+F12 "M2PWM_OutPonteH" O L 3650 2400 55 
+F13 "SensorDireita_InPlacaCentral" I R 5550 2850 55 
+F14 "SensorEsquerda_InPlacaCentral" I R 5550 2950 55 
+F15 "Sensor1_InPlacaCentral" I R 5550 3150 55 
+F16 "Sensor2_InPlacaCentral" I R 5550 3250 55 
+F17 "Sensor3_InPlacaCentral" I R 5550 3350 55 
+F18 "Sensor4_InPlacaCentral" I R 5550 3450 55 
+F19 "Sensor5_InPlacaCentral" I R 5550 3550 55 
+F20 "Sensor6_InPlacaCentral" I R 5550 3650 55 
+F21 "Sensor7_InPlacaCentral" I R 5550 3750 55 
+F22 "Sensor8_InPlacaCentral" I R 5550 3850 55 
+F23 "GND_OutPlacaCentral" O R 5550 4050 55 
+F24 "Vcc_OutPlacaCentral" O R 5550 4150 55 
+F25 "5V_OutEncoder" O R 5550 4600 55 
+F26 "GND_OutEncoder" O R 5550 4750 55 
+F27 "EncoderEsq_Encoder" B R 5550 4900 55 
+F28 "EncoderDir_Encoder" B R 5550 5000 55 
+$EndSheet
+Text Notes 2650 750  0    118  ~ 0
+Projeto Seguidor de Linha -  2019 - Destiscalpium Automata
+Text Notes 4200 950  0    79   ~ 0
+Placa Central
+Text Notes 7800 4750 0    79   ~ 0
+Placas de Encoder Direito e Esquerdo
+Text Notes 8000 2700 0    79   ~ 0
+Placas de Conexão e de Sensores
+Text Notes 800  2050 0    79   ~ 0
+Placa de alimentação e proteção
+Text Notes 2950 2950 1    55   ~ 0
+Botão ON/OFF
+Wire Notes Line
+	2550 2600 2850 2600
+Wire Notes Line
+	2550 2700 2850 2700
+Text Notes 700  3500 1    55   ~ 0
+LiPo 2S - 8.4V Máx.
+Wire Notes Line
+	1000 3100 750  3100
+Wire Notes Line
+	1000 3000 750  3000
+Text Notes 4650 2550 1    55   ~ 0
+Ponte H - Parafusada na Placa
+Wire Notes Line
+	4250 1150 4250 2600
+Wire Notes Line
+	4250 2600 5000 2600
+Wire Notes Line
+	5000 2600 5000 1150
+Wire Notes Line
+	4250 1150 5000 1150
+Wire Notes Line
+	2550 3400 3650 3400
+Wire Notes Line
+	2550 3300 3650 3300
+Text Notes 6050 4150 1    55   ~ 0
+          Conector IDC\n(Invertido em uma das pontas)
+Wire Notes Line
+	5550 3850 6450 3850
+Wire Notes Line
+	5550 3750 6450 3750
+Wire Notes Line
+	5550 3650 6450 3650
+Wire Notes Line
+	5550 3550 6450 3550
+Wire Notes Line
+	5550 3450 6450 3450
+Wire Notes Line
+	5550 3350 6450 3350
+Wire Notes Line
+	5550 3250 6450 3250
+Wire Notes Line
+	5550 3150 6450 3150
+Wire Notes Line
+	5550 2950 6450 2950
+Wire Notes Line
+	5550 2850 6450 2850
+Wire Notes Line
+	5550 4150 6450 4150
+Wire Notes Line
+	5550 4050 6450 4050
+Wire Notes Line
+	5550 4800 6450 4800
+Wire Notes Line
+	5550 4700 6450 4700
+Wire Notes Line
+	5550 4650 6450 4650
+Wire Notes Line
+	5550 4550 6450 4550
+Wire Notes Line
+	5550 5000 6450 5000
+Wire Notes Line
+	5550 4900 6450 4900
+$EndSCHEMATC

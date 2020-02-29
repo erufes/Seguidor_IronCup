@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 2 7
 Title ""
 Date ""
 Rev ""
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Switch:SW_SPST SW1
+L Switch:SW_SPST SW?
 U 1 1 5D0BCA30
 P 2850 2900
-F 0 "SW1" H 2850 3135 50  0000 C CNN
+F 0 "SW?" H 2850 3135 50  0000 C CNN
 F 1 "SW_ON/OFF" H 2850 3044 50  0000 C CNN
 F 2 "CUSTOM_Placa_central_v01:Solder_Pad_Custom" H 2850 2900 50  0001 C CNN
 F 3 "" H 2850 2900 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "" H 2850 2900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H1
+L Mechanical:MountingHole_Pad H?
 U 1 1 5D0BE091
 P 2850 1600
-F 0 "H1" H 2950 1651 50  0000 L CNN
+F 0 "H?" H 2950 1651 50  0000 L CNN
 F 1 "V8.4 - Lipo" H 2600 1550 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 2850 1600 50  0001 C CNN
 F 3 "~" H 2850 1600 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "~" H 2850 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole_Pad H2
+L Mechanical:MountingHole_Pad H?
 U 1 1 5D0BE14B
 P 3300 1600
-F 0 "H2" H 3400 1651 50  0000 L CNN
+F 0 "H?" H 3400 1651 50  0000 L CNN
 F 1 "GND - Lipo" H 3100 1550 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3300 1600 50  0001 C CNN
 F 3 "~" H 3300 1600 50  0001 C CNN
@@ -47,10 +47,10 @@ F 3 "~" H 3300 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J2
+L Connector:Conn_01x01_Female J?
 U 1 1 5D152CB0
 P 3600 2050
-F 0 "J2" H 3650 2050 50  0000 L CNN
+F 0 "J?" H 3650 2050 50  0000 L CNN
 F 1 "PinoCheckBateriaGND" H 3800 2050 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.5mm" H 3600 2050 50  0001 C CNN
 F 3 "~" H 3600 2050 50  0001 C CNN
@@ -58,10 +58,10 @@ F 3 "~" H 3600 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D1
+L Device:D D?
 U 1 1 5D153AA9
 P 2850 2500
-F 0 "D1" V 2800 2400 50  0000 R CNN
+F 0 "D?" V 2800 2400 50  0000 R CNN
 F 1 "DiodoProtecao-5A" V 2800 3300 50  0000 R CNN
 F 2 "Diode_THT:D_DO-27_P15.24mm_Horizontal" H 2850 2500 50  0001 C CNN
 F 3 "~" H 2850 2500 50  0001 C CNN
@@ -69,10 +69,10 @@ F 3 "~" H 2850 2500 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:Fuse F1
+L Device:Fuse F?
 U 1 1 5D154189
 P 2850 2150
-F 0 "F1" H 2910 2196 50  0000 L CNN
+F 0 "F?" H 2910 2196 50  0000 L CNN
 F 1 "Fuse-5A" H 2910 2105 50  0000 L CNN
 F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" V 2780 2150 50  0001 C CNN
 F 3 "~" H 2850 2150 50  0001 C CNN
@@ -93,10 +93,10 @@ Wire Notes Line
 Wire Wire Line
 	2850 2650 2850 2700
 $Comp
-L Device:D_Zener D2
+L Device:D_Zener D?
 U 1 1 5D316091
 P 6800 2500
-F 0 "D2" V 6754 2579 50  0000 L CNN
+F 0 "D?" V 6754 2579 50  0000 L CNN
 F 1 "DiodoZener6.8V" V 6845 2579 50  0000 L CNN
 F 2 "Diode_THT:D_DO-35_SOD27_P10.16mm_Horizontal" H 6800 2500 50  0001 C CNN
 F 3 "~" H 6800 2500 50  0001 C CNN
@@ -104,10 +104,10 @@ F 3 "~" H 6800 2500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R3
+L Device:R R?
 U 1 1 5D316319
 P 7050 2900
-F 0 "R3" V 7050 2900 50  0000 C CNN
+F 0 "R?" V 7050 2900 50  0000 C CNN
 F 1 "R1KMedidorDeBateria" V 6934 2900 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6980 2900 50  0001 C CNN
 F 3 "~" H 7050 2900 50  0001 C CNN
@@ -115,10 +115,10 @@ F 3 "~" H 7050 2900 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R2
+L Device:R R?
 U 1 1 5D316455
 P 6800 3150
-F 0 "R2" H 6750 3150 50  0000 L CNN
+F 0 "R?" H 6750 3150 50  0000 L CNN
 F 1 "R6K6MedidorDeBateria" H 6870 3105 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6730 3150 50  0001 C CNN
 F 3 "~" H 6800 3150 50  0001 C CNN
@@ -126,10 +126,10 @@ F 3 "~" H 6800 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:BC548 Q1
+L Transistor_BJT:BC548 Q?
 U 1 1 5D3166B6
 P 7550 2900
-F 0 "Q1" H 7741 2946 50  0000 L CNN
+F 0 "Q?" H 7741 2946 50  0000 L CNN
 F 1 "BC548" H 7741 2855 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Wide" H 7750 2825 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 7550 2900 50  0001 L CNN
@@ -137,10 +137,10 @@ F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 7550 2900 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R4
+L Device:R R?
 U 1 1 5D316CF8
 P 7650 2400
-F 0 "R4" H 7600 2400 50  0000 L CNN
+F 0 "R?" H 7600 2400 50  0000 L CNN
 F 1 "R10KMedidorDeBateria" H 7200 2550 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7580 2400 50  0001 C CNN
 F 3 "~" H 7650 2400 50  0001 C CNN
@@ -148,10 +148,10 @@ F 3 "~" H 7650 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R5
+L Device:R R?
 U 1 1 5D31721A
 P 7950 2100
-F 0 "R5" V 7950 2100 50  0000 C CNN
+F 0 "R?" V 7950 2100 50  0000 C CNN
 F 1 "R1KMedidorDeBateria" V 7834 2100 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7880 2100 50  0001 C CNN
 F 3 "~" H 7950 2100 50  0001 C CNN
@@ -159,10 +159,10 @@ F 3 "~" H 7950 2100 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Transistor_BJT:BC548 Q2
+L Transistor_BJT:BC548 Q?
 U 1 1 5D3176BA
 P 8100 2650
-F 0 "Q2" H 8291 2696 50  0000 L CNN
+F 0 "Q?" H 8291 2696 50  0000 L CNN
 F 1 "BC548" H 8291 2605 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Wide" H 8300 2575 50  0001 L CIN
 F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8100 2650 50  0001 L CNN
@@ -170,10 +170,10 @@ F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8100 2650 50  0001 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:LED D3
+L Device:LED D?
 U 1 1 5D31810C
 P 8200 2250
-F 0 "D3" V 8238 2132 50  0000 R CNN
+F 0 "D?" V 8238 2132 50  0000 R CNN
 F 1 "LedBateriaVermelho" V 8150 2100 50  0000 R CNN
 F 2 "LED_THT:LED_D3.0mm" H 8200 2250 50  0001 C CNN
 F 3 "~" H 8200 2250 50  0001 C CNN
@@ -234,10 +234,10 @@ Wire Notes Line
 Wire Wire Line
 	3300 2050 3300 3050
 $Comp
-L Connector:Conn_01x01_Female J3
+L Connector:Conn_01x01_Female J?
 U 1 1 5D3D07BC
 P 2650 3400
-F 0 "J3" H 2678 3426 50  0000 L CNN
+F 0 "J?" H 2678 3426 50  0000 L CNN
 F 1 "8.4V_PlacaCentral" H 2800 3400 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.2mm" H 2650 3400 50  0001 C CNN
 F 3 "~" H 2650 3400 50  0001 C CNN
@@ -245,10 +245,10 @@ F 3 "~" H 2650 3400 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J4
+L Connector:Conn_01x01_Female J?
 U 1 1 5D3D515E
 P 3500 3400
-F 0 "J4" H 3528 3426 50  0000 L CNN
+F 0 "J?" H 3528 3426 50  0000 L CNN
 F 1 "GND_PlacaCentral" H 3650 3400 50  0000 L CNN
 F 2 "Connector_Wire:SolderWirePad_1x01_Drill1.2mm" H 3500 3400 50  0001 C CNN
 F 3 "~" H 3500 3400 50  0001 C CNN
@@ -260,10 +260,10 @@ GND
 Text GLabel 6650 3400 0    50   Input ~ 0
 GND
 $Comp
-L Mechanical:MountingHole H3
+L Mechanical:MountingHole H?
 U 1 1 5D58B29C
 P 1900 3650
-F 0 "H3" H 2000 3696 50  0000 L CNN
+F 0 "H?" H 2000 3696 50  0000 L CNN
 F 1 "Furos" H 2000 3605 50  0000 L CNN
 F 2 "Wire_Pads:SolderWirePad_single_2-5mmDrill" H 1900 3650 50  0001 C CNN
 F 3 "~" H 1900 3650 50  0001 C CNN
@@ -271,10 +271,10 @@ F 3 "~" H 1900 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H4
+L Mechanical:MountingHole H?
 U 1 1 5D58BCCF
 P 1900 3900
-F 0 "H4" H 2000 3946 50  0000 L CNN
+F 0 "H?" H 2000 3946 50  0000 L CNN
 F 1 "Furos" H 2000 3855 50  0000 L CNN
 F 2 "Wire_Pads:SolderWirePad_single_2-5mmDrill" H 1900 3900 50  0001 C CNN
 F 3 "~" H 1900 3900 50  0001 C CNN
@@ -282,10 +282,10 @@ F 3 "~" H 1900 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J1
+L Connector:Conn_01x01_Female J?
 U 1 1 5D20493D
 P 2200 1950
-F 0 "J1" H 2300 1950 50  0000 C CNN
+F 0 "J?" H 2300 1950 50  0000 C CNN
 F 1 "PinoCheckBateriaVcc" H 2800 1950 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 2200 1950 50  0001 C CNN
 F 3 "~" H 2200 1950 50  0001 C CNN
@@ -295,10 +295,10 @@ $EndComp
 Wire Wire Line
 	2400 1950 2450 1950
 $Comp
-L Device:R R1
+L Device:R R?
 U 1 1 5D1A4675
 P 2600 1950
-F 0 "R1" V 2600 1950 50  0000 C CNN
+F 0 "R?" V 2600 1950 50  0000 C CNN
 F 1 "R10KBatCheck" V 2700 1900 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2530 1950 50  0001 C CNN
 F 3 "~" H 2600 1950 50  0001 C CNN
@@ -324,7 +324,7 @@ Text GLabel 6800 1900 2    50   Input ~ 0
 Wire Wire Line
 	6800 1900 6800 2150
 Wire Wire Line
-	2850 3100 2850 3300
+	2850 3100 2850 3150
 Wire Wire Line
 	3300 3400 3300 3300
 Connection ~ 3300 3050
@@ -336,7 +336,7 @@ Connection ~ 6800 3400
 Text HLabel 2650 3300 0    50   Output ~ 0
 8.4V_OutPlacaCentral
 Text HLabel 3500 3300 2    50   Output ~ 0
-8.4V_OutPlacaCentral
+GND_OutPlacaCentral
 Text HLabel 2700 1750 0    50   Input ~ 0
 8.4V_InBateria
 Text HLabel 3550 1750 2    50   Input ~ 0
@@ -369,4 +369,16 @@ Wire Wire Line
 Connection ~ 3300 3300
 Wire Wire Line
 	3300 3300 3300 3050
+Text HLabel 2650 2650 0    50   Output ~ 0
+Botão_Out
+Text HLabel 2650 3150 0    50   Input ~ 0
+Botão_In
+Wire Wire Line
+	2650 2650 2850 2650
+Connection ~ 2850 2650
+Wire Wire Line
+	2650 3150 2850 3150
+Connection ~ 2850 3150
+Wire Wire Line
+	2850 3150 2850 3300
 $EndSCHEMATC

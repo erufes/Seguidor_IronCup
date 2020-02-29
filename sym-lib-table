@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Sensores_e_componentes_SL)(type Legacy)(uri ${KIPRJMOD}/Bibliotecas/Sensores_e_componentes_SL.lib)(options "")(descr ""))
+  (lib (name Sensores_SL)(type Legacy)(uri "C:/Users/PC/Documents/GitHub/Seguidor_IronCup/Placa Sensores/Placa_sensores v1_2/Libraries/Sensores_SL.lib")(options "")(descr ""))
+)
